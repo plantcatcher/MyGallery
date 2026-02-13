@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { X, MapPin, Calendar, Info, Heart, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { X, MapPin, Calendar, Info, Heart, ChevronLeft, ChevronRight, Play, Pause, Music, VolumeX, Volume2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Photo } from "@/types/photography";
 import { Button } from "@/components/ui/button";
@@ -21,8 +21,57 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
   const [likeCount, setLikeCount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const currentIndex = allPhotos.findIndex(p => p.id === photo?.id);
+
+  // 初始化音频
+  useEffect(() => {
+    audioRef.current = new Audio("https://planetgis.cn/bgm.mp3");
+    audioRef.current.loop = true;
+    
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  // 音乐播放控制
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlayingMusic) {
+        audioRef.current.play().catch(err => {
+          console.error("Music playback failed:", err);
+          setIsPlayingMusic(false);
+        });
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlayingMusic]);
+
+  const toggleMusic = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setIsPlayingMusic(!isPlayingMusic);
+  };
+
+  const toggleAutoPlay = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const newAutoPlay = !isAutoPlaying;
+    setIsAutoPlaying(newAutoPlay);
+    
+    // 如果开启自动播放且音乐没在播，则自动响起音乐
+    if (newAutoPlay && !isPlayingMusic) {
+      setIsPlayingMusic(true);
+    }
+  };
 
   const navigateTo = useCallback((direction: 'prev' | 'next') => {
     if (!onNavigate || allPhotos.length === 0) return;
@@ -108,18 +157,32 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
         className="fixed inset-0 z-[60] flex items-center justify-center bg-background/95 backdrop-blur-xl p-4 md:p-12"
         onClick={onClose}
       >
-        <div className="absolute top-6 left-6 z-[70] flex items-center space-x-4">
+        <div className="absolute top-6 left-6 z-[70] flex items-center space-x-2">
           <Button
+            type="button"
             variant="ghost"
             size="sm"
-            onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+            onClick={toggleAutoPlay}
             className={cn(
               "rounded-full font-serif text-[10px] tracking-[0.2em] uppercase transition-all",
-              isAutoPlaying ? "text-accent bg-accent/10" : "text-muted-foreground"
+              isAutoPlaying ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"
             )}
           >
             {isAutoPlaying ? <Pause className="w-3 h-3 mr-2" /> : <Play className="w-3 h-3 mr-2" />}
             {isAutoPlaying ? "停止播放" : "自动播放"}
+          </Button>
+
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            onClick={toggleMusic}
+            className={cn(
+              "w-8 h-8 rounded-full transition-all",
+              isPlayingMusic ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"
+            )}
+          >
+            {isPlayingMusic ? <Volume2 className="w-3 h-3" /> : <VolumeX className="w-3 h-3" />}
           </Button>
         </div>
 
