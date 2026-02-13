@@ -157,35 +157,6 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
         className="fixed inset-0 z-[60] flex items-center justify-center bg-background/95 backdrop-blur-xl p-4 md:p-12"
         onClick={onClose}
       >
-        <div className="absolute top-6 left-6 z-[70] flex items-center space-x-2">
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            onClick={toggleAutoPlay}
-            className={cn(
-              "rounded-full font-serif text-[10px] tracking-[0.2em] uppercase transition-all",
-              isAutoPlaying ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"
-            )}
-          >
-            {isAutoPlaying ? <Pause className="w-3 h-3 mr-2" /> : <Play className="w-3 h-3 mr-2" />}
-            {isAutoPlaying ? "停止播放" : "自动播放"}
-          </Button>
-
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            onClick={toggleMusic}
-            className={cn(
-              "w-8 h-8 rounded-full transition-all",
-              isPlayingMusic ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"
-            )}
-          >
-            {isPlayingMusic ? <Volume2 className="w-3 h-3" /> : <VolumeX className="w-3 h-3" />}
-          </Button>
-        </div>
-
         <Button
           variant="ghost"
           size="icon"
@@ -199,20 +170,25 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
           className="relative w-full h-full max-w-7xl flex flex-col md:flex-row gap-8 items-center"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Image Side */}
+          {/* 图片区域 */}
           <div className="flex-1 w-full h-full flex items-center justify-center overflow-hidden relative group/nav">
-            <motion.img
-              key={photo.id}
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 1.05, opacity: 0 }}
-              transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
-              src={photo.url}
-              alt={photo.title}
-              className="max-w-full max-h-full object-contain"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={photo.id}
+                initial={{ opacity: 0, scale: 0.98, x: 10, filter: "blur(10px)" }}
+                animate={{ opacity: 1, scale: 1, x: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 1.02, x: -10, filter: "blur(10px)" }}
+                transition={{ 
+                  duration: 0.8, 
+                  ease: [0.19, 1, 0.22, 1] // 更高级的缓动效果
+                }}
+                src={photo.url}
+                alt={photo.title}
+                className="max-w-full max-h-full object-contain"
+              />
+            </AnimatePresence>
 
-            {/* Navigation Buttons */}
+            {/* 导航按钮 */}
             <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/nav:opacity-100 transition-opacity pointer-events-none">
               <Button
                 variant="ghost"
@@ -233,13 +209,43 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
             </div>
           </div>
 
-          {/* Info Side */}
+          {/* 信息区域 */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
             className="w-full md:w-96 flex flex-col space-y-8 text-left"
           >
+            {/* 这里的控制按钮现在在信息区域顶部，不会遮挡照片 */}
+            <div className="flex items-center space-x-2 pt-2 pb-4 border-b border-border/10">
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={toggleAutoPlay}
+                className={cn(
+                  "rounded-full font-serif text-[10px] tracking-[0.2em] uppercase transition-all",
+                  isAutoPlaying ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"
+                )}
+              >
+                {isAutoPlaying ? <Pause className="w-3 h-3 mr-2" /> : <Play className="w-3 h-3 mr-2" />}
+                {isAutoPlaying ? "停止播放" : "自动播放"}
+              </Button>
+
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                onClick={toggleMusic}
+                className={cn(
+                  "w-8 h-8 rounded-full transition-all",
+                  isPlayingMusic ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"
+                )}
+              >
+                {isPlayingMusic ? <Volume2 className="w-3 h-3" /> : <VolumeX className="w-3 h-3" />}
+              </Button>
+            </div>
+
             <div className="space-y-4">
               <span className="text-accent text-[10px] font-bold tracking-[0.4em] uppercase">{photo.location}</span>
               <h2 className="text-4xl md:text-5xl font-serif tracking-tighter leading-tight">{photo.title}</h2>
