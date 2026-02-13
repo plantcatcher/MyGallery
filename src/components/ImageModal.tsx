@@ -106,7 +106,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     if (isAutoPlaying && photo) {
       interval = setInterval(() => {
         navigateTo('next');
-      }, 3000);
+      }, 5000);
     }
     return () => clearInterval(interval);
   }, [isAutoPlaying, photo, navigateTo]);
