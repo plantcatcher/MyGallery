@@ -154,24 +154,24 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[60] flex items-center justify-center bg-background/95 backdrop-blur-xl p-4 md:p-12"
+        className="fixed inset-0 z-[60] flex items-center justify-center bg-background/95 backdrop-blur-xl p-2 md:p-12"
         onClick={onClose}
       >
         <Button
           variant="ghost"
           size="icon"
-          className="absolute top-6 right-6 z-[70] hover:bg-muted"
+          className="absolute top-4 right-4 z-[70] hover:bg-muted"
           onClick={onClose}
         >
           <X className="w-6 h-6" />
         </Button>
 
         <div 
-          className="relative w-full h-full max-w-7xl flex flex-col md:flex-row gap-8 items-center"
+          className="relative w-full h-full max-w-7xl flex flex-col md:flex-row gap-4 md:gap-8 items-center"
           onClick={(e) => e.stopPropagation()}
         >
           {/* 图片区域 */}
-          <div className="flex-1 w-full h-full flex items-center justify-center overflow-hidden relative group/nav">
+          <div className="flex-[2] md:flex-1 w-full h-full flex items-center justify-center overflow-hidden relative group/nav">
             <AnimatePresence mode="wait">
               <motion.img
                 key={photo.id}
@@ -180,31 +180,31 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
                 exit={{ opacity: 0, scale: 1.02, x: -10, filter: "blur(10px)" }}
                 transition={{ 
                   duration: 0.8, 
-                  ease: [0.19, 1, 0.22, 1] // 更高级的缓动效果
+                  ease: [0.19, 1, 0.22, 1]
                 }}
                 src={photo.url}
                 alt={photo.title}
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-[70vh] md:max-h-full object-contain shadow-2xl"
               />
             </AnimatePresence>
 
-            {/* 导航按钮 */}
-            <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover/nav:opacity-100 transition-opacity pointer-events-none">
+            {/* 导航按钮 - 在手机端也保持可见或通过点击触发 */}
+            <div className="absolute inset-0 flex items-center justify-between px-2 md:px-4 opacity-0 group-hover/nav:opacity-100 md:group-hover/nav:opacity-100 transition-opacity pointer-events-none">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => navigateTo('prev')}
-                className="w-12 h-12 rounded-full bg-background/20 backdrop-blur-md hover:bg-background/40 pointer-events-auto transition-all"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/40 backdrop-blur-md hover:bg-background/60 pointer-events-auto transition-all"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => navigateTo('next')}
-                className="w-12 h-12 rounded-full bg-background/20 backdrop-blur-md hover:bg-background/40 pointer-events-auto transition-all"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-background/40 backdrop-blur-md hover:bg-background/60 pointer-events-auto transition-all"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
               </Button>
             </div>
           </div>
@@ -214,10 +214,10 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="w-full md:w-96 flex flex-col space-y-8 text-left"
+            className="flex-1 w-full md:w-96 flex flex-col space-y-4 md:space-y-8 text-left p-4 md:p-0 overflow-y-auto"
           >
             {/* 这里的控制按钮现在在信息区域顶部，不会遮挡照片 */}
-            <div className="flex items-center space-x-2 pt-2 pb-4 border-b border-border/10">
+            <div className="flex items-center space-x-2 pt-0 md:pt-2 pb-4 border-b border-border/10">
               <Button
                 type="button"
                 variant="ghost"
