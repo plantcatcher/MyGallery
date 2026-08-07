@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,8 +8,12 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Camera } from "lucide-react";
 import { toast } from "sonner";
+import PageMeta from "@/components/common/PageMeta";
+
+const MIN_PASSWORD_LENGTH = 8;
 
 const LoginPage: React.FC = () => {
+  const { t } = useTranslation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,14 +26,12 @@ const LoginPage: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!username || !password) {
-      toast.error("请输入用户名和密码");
+      toast.error(t("login.errorRequired"));
       return;
     }
 
-    // 仅允许管理员账号登录
-    const allowedAccounts = ["zayn", "zayn2"];
-    if (!allowedAccounts.includes(username)) {
-      toast.error("无效的账号");
+    if (password.length < MIN_PASSWORD_LENGTH) {
+      toast.error(t("login.passwordTooShort") || `密码至少需要 ${MIN_PASSWORD_LENGTH} 位`);
       return;
     }
 
@@ -37,15 +40,16 @@ const LoginPage: React.FC = () => {
     setLoading(false);
 
     if (error) {
-      toast.error(`登录失败: ${error.message}`);
+      toast.error(`${t("login.loginFailed")} ${error.message}`);
     } else {
-      toast.success("登录成功");
+      toast.success(t("login.loginSuccess"));
       navigate(from, { replace: true });
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-6 py-12">
+      <PageMeta title={t("seo.loginTitle")} description={t("seo.loginDesc")} />
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-4">
           <div className="flex justify-center">
@@ -54,41 +58,41 @@ const LoginPage: React.FC = () => {
               <div className="absolute inset-0 bg-accent/20 blur-2xl rounded-full scale-150" />
             </div>
           </div>
-          <h1 className="text-4xl font-serif tracking-tighter">板牙摄影工作室</h1>
-          <p className="text-muted-foreground font-serif italic">管理员登录</p>
+          <h1 className="text-4xl font-serif tracking-tighter">{t("login.title")}</h1>
+          <p className="text-muted-foreground font-serif italic">{t("login.subtitle")}</p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>欢迎回来</CardTitle>
-            <CardDescription>使用管理员账户登录</CardDescription>
+            <CardTitle>{t("login.welcome")}</CardTitle>
+            <CardDescription>{t("login.welcomeDesc")}</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="username">用户名</Label>
+                <Label htmlFor="username">{t("login.username")}</Label>
                 <Input
                   id="username"
                   type="text"
-                  placeholder="输入用户名"
+                  placeholder={t("login.usernamePlaceholder")}
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   disabled={loading}
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password">密码</Label>
+                <Label htmlFor="password">{t("login.password")}</Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="输入密码"
+                  placeholder={t("login.passwordPlaceholder")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading}
                 />
               </div>
               <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? "登录中..." : "登录"}
+                {loading ? t("login.loggingIn") : t("login.loginBtn")}
               </Button>
             </form>
           </CardContent>
@@ -96,7 +100,7 @@ const LoginPage: React.FC = () => {
 
         <div className="text-center">
           <Button variant="ghost" onClick={() => navigate("/")}>
-            返回首页
+            {t("login.backHome")}
           </Button>
         </div>
       </div>

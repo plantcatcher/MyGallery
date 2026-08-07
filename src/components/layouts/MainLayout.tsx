@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Camera, Instagram, Mail, LogOut, User } from "lucide-react";
+import { Menu, X, Camera, Instagram, Mail, LogOut, User, ScrollText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useAuth } from "@/contexts/AuthContext";
+import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
 interface MainLayoutProps {
@@ -17,6 +19,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { user, profile, signOut } = useAuth();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +35,10 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: "光影", path: "/" },
-    { name: "画廊", path: "/gallery" },
-    { name: "自白", path: "/profile" },
-    { name: "回声", path: "/about" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.gallery"), path: "/gallery" },
+    { name: t("nav.profile"), path: "/profile" },
+    { name: t("nav.about"), path: "/about" },
   ];
 
   return (
@@ -53,7 +56,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               <Camera className="w-5 h-5 transition-transform duration-500 group-hover:rotate-[15deg] relative z-10" />
               <div className="absolute inset-0 bg-accent/20 blur-lg rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className="font-serif text-lg tracking-[0.2em] uppercase">板牙摄影工作室</span>
+            <span className="font-serif text-lg tracking-[0.2em] uppercase">{t("nav.brand")}</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -71,6 +74,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               </Link>
             ))}
             
+            <LanguageSwitcher />
             <ThemeToggle />
             
             {user ? (
@@ -80,7 +84,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                     to="/admin"
                     className="text-sm font-medium tracking-widest uppercase transition-colors hover:text-accent text-muted-foreground"
                   >
-                    管理
+                    {t("nav.admin")}
                   </Link>
                 )}
                 <Button
@@ -140,7 +144,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                   to="/admin"
                   className="text-3xl font-bold tracking-tighter uppercase text-foreground"
                 >
-                  管理
+                  {t("nav.admin")}
                 </Link>
               )}
             </nav>
@@ -150,14 +154,15 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                 <Mail className="w-6 h-6 text-muted-foreground" />
               </div>
               <div className="flex items-center space-x-4">
+                <LanguageSwitcher />
                 <ThemeToggle />
                 {user ? (
                   <Button variant="ghost" size="sm" onClick={() => signOut()}>
-                    登出
+                    {t("nav.logout")}
                   </Button>
                 ) : (
                   <Link to="/login">
-                    <Button variant="ghost" size="sm">登录</Button>
+                    <Button variant="ghost" size="sm">{t("nav.login")}</Button>
                   </Link>
                 )}
               </div>
@@ -175,13 +180,20 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       <footer className="py-12 px-6 md:px-12 border-t mt-24">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2026 Zayn Huang. All rights reserved.
+            © {new Date().getFullYear()} Zayn Huang. All rights reserved.
           </div>
           <div className="flex items-center space-x-8">
-            <button 
+            <Link
+              to="/changelog"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center"
+            >
+              <ScrollText className="w-3.5 h-3.5 mr-1.5" />
+              {t("nav.changelog")}
+            </Link>
+            <button
               onClick={() => {
                 navigator.clipboard.writeText("zaynhuang@outlook.com");
-                toast.success("邮箱地址已复制到剪贴板");
+                toast.success(t("common.emailCopied"));
               }}
               className="text-sm hover:text-accent transition-colors cursor-pointer"
             >

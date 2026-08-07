@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { X, MapPin, Calendar, Info, Heart, ChevronLeft, ChevronRight, Play, Pause, Music, VolumeX, Volume2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Photo } from "@/types/photography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -16,6 +17,7 @@ interface ImageModalProps {
 }
 
 export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], onClose, onNavigate }) => {
+  const { t } = useTranslation();
   const { user } = useAuth();
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
@@ -28,7 +30,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
 
   // 初始化音频
   useEffect(() => {
-    audioRef.current = new Audio("https://planetgis.cn/bgm.mp3");
+    audioRef.current = new Audio("https://galleryphoto.planetgis.cn/bgm.mp3");
     audioRef.current.loop = true;
     
     return () => {
@@ -91,6 +93,19 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     }
   }, [photo, user]);
 
+  // 预加载前后各一张图片，减少切换时的加载延迟
+  useEffect(() => {
+    if (!photo || allPhotos.length <= 1) return;
+    const preloadIndices = [
+      (currentIndex - 1 + allPhotos.length) % allPhotos.length,
+      (currentIndex + 1) % allPhotos.length,
+    ];
+    preloadIndices.forEach((idx) => {
+      const img = new Image();
+      img.src = allPhotos[idx].url;
+    });
+  }, [photo, currentIndex, allPhotos]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') navigateTo('prev');
@@ -132,12 +147,12 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
         await unlikePhoto(photo.id, user?.id);
         setLiked(false);
         setLikeCount(prev => Math.max(0, prev - 1));
-        toast.success("已取消点赞");
+        toast.success(t("modal.unliked"));
       } else {
         await likePhoto(photo.id, user?.id);
         setLiked(true);
         setLikeCount(prev => prev + 1);
-        toast.success("点赞成功");
+        toast.success(t("modal.liked"));
       }
     } catch (error: any) {
       toast.error(error.message);
@@ -229,7 +244,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
                 )}
               >
                 {isAutoPlaying ? <Pause className="w-3 h-3 mr-2" /> : <Play className="w-3 h-3 mr-2" />}
-                {isAutoPlaying ? "停止播放" : "自动播放"}
+                {isAutoPlaying ? t("modal.stopPlay") : t("modal.autoPlay")}
               </Button>
 
               <Button
@@ -271,7 +286,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
                 disabled={loading}
               >
                 <Heart className={`w-5 h-5 mr-2 transition-all ${liked ? "fill-current" : ""}`} />
-                <span className="relative z-10">{liked ? "已点赞" : "点赞"} {likeCount > 0 && `(${likeCount})`}</span>
+                <span className="relative z-10">{liked ? t("modal.likedBtn") : t("modal.likeBtn")} {likeCount > 0 && `(${likeCount})`}</span>
               </Button>
             </div>
           </motion.div>

@@ -12,7 +12,10 @@ dist
 dist-ssr
 output
 *.local
-package-lock.json
+# package-lock.json 现在纳入版本控制（纯 npm 项目，保证依赖可复现）
+
+# WorkBuddy 本地项目记忆 / 配置（含私有数据，不上传）
+.workbuddy/
 
 # Editor directories and files
 .vscode/*
@@ -27,3 +30,8 @@ package-lock.json
 .sync
 history/*.json
 .vite_cache
+
+# Environment variables - never commit secrets
+.env
+.env.*
+!.env.example

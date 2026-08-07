@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Award, Camera, Map, CheckCircle2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import PageMeta from "@/components/common/PageMeta";
+
+// 摄影师肖像图：替换为本地或稳定的 CDN 链接
+const PHOTOGRAPHER_AVATAR = "https://miaoda-conversation-file.cdn.bcebos.com/user-9cva4ifsa1vk/conv-9kf03ktlf1ts/20260212/file-9kvi49kl9d6o.jpg";
 
 const ProfilePage: React.FC = () => {
+  const { t } = useTranslation();
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
+      <PageMeta title={t("seo.profileTitle")} description={t("seo.profileDesc")} />
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 items-start">
         {/* Left: Image */}
         <div className="md:col-span-5 lg:col-span-4 md:sticky top-32">
@@ -13,17 +22,27 @@ const ProfilePage: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             className="aspect-[3/4] overflow-hidden bg-muted"
           >
-            <img
-              src="https://miaoda-conversation-file.cdn.bcebos.com/user-9cva4ifsa1vk/conv-9kf03ktlf1ts/20260212/file-9kvi49kl9d6o.jpg"
-              alt="Photographer"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
+            {imgError ? (
+              <div className="w-full h-full flex flex-col items-center justify-center space-y-4">
+                <Camera className="w-16 h-16 text-muted-foreground/20" />
+                <span className="text-[10px] text-muted-foreground/40 uppercase tracking-[0.3em]">
+                  {t("profile.badge")}
+                </span>
+              </div>
+            ) : (
+              <img
+                src={PHOTOGRAPHER_AVATAR}
+                alt="Photographer"
+                onError={() => setImgError(true)}
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            )}
           </motion.div>
           <div className="mt-8 space-y-4">
-            <h3 className="text-xl font-bold tracking-tighter uppercase">视觉中国签约摄影师</h3>
+            <h3 className="text-xl font-bold tracking-tighter uppercase">{t("profile.badge")}</h3>
             <div className="flex items-center space-x-2 text-muted-foreground">
               <CheckCircle2 className="w-4 h-4 text-accent" />
-              <span className="text-sm">Verified Professional</span>
+              <span className="text-sm">{t("profile.verified")}</span>
             </div>
           </div>
         </div>
@@ -36,9 +55,9 @@ const ProfilePage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <span className="text-accent text-xs font-bold tracking-[0.4em] uppercase">关于我的自白</span>
+              <span className="text-accent text-xs font-bold tracking-[0.4em] uppercase">{t("profile.subtitle")}</span>
               <h1 className="text-5xl md:text-8xl font-serif tracking-tighter leading-tight">
-                一个在荒野中<br /><span className="italic text-muted-foreground/40">收集光的人</span>。
+                {t("profile.title1")}<br /><span className="italic text-muted-foreground/40">{t("profile.title2")}</span>{t("profile.titleEnd")}
               </h1>
             </motion.div>
             
@@ -49,33 +68,33 @@ const ProfilePage: React.FC = () => {
               className="font-serif italic text-lg md:text-xl text-muted-foreground leading-relaxed space-y-6 max-w-2xl"
             >
               <p>
-                摄影对我来说，不是记录，而是寻找——寻找那些我无法用言语表达的、关于存在本身的细微震颤。我叫 Zayn，一个居住在深圳的摄影师。
+                {t("profile.p1")}
               </p>
-              <p>{"我的性格里有着典型的 INFP 特质：理想主义、总是在现实的边缘游走。镜头是我与这个世界沟通的桥梁。在那些渺无人烟的荒原，我感到的不是孤独，而是某种跨越时空的共鸣。"}</p>
+              <p>{t("profile.p2")}</p>
               <p>
-                每一张照片，都是我灵魂的一个切切片。我不追求完美的构图，我追求的是那个能让我心脏漏跳一拍的瞬间。
+                {t("profile.p3")}
               </p>
             </motion.div>
           </section>
 
           {/* Special Experience */}
           <section className="py-12 space-y-12">
-            <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-accent border-b border-accent/20 pb-4 inline-block">旅程的印记</h3>
+            <h3 className="text-sm font-bold tracking-[0.3em] uppercase text-accent border-b border-accent/20 pb-4 inline-block">{t("profile.journeyTitle")}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-4">
-                <h4 className="font-serif text-2xl italic">山脉的洗礼</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">在海拔5000米的冈仁波齐，我学会了向大自然低头。那里的空气稀薄得像是一场梦，每一口呼吸都提醒着我生命的脆弱与伟大。</p>
+                <h4 className="font-serif text-2xl italic">{t("profile.exp1Title")}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t("profile.exp1Desc")}</p>
               </div>
               <div className="space-y-4">
-                <h4 className="font-serif text-2xl italic">深圳的光影</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">我居住在深圳，这座城市的快节奏与我内心的慢节奏形成了奇妙的对比。在这里，我学会了在繁华中寻找宁静，在钢筋水泥中发现诗意。</p>
+                <h4 className="font-serif text-2xl italic">{t("profile.exp2Title")}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{t("profile.exp2Desc")}</p>
               </div>
             </div>
           </section>
 
           {/* Equipment */}
           <section className="space-y-8">
-            <h3 className="text-2xl font-bold tracking-tighter uppercase">我的装备</h3>
+            <h3 className="text-2xl font-bold tracking-tighter uppercase">{t("profile.gearTitle")}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
               <div className="space-y-4">
                 <h4 className="text-xs font-bold tracking-widest uppercase text-muted-foreground">Camera Bodies</h4>

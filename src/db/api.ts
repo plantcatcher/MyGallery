@@ -254,3 +254,28 @@ export async function deleteMessage(id: string) {
     throw new Error(`删除留言失败: ${error.message}`);
   }
 }
+
+// ==================== 公开留言（脱敏） ====================
+
+export interface PublicMessage {
+  id: string;
+  name: string;
+  content: string;
+  created_at: string;
+}
+
+/**
+ * 获取公开留言（仅返回 name / content / created_at，不包含 email）
+ * 依赖数据库函数 get_public_messages(limit_count int)
+ */
+export async function getPublicMessages(limit = 50): Promise<PublicMessage[]> {
+  const { data, error } = await supabase
+    .rpc("get_public_messages", { limit_count: limit });
+
+  if (error) {
+    console.error("获取公开留言失败:", error);
+    return [];
+  }
+
+  return Array.isArray(data) ? data : [];
+}

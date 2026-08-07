@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { getAllPhotos, getAllProjects, createPhoto, updatePhoto, deletePhoto, createProject, updateProject, deleteProject, getMessages, deleteMessage } from "@/db/api";
 import { Photo, Project } from "@/types/photography";
 import { Button } from "@/components/ui/button";
@@ -16,6 +17,7 @@ import { Plus, Edit, Trash2, Image as ImageIcon, FolderOpen, ArrowLeft, MessageS
 import { toast } from "sonner";
 
 const AdminPage: React.FC = () => {
+  const { t } = useTranslation();
   const { profile, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [photos, setPhotos] = useState<Photo[]>([]);
@@ -25,7 +27,7 @@ const AdminPage: React.FC = () => {
 
   useEffect(() => {
     if (!authLoading && profile?.role !== "admin") {
-      toast.error("您没有权限访问此页面");
+      toast.error(t("admin.noPermission"));
       navigate("/");
       return;
     }
@@ -51,7 +53,7 @@ const AdminPage: React.FC = () => {
   if (authLoading || loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-muted-foreground font-serif italic">加载中...</div>
+        <div className="text-muted-foreground font-serif italic">{t("admin.loading")}</div>
       </div>
     );
   }
@@ -65,12 +67,12 @@ const AdminPage: React.FC = () => {
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex items-center justify-between">
           <div className="space-y-2">
-            <h1 className="text-4xl font-serif tracking-tighter">管理后台</h1>
-            <p className="text-muted-foreground">管理您的照片和项目</p>
+            <h1 className="text-4xl font-serif tracking-tighter">{t("admin.title")}</h1>
+            <p className="text-muted-foreground">{t("admin.description")}</p>
           </div>
           <Button variant="ghost" onClick={() => navigate("/")}>
             <ArrowLeft className="w-4 h-4 mr-2" />
-            返回首页
+            {t("admin.backHome")}
           </Button>
         </div>
 
@@ -78,20 +80,20 @@ const AdminPage: React.FC = () => {
           <TabsList>
             <TabsTrigger value="photos">
               <ImageIcon className="w-4 h-4 mr-2" />
-              照片管理
+              {t("admin.photoManage")}
             </TabsTrigger>
             <TabsTrigger value="projects">
               <FolderOpen className="w-4 h-4 mr-2" />
-              项目管理
+              {t("admin.projectManage")}
             </TabsTrigger>
             <TabsTrigger value="messages">
               <MessageSquare className="w-4 h-4 mr-2" />
-              留言管理
+              {t("admin.messageManage")}
             </TabsTrigger>
           </TabsList>
 
           <TabsContent value="photos" className="space-y-6">
-            <PhotosManager photos={photos} onRefresh={fetchData} />
+            <PhotosManager photos={photos} projects={projects} onRefresh={fetchData} />
           </TabsContent>
 
           <TabsContent value="projects" className="space-y-6">
@@ -108,7 +110,8 @@ const AdminPage: React.FC = () => {
 };
 
 // 照片管理组件
-const PhotosManager: React.FC<{ photos: Photo[]; onRefresh: () => void }> = ({ photos, onRefresh }) => {
+const PhotosManager: React.FC<{ photos: Photo[]; projects: Project[]; onRefresh: () => void }> = ({ photos, projects, onRefresh }) => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [editingPhoto, setEditingPhoto] = useState<Photo | null>(null);
 
@@ -118,11 +121,11 @@ const PhotosManager: React.FC<{ photos: Photo[]; onRefresh: () => void }> = ({ p
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("确定要删除这张照片吗？")) return;
+    if (!confirm(t("admin.confirmDeletePhoto"))) return;
 
     try {
       await deletePhoto(id);
-      toast.success("照片已删除");
+      toast.success(t("admin.photoDeleted"));
       onRefresh();
     } catch (error: any) {
       toast.error(error.message);
@@ -137,16 +140,16 @@ const PhotosManager: React.FC<{ photos: Photo[]; onRefresh: () => void }> = ({ p
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-serif">照片列表</h2>
+        <h2 className="text-2xl font-serif">{t("admin.photoList")}</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button onClick={() => setEditingPhoto(null)}>
               <Plus className="w-4 h-4 mr-2" />
-              添加照片
+              {t("admin.addPhoto")}
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-            <PhotoForm photo={editingPhoto} onSuccess={() => { handleClose(); onRefresh(); }} />
+            <PhotoForm photo={editingPhoto} projects={projects} onSuccess={() => { handleClose(); onRefresh(); }} />
           </DialogContent>
         </Dialog>
       </div>
@@ -182,7 +185,8 @@ const PhotosManager: React.FC<{ photos: Photo[]; onRefresh: () => void }> = ({ p
 };
 
 // 照片表单组件
-const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ photo, onSuccess }) => {
+const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess: () => void }> = ({ photo, projects, onSuccess }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     url: photo?.url || "",
     title: photo?.title || "",
@@ -201,10 +205,10 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
     try {
       if (photo) {
         await updatePhoto(photo.id, formData);
-        toast.success("照片已更新");
+        toast.success(t("admin.photoUpdated"));
       } else {
         await createPhoto(formData as any);
-        toast.success("照片已添加");
+        toast.success(t("admin.photoAdded"));
       }
       onSuccess();
     } catch (error: any) {
@@ -217,13 +221,13 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <DialogHeader>
-        <DialogTitle>{photo ? "编辑照片" : "添加照片"}</DialogTitle>
-        <DialogDescription>填写照片信息</DialogDescription>
+        <DialogTitle>{photo ? t("admin.editPhoto") : t("admin.addPhoto")}</DialogTitle>
+        <DialogDescription>{t("admin.photoFormDesc")}</DialogDescription>
       </DialogHeader>
 
       <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="url">图片链接 *</Label>
+          <Label htmlFor="url">{t("admin.imageUrl")}</Label>
           <Input
             id="url"
             value={formData.url}
@@ -234,7 +238,7 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="title">标题 *</Label>
+          <Label htmlFor="title">{t("admin.photoTitle")}</Label>
           <Input
             id="title"
             value={formData.title}
@@ -245,7 +249,7 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="description">描述</Label>
+          <Label htmlFor="description">{t("admin.description")}</Label>
           <Textarea
             id="description"
             value={formData.description}
@@ -257,18 +261,18 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
 
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="category">分类 *</Label>
+            <Label htmlFor="category">{t("admin.category")}</Label>
             <Input
               id="category"
               value={formData.category}
               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-              placeholder="例如：风光、建筑、人文"
+              placeholder={t("admin.categoryPlaceholder")}
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="date">日期 *</Label>
+            <Label htmlFor="date">{t("admin.date")}</Label>
             <Input
               id="date"
               type="date"
@@ -280,7 +284,7 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="location">地点 *</Label>
+          <Label htmlFor="location">{t("admin.location")}</Label>
           <Input
             id="location"
             value={formData.location}
@@ -291,18 +295,28 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="project">项目 ID（可选）</Label>
-          <Input
-            id="project"
-            value={formData.project}
-            onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-            placeholder="关联的项目 ID"
-          />
+          <Label htmlFor="project">{t("admin.projectId")}</Label>
+          <Select
+            value={formData.project || "__NONE__"}
+            onValueChange={(value) => setFormData({ ...formData, project: value === "__NONE__" ? "" : value })}
+          >
+            <SelectTrigger id="project">
+              <SelectValue placeholder={t("admin.projectIdPlaceholder")} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="__NONE__">{t("admin.noProject")}</SelectItem>
+              {projects.map((proj) => (
+                <SelectItem key={proj.id} value={proj.id}>
+                  {proj.title}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
       <Button type="submit" className="w-full" disabled={loading}>
-        {loading ? "保存中..." : photo ? "更新照片" : "添加照片"}
+        {loading ? t("admin.saving") : photo ? t("admin.updatePhoto") : t("admin.addPhoto")}
       </Button>
     </form>
   );
@@ -310,6 +324,7 @@ const PhotoForm: React.FC<{ photo: Photo | null; onSuccess: () => void }> = ({ p
 
 // 项目管理组件
 const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRefresh: () => void }> = ({ projects, allPhotos, onRefresh }) => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
 
@@ -319,11 +334,11 @@ const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRef
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("确定要删除这个项目吗？")) return;
+    if (!confirm(t("admin.confirmDeleteProject"))) return;
 
     try {
       await deleteProject(id);
-      toast.success("项目已删除");
+      toast.success(t("admin.projectDeleted"));
       onRefresh();
     } catch (error: any) {
       toast.error(error.message);
@@ -338,12 +353,12 @@ const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRef
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-serif">项目列表</h2>
+        <h2 className="text-2xl font-serif">{t("admin.projectList")}</h2>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button onClick={() => setEditingProject(null)}>
               <Plus className="w-4 h-4 mr-2" />
-              添加项目
+              {t("admin.addProject")}
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -389,6 +404,7 @@ const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRef
 // 项目表单组件
 // 项目表单组件
 const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuccess: () => void }> = ({ project, allPhotos, onSuccess }) => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     id: project?.id || "",
     title: project?.title || "",
@@ -443,7 +459,7 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
 
       await Promise.all(updatePromises);
       
-      toast.success(project ? "项目已更新" : "项目已添加");
+      toast.success(project ? t("admin.projectUpdated") : t("admin.projectAdded"));
       onSuccess();
     } catch (error: any) {
       toast.error(error.message);
@@ -455,14 +471,14 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <DialogHeader>
-        <DialogTitle>{project ? "编辑叙事系列" : "添加叙事系列"}</DialogTitle>
-        <DialogDescription>定义您的叙事结构与包含的作品</DialogDescription>
+        <DialogTitle>{project ? t("admin.editSeries") : t("admin.addSeries")}</DialogTitle>
+        <DialogDescription>{t("admin.seriesFormDesc")}</DialogDescription>
       </DialogHeader>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="project-id">项目唯一 ID *</Label>
+            <Label htmlFor="project-id">{t("admin.projectIdLabel")}</Label>
             <Input
               id="project-id"
               value={formData.id}
@@ -474,7 +490,7 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="project-title">标题 *</Label>
+            <Label htmlFor="project-title">{t("admin.seriesTitle")}</Label>
             <Input
               id="project-title"
               value={formData.title}
@@ -485,7 +501,7 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="project-description">系列简介</Label>
+            <Label htmlFor="project-description">{t("admin.seriesDesc")}</Label>
             <Textarea
               id="project-description"
               value={formData.description}
@@ -497,7 +513,7 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="cover-image">封面图片 URL *</Label>
+              <Label htmlFor="cover-image">{t("admin.coverImage")}</Label>
               <Input
                 id="cover-image"
                 value={formData.cover_image}
@@ -507,7 +523,7 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="project-year">年份/跨度</Label>
+              <Label htmlFor="project-year">{t("admin.yearSpan")}</Label>
               <Input
                 id="project-year"
                 value={formData.year}
@@ -519,7 +535,7 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
         </div>
 
         <div className="space-y-2 flex flex-col">
-          <Label className="mb-2">选择包含的照片 ({selectedPhotoIds.length})</Label>
+          <Label className="mb-2">{t("admin.selectPhotos")} ({selectedPhotoIds.length})</Label>
           <div className="border rounded-md p-4 flex-1 overflow-y-auto max-h-[400px] grid grid-cols-3 gap-2 bg-muted/20">
             {allPhotos.map(photo => (
               <div 
@@ -541,15 +557,15 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
               </div>
             ))}
             {allPhotos.length === 0 && (
-              <p className="col-span-3 text-center text-muted-foreground text-xs py-10">暂无照片可选，请先上传照片</p>
+              <p className="col-span-3 text-center text-muted-foreground text-xs py-10">{t("admin.noPhotos")}</p>
             )}
           </div>
-          <p className="text-[10px] text-muted-foreground mt-2 italic">点击图片可将其加入或移除该系列</p>
+          <p className="text-[10px] text-muted-foreground mt-2 italic">{t("admin.clickPhotoHint")}</p>
         </div>
       </div>
 
       <Button type="submit" className="w-full" disabled={loading}>
-        {loading ? "保存中..." : project ? "保存叙事系列" : "创建叙事系列"}
+        {loading ? t("admin.saving") : project ? t("admin.saveSeries") : t("admin.createSeries")}
       </Button>
     </form>
   );
@@ -557,12 +573,13 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
 
 // 留言管理组件
 const MessagesManager: React.FC<{ messages: any[]; onRefresh: () => void }> = ({ messages, onRefresh }) => {
+  const { t } = useTranslation();
   const handleDelete = async (id: string) => {
-    if (!confirm("确定要删除这条留言吗？")) return;
+    if (!confirm(t("admin.confirmDeleteMessage"))) return;
 
     try {
       await deleteMessage(id);
-      toast.success("留言已删除");
+      toast.success(t("admin.messageDeleted"));
       onRefresh();
     } catch (error: any) {
       toast.error(error.message);
@@ -571,14 +588,14 @@ const MessagesManager: React.FC<{ messages: any[]; onRefresh: () => void }> = ({
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-serif">留言列表 ({messages.length})</h2>
+      <h2 className="text-2xl font-serif">{t("admin.messageList")} ({messages.length})</h2>
       <div className="grid grid-cols-1 gap-4">
         {messages.map((msg) => (
           <Card key={msg.id} className="bg-muted/30">
             <CardHeader className="flex flex-row items-start justify-between space-y-0">
               <div className="space-y-1">
                 <CardTitle className="text-lg font-serif">{msg.name}</CardTitle>
-                <CardDescription>{msg.email || "无邮箱"}</CardDescription>
+                <CardDescription>{msg.email || t("admin.noEmail")}</CardDescription>
               </div>
               <Button variant="ghost" size="icon" onClick={() => handleDelete(msg.id)}>
                 <Trash2 className="w-4 h-4 text-destructive" />
@@ -592,7 +609,7 @@ const MessagesManager: React.FC<{ messages: any[]; onRefresh: () => void }> = ({
                 </p>
                 {msg.email && (
                   <a href={`mailto:${msg.email}`} className="text-[10px] text-accent hover:underline uppercase tracking-widest">
-                    回复邮件
+                    {t("admin.replyEmail")}
                   </a>
                 )}
               </div>
@@ -600,7 +617,7 @@ const MessagesManager: React.FC<{ messages: any[]; onRefresh: () => void }> = ({
           </Card>
         ))}
         {messages.length === 0 && (
-          <p className="text-center text-muted-foreground py-20 font-serif italic">暂无留言</p>
+          <p className="text-center text-muted-foreground py-20 font-serif italic">{t("admin.noMessages")}</p>
         )}
       </div>
     </div>
