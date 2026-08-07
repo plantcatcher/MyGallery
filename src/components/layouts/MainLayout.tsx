@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import Busuanzi from "@/components/Busuanzi";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
@@ -215,6 +216,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             >
               500px
             </a>
+            <Busuanzi />
           </div>
         </div>
       </footer>
