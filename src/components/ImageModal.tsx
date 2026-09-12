@@ -6,7 +6,6 @@ import { Photo } from "@/types/photography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { likePhoto, unlikePhoto, getPhotoLikes, checkUserLiked } from "@/db/api";
-import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
 
 interface ImageModalProps {
@@ -18,7 +17,6 @@ interface ImageModalProps {
 
 export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], onClose, onNavigate }) => {
   const { t } = useTranslation();
-  const { user } = useAuth();
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -91,7 +89,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     if (photo) {
       loadLikeData();
     }
-  }, [photo, user]);
+  }, [photo]);
 
   // 预加载前后各一张图片，减少切换时的加载延迟
   useEffect(() => {
@@ -131,7 +129,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     
     const [count, isLiked] = await Promise.all([
       getPhotoLikes(photo.id),
-      checkUserLiked(photo.id, user?.id)
+      checkUserLiked(photo.id)
     ]);
     
     setLikeCount(count);
@@ -144,12 +142,12 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     setLoading(true);
     try {
       if (liked) {
-        await unlikePhoto(photo.id, user?.id);
+        await unlikePhoto(photo.id);
         setLiked(false);
         setLikeCount(prev => Math.max(0, prev - 1));
         toast.success(t("modal.unliked"));
       } else {
-        await likePhoto(photo.id, user?.id);
+        await likePhoto(photo.id);
         setLiked(true);
         setLikeCount(prev => prev + 1);
         toast.success(t("modal.liked"));

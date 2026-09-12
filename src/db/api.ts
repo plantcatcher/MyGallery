@@ -1,261 +1,247 @@
-import { supabase } from "./supabase";
 import type { Photo, Project } from "@/types/photography";
+import photosData from "@/data/photos.json";
+import projectsData from "@/data/projects.json";
 
-// ==================== 点赞相关 API ====================
+// 判断是否为开发模式（有本地 API）
+const IS_DEV = import.meta.env.DEV;
 
-export async function likePhoto(photoId: string, userId?: string) {
-  const sessionId = userId ? null : getSessionId();
-  
-  const { data, error } = await supabase
-    .from("photo_likes")
-    .insert([{ 
-      photo_id: photoId, 
-      user_id: userId || null,
-      session_id: sessionId 
-    }])
-    .select()
-    .maybeSingle();
+// ==================== 点赞相关 API（本地 localStorage 实现） ====================
 
-  if (error) {
-    throw new Error(`点赞失败: ${error.message}`);
+const LIKES_STORAGE_KEY = "gallery_likes";
+const LIKE_COUNTS_KEY = "gallery_like_counts";
+
+function getLikedPhotos(): string[] {
+  try {
+    const data = localStorage.getItem(LIKES_STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch {
+    return [];
   }
-
-  return data;
 }
 
-export async function unlikePhoto(photoId: string, userId?: string) {
-  const sessionId = userId ? null : getSessionId();
-  
-  let query = supabase.from("photo_likes").delete().eq("photo_id", photoId);
-  
-  if (userId) {
-    query = query.eq("user_id", userId);
-  } else {
-    query = query.eq("session_id", sessionId);
+function setLikedPhotos(ids: string[]) {
+  try {
+    localStorage.setItem(LIKES_STORAGE_KEY, JSON.stringify(ids));
+  } catch {
+    // ignore
   }
+}
 
-  const { error } = await query;
+function getLikeCounts(): Record<string, number> {
+  try {
+    const data = localStorage.getItem(LIKE_COUNTS_KEY);
+    return data ? JSON.parse(data) : {};
+  } catch {
+    return {};
+  }
+}
 
-  if (error) {
-    throw new Error(`取消点赞失败: ${error.message}`);
+function setLikeCounts(counts: Record<string, number>) {
+  try {
+    localStorage.setItem(LIKE_COUNTS_KEY, JSON.stringify(counts));
+  } catch {
+    // ignore
+  }
+}
+
+export async function likePhoto(photoId: string): Promise<void> {
+  const liked = getLikedPhotos();
+  if (!liked.includes(photoId)) {
+    liked.push(photoId);
+    setLikedPhotos(liked);
+  }
+  const counts = getLikeCounts();
+  counts[photoId] = (counts[photoId] || 0) + 1;
+  setLikeCounts(counts);
+}
+
+export async function unlikePhoto(photoId: string): Promise<void> {
+  const liked = getLikedPhotos();
+  const filtered = liked.filter(id => id !== photoId);
+  setLikedPhotos(filtered);
+  const counts = getLikeCounts();
+  if (counts[photoId] && counts[photoId] > 0) {
+    counts[photoId] -= 1;
+    setLikeCounts(counts);
   }
 }
 
 export async function getPhotoLikes(photoId: string): Promise<number> {
-  const { data, error } = await supabase
-    .from("photo_like_counts")
-    .select("like_count")
-    .eq("photo_id", photoId)
-    .maybeSingle();
-
-  if (error) {
-    console.error("获取点赞数失败:", error);
-    return 0;
-  }
-
-  return data?.like_count || 0;
+  const counts = getLikeCounts();
+  return counts[photoId] || 0;
 }
 
-export async function checkUserLiked(photoId: string, userId?: string): Promise<boolean> {
-  const sessionId = userId ? null : getSessionId();
-  
-  let query = supabase.from("photo_likes").select("id").eq("photo_id", photoId);
-  
-  if (userId) {
-    query = query.eq("user_id", userId);
-  } else {
-    query = query.eq("session_id", sessionId);
-  }
-
-  const { data, error } = await query.maybeSingle();
-
-  if (error) {
-    console.error("检查点赞状态失败:", error);
-    return false;
-  }
-
-  return !!data;
-}
-
-// 生成或获取游客的 session ID
-function getSessionId(): string {
-  let sessionId = localStorage.getItem("guest_session_id");
-  if (!sessionId) {
-    sessionId = `guest_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    localStorage.setItem("guest_session_id", sessionId);
-  }
-  return sessionId;
+export async function checkUserLiked(photoId: string): Promise<boolean> {
+  const liked = getLikedPhotos();
+  return liked.includes(photoId);
 }
 
 // ==================== 照片相关 API ====================
 
 export async function getAllPhotos(): Promise<Photo[]> {
-  const { data, error } = await supabase
-    .from("photos")
-    .select("*")
-    .order("date", { ascending: false });
-
-  if (error) {
-    console.error("获取照片失败:", error);
-    return [];
+  if (IS_DEV) {
+    try {
+      const res = await fetch("/api/photos/");
+      if (res.ok) {
+        const data = await res.json();
+        return [...data].sort(
+          (a: Photo, b: Photo) =>
+            new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+      }
+    } catch {
+      // 开发模式下 API 不可用时回退到静态数据
+    }
   }
-
-  return Array.isArray(data) ? data : [];
+  return [...photosData].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 }
 
 export async function getPhotosByCategory(category: string): Promise<Photo[]> {
   if (category === "all") {
     return getAllPhotos();
   }
-
-  const { data, error } = await supabase
-    .from("photos")
-    .select("*")
-    .eq("category", category)
-    .order("date", { ascending: false });
-
-  if (error) {
-    console.error("获取分类照片失败:", error);
-    return [];
-  }
-
-  return Array.isArray(data) ? data : [];
+  const allPhotos = await getAllPhotos();
+  return allPhotos.filter((p) => p.category === category);
 }
 
-export async function createPhoto(photo: Omit<Photo, "id" | "created_at" | "updated_at">) {
-  const { data, error } = await supabase
-    .from("photos")
-    .insert([photo])
-    .select()
-    .maybeSingle();
-
-  if (error) {
-    throw new Error(`创建照片失败: ${error.message}`);
+export async function createPhoto(photo: Omit<Photo, "id">): Promise<Photo> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持新增照片，请在本地开发模式下操作");
   }
-
-  return data;
+  const res = await fetch("/api/photos/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(photo),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "创建照片失败");
+  }
+  return res.json();
 }
 
-export async function updatePhoto(id: string, updates: Partial<Photo>) {
-  const { data, error } = await supabase
-    .from("photos")
-    .update(updates)
-    .eq("id", id)
-    .select()
-    .maybeSingle();
-
-  if (error) {
-    throw new Error(`更新照片失败: ${error.message}`);
+export async function updatePhoto(id: string, updates: Partial<Photo>): Promise<Photo> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持更新照片，请在本地开发模式下操作");
   }
-
-  return data;
+  const res = await fetch(`/api/photos/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updates),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "更新照片失败");
+  }
+  return res.json();
 }
 
-export async function deletePhoto(id: string) {
-  const { error } = await supabase
-    .from("photos")
-    .delete()
-    .eq("id", id);
-
-  if (error) {
-    throw new Error(`删除照片失败: ${error.message}`);
+export async function deletePhoto(id: string): Promise<void> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持删除照片，请在本地开发模式下操作");
+  }
+  const res = await fetch(`/api/photos/${id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "删除照片失败");
   }
 }
 
 // ==================== 项目相关 API ====================
 
 export async function getAllProjects(): Promise<Project[]> {
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .order("year", { ascending: false });
-
-  if (error) {
-    console.error("获取项目失败:", error);
-    return [];
+  if (IS_DEV) {
+    try {
+      const res = await fetch("/api/projects/");
+      if (res.ok) {
+        const data = await res.json();
+        return [...data].sort((a: Project, b: Project) => {
+          const yearA = parseInt(a.year.split("-")[0]);
+          const yearB = parseInt(b.year.split("-")[0]);
+          return yearB - yearA;
+        });
+      }
+    } catch {
+      // 开发模式下 API 不可用时回退到静态数据
+    }
   }
-
-  return Array.isArray(data) ? data : [];
+  return [...projectsData].sort((a, b) => {
+    const yearA = parseInt(a.year.split("-")[0]);
+    const yearB = parseInt(b.year.split("-")[0]);
+    return yearB - yearA;
+  });
 }
 
-export async function createProject(project: Omit<Project, "created_at" | "updated_at">) {
-  const { data, error } = await supabase
-    .from("projects")
-    .insert([project])
-    .select()
-    .maybeSingle();
-
-  if (error) {
-    throw new Error(`创建项目失败: ${error.message}`);
+export async function createProject(project: Omit<Project, "id"> & { id?: string }): Promise<Project> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持新增项目，请在本地开发模式下操作");
   }
-
-  return data;
+  const res = await fetch("/api/projects/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(project),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "创建项目失败");
+  }
+  return res.json();
 }
 
-export async function updateProject(id: string, updates: Partial<Project>) {
-  const { data, error } = await supabase
-    .from("projects")
-    .update(updates)
-    .eq("id", id)
-    .select()
-    .maybeSingle();
-
-  if (error) {
-    throw new Error(`更新项目失败: ${error.message}`);
+export async function updateProject(id: string, updates: Partial<Project>): Promise<Project> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持更新项目，请在本地开发模式下操作");
   }
-
-  return data;
+  const res = await fetch(`/api/projects/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updates),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "更新项目失败");
+  }
+  return res.json();
 }
 
-export async function deleteProject(id: string) {
-  const { error } = await supabase
-    .from("projects")
-    .delete()
-    .eq("id", id);
-
-  if (error) {
-    throw new Error(`删除项目失败: ${error.message}`);
+export async function deleteProject(id: string): Promise<void> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持删除项目，请在本地开发模式下操作");
   }
-}
-
-// ==================== 留言板相关 API ====================
-
-export async function getMessages() {
-  const { data, error } = await supabase
-    .from("messages")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (error) {
-    console.error("获取留言失败:", error);
-    return [];
-  }
-
-  return data || [];
-}
-
-export async function createMessage(message: { name: string; email?: string; content: string }) {
-  const { error } = await supabase
-    .from("messages")
-    .insert([message]);
-
-  if (error) {
-    throw new Error(`提交留言失败: ${error.message}`);
+  const res = await fetch(`/api/projects/${id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "删除项目失败");
   }
 }
 
-export async function deleteMessage(id: string) {
-  const { error } = await supabase
-    .from("messages")
-    .delete()
-    .eq("id", id);
+// ==================== 上传图片 ====================
 
-  if (error) {
-    throw new Error(`删除留言失败: ${error.message}`);
+export async function uploadImage(file: File): Promise<{ url: string; filename: string }> {
+  if (!IS_DEV) {
+    throw new Error("生产环境不支持上传图片，请在本地开发模式下操作");
   }
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await fetch("/api/upload", {
+    method: "POST",
+    body: formData,
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || "上传失败");
+  }
+  return res.json();
 }
 
-// ==================== 公开留言（脱敏） ====================
+// ==================== 留言板相关（已移除，保留空函数避免编译错误） ====================
 
 export interface PublicMessage {
   id: string;
@@ -264,18 +250,19 @@ export interface PublicMessage {
   created_at: string;
 }
 
-/**
- * 获取公开留言（仅返回 name / content / created_at，不包含 email）
- * 依赖数据库函数 get_public_messages(limit_count int)
- */
-export async function getPublicMessages(limit = 50): Promise<PublicMessage[]> {
-  const { data, error } = await supabase
-    .rpc("get_public_messages", { limit_count: limit });
+export async function getMessages(): Promise<any[]> {
+  return [];
+}
 
-  if (error) {
-    console.error("获取公开留言失败:", error);
-    return [];
-  }
+export async function createMessage(_message: { name: string; email?: string; content: string }): Promise<void> {
+  // 静态站点已移除留言功能
+  throw new Error("留言功能已停用，请通过邮件联系");
+}
 
-  return Array.isArray(data) ? data : [];
+export async function deleteMessage(_id: string): Promise<void> {
+  // 静态站点已移除留言功能
+}
+
+export async function getPublicMessages(_limit = 50): Promise<PublicMessage[]> {
+  return [];
 }

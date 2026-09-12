@@ -4,12 +4,22 @@ import svgr from 'vite-plugin-svgr';
 import path from 'path';
 
 import { miaodaDevPlugin } from "miaoda-sc-plugin";
+import localAdminPlugin from './plugins/vite-plugin-local-admin';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), svgr({
+  plugins: [
+    react(),
+    svgr({
       svgrOptions: {
-        icon: true, exportType: 'named', namedExport: 'ReactComponent', }, }), miaodaDevPlugin()],
+        icon: true,
+        exportType: 'named',
+        namedExport: 'ReactComponent',
+      },
+    }),
+    miaodaDevPlugin(),
+    localAdminPlugin(),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

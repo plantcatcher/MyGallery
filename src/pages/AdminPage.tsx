@@ -1,65 +1,94 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { getAllPhotos, getAllProjects, createPhoto, updatePhoto, deletePhoto, createProject, updateProject, deleteProject, getMessages, deleteMessage } from "@/db/api";
+import {
+  getAllPhotos,
+  getAllProjects,
+  createPhoto,
+  updatePhoto,
+  deletePhoto,
+  createProject,
+  updateProject,
+  deleteProject,
+} from "@/db/api";
 import { Photo, Project } from "@/types/photography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plus, Edit, Trash2, Image as ImageIcon, FolderOpen, ArrowLeft, MessageSquare } from "lucide-react";
+import {
+  Plus,
+  Edit,
+  Trash2,
+  Image as ImageIcon,
+  FolderOpen,
+  ArrowLeft,
+} from "lucide-react";
 import { toast } from "sonner";
+
+const IS_DEV = import.meta.env.DEV;
 
 const AdminPage: React.FC = () => {
   const { t } = useTranslation();
-  const { profile, loading: authLoading } = useAuth();
   const navigate = useNavigate();
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
-  const [messages, setMessages] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!authLoading && profile?.role !== "admin") {
-      toast.error(t("admin.noPermission"));
-      navigate("/");
+    // 生产环境下直接跳转首页
+    if (!IS_DEV) {
+      navigate("/", { replace: true });
       return;
     }
-
-    if (profile?.role === "admin") {
-      fetchData();
-    }
-  }, [profile, authLoading, navigate]);
+    fetchData();
+  }, [navigate]);
 
   const fetchData = async () => {
     setLoading(true);
-    const [photosData, projectsData, messagesData] = await Promise.all([
+    const [photosData, projectsData] = await Promise.all([
       getAllPhotos(),
       getAllProjects(),
-      getMessages()
     ]);
     setPhotos(photosData);
     setProjects(projectsData);
-    setMessages(messagesData);
     setLoading(false);
   };
 
-  if (authLoading || loading) {
+  if (!IS_DEV) {
+    return null;
+  }
+
+  if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-muted-foreground font-serif italic">{t("admin.loading")}</div>
       </div>
     );
-  }
-
-  if (profile?.role !== "admin") {
-    return null;
   }
 
   return (
@@ -68,7 +97,7 @@ const AdminPage: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="space-y-2">
             <h1 className="text-4xl font-serif tracking-tighter">{t("admin.title")}</h1>
-            <p className="text-muted-foreground">{t("admin.description")}</p>
+            <p className="text-muted-foreground">本地管理模式 — 数据直接写入 JSON 文件</p>
           </div>
           <Button variant="ghost" onClick={() => navigate("/")}>
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -86,10 +115,6 @@ const AdminPage: React.FC = () => {
               <FolderOpen className="w-4 h-4 mr-2" />
               {t("admin.projectManage")}
             </TabsTrigger>
-            <TabsTrigger value="messages">
-              <MessageSquare className="w-4 h-4 mr-2" />
-              {t("admin.messageManage")}
-            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="photos" className="space-y-6">
@@ -97,11 +122,11 @@ const AdminPage: React.FC = () => {
           </TabsContent>
 
           <TabsContent value="projects" className="space-y-6">
-            <ProjectsManager projects={projects} allPhotos={photos} onRefresh={fetchData} />
-          </TabsContent>
-
-          <TabsContent value="messages" className="space-y-6">
-            <MessagesManager messages={messages} onRefresh={fetchData} />
+            <ProjectsManager
+              projects={projects}
+              allPhotos={photos}
+              onRefresh={fetchData}
+            />
           </TabsContent>
         </Tabs>
       </div>
@@ -109,8 +134,13 @@ const AdminPage: React.FC = () => {
   );
 };
 
-// 照片管理组件
-const PhotosManager: React.FC<{ photos: Photo[]; projects: Project[]; onRefresh: () => void }> = ({ photos, projects, onRefresh }) => {
+// ==================== 照片管理组件 ====================
+
+const PhotosManager: React.FC<{
+  photos: Photo[];
+  projects: Project[];
+  onRefresh: () => void;
+}> = ({ photos, projects, onRefresh }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [editingPhoto, setEditingPhoto] = useState<Photo | null>(null);
@@ -149,7 +179,14 @@ const PhotosManager: React.FC<{ photos: Photo[]; projects: Project[]; onRefresh:
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-            <PhotoForm photo={editingPhoto} projects={projects} onSuccess={() => { handleClose(); onRefresh(); }} />
+            <PhotoForm
+              photo={editingPhoto}
+              projects={projects}
+              onSuccess={() => {
+                handleClose();
+                onRefresh();
+              }}
+            />
           </DialogContent>
         </Dialog>
       </div>
@@ -159,12 +196,18 @@ const PhotosManager: React.FC<{ photos: Photo[]; projects: Project[]; onRefresh:
           <Card key={photo.id}>
             <CardHeader className="p-0">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={photo.url} alt={photo.title} className="w-full h-full object-cover" />
+                <img
+                  src={photo.url}
+                  alt={photo.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </CardHeader>
             <CardContent className="p-4 space-y-2">
               <CardTitle className="text-lg">{photo.title}</CardTitle>
-              <CardDescription className="line-clamp-2">{photo.description}</CardDescription>
+              <CardDescription className="line-clamp-2">
+                {photo.description}
+              </CardDescription>
               <div className="flex items-center justify-between pt-2">
                 <span className="text-xs text-muted-foreground">{photo.category}</span>
                 <div className="flex space-x-2">
@@ -184,8 +227,13 @@ const PhotosManager: React.FC<{ photos: Photo[]; projects: Project[]; onRefresh:
   );
 };
 
-// 照片表单组件
-const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess: () => void }> = ({ photo, projects, onSuccess }) => {
+// ==================== 照片表单组件 ====================
+
+const PhotoForm: React.FC<{
+  photo: Photo | null;
+  projects: Project[];
+  onSuccess: () => void;
+}> = ({ photo, projects, onSuccess }) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     url: photo?.url || "",
@@ -194,7 +242,7 @@ const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess:
     category: photo?.category || "landscape",
     project: photo?.project || "",
     date: photo?.date || new Date().toISOString().split("T")[0],
-    location: photo?.location || ""
+    location: photo?.location || "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -207,7 +255,7 @@ const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess:
         await updatePhoto(photo.id, formData);
         toast.success(t("admin.photoUpdated"));
       } else {
-        await createPhoto(formData as any);
+        await createPhoto(formData as Omit<Photo, "id">);
         toast.success(t("admin.photoAdded"));
       }
       onSuccess();
@@ -226,15 +274,25 @@ const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess:
       </DialogHeader>
 
       <div className="space-y-4">
+        {/* 图片链接 */}
         <div className="space-y-2">
           <Label htmlFor="url">{t("admin.imageUrl")}</Label>
           <Input
             id="url"
             value={formData.url}
             onChange={(e) => setFormData({ ...formData, url: e.target.value })}
-            placeholder="https://example.com/image.jpg"
+            placeholder="https://your-image-host.com/photo.jpg"
             required
           />
+          {formData.url && (
+            <div className="mt-2 aspect-video rounded-md overflow-hidden bg-muted">
+              <img
+                src={formData.url}
+                alt="preview"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          )}
         </div>
 
         <div className="space-y-2">
@@ -298,7 +356,9 @@ const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess:
           <Label htmlFor="project">{t("admin.projectId")}</Label>
           <Select
             value={formData.project || "__NONE__"}
-            onValueChange={(value) => setFormData({ ...formData, project: value === "__NONE__" ? "" : value })}
+            onValueChange={(value) =>
+              setFormData({ ...formData, project: value === "__NONE__" ? "" : value })
+            }
           >
             <SelectTrigger id="project">
               <SelectValue placeholder={t("admin.projectIdPlaceholder")} />
@@ -316,14 +376,23 @@ const PhotoForm: React.FC<{ photo: Photo | null; projects: Project[]; onSuccess:
       </div>
 
       <Button type="submit" className="w-full" disabled={loading}>
-        {loading ? t("admin.saving") : photo ? t("admin.updatePhoto") : t("admin.addPhoto")}
+        {loading
+          ? t("admin.saving")
+          : photo
+            ? t("admin.updatePhoto")
+            : t("admin.addPhoto")}
       </Button>
     </form>
   );
 };
 
-// 项目管理组件
-const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRefresh: () => void }> = ({ projects, allPhotos, onRefresh }) => {
+// ==================== 项目管理组件 ====================
+
+const ProjectsManager: React.FC<{
+  projects: Project[];
+  allPhotos: Photo[];
+  onRefresh: () => void;
+}> = ({ projects, allPhotos, onRefresh }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
@@ -362,10 +431,13 @@ const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRef
             </Button>
           </DialogTrigger>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-            <ProjectForm 
-              project={editingProject} 
+            <ProjectForm
+              project={editingProject}
               allPhotos={allPhotos}
-              onSuccess={() => { handleClose(); onRefresh(); }} 
+              onSuccess={() => {
+                handleClose();
+                onRefresh();
+              }}
             />
           </DialogContent>
         </Dialog>
@@ -376,7 +448,11 @@ const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRef
           <Card key={project.id}>
             <CardHeader className="p-0">
               <div className="aspect-video overflow-hidden">
-                <img src={project.cover_image} alt={project.title} className="w-full h-full object-cover" />
+                <img
+                  src={project.cover_image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </CardHeader>
             <CardContent className="p-4 space-y-2">
@@ -401,16 +477,20 @@ const ProjectsManager: React.FC<{ projects: Project[]; allPhotos: Photo[]; onRef
   );
 };
 
-// 项目表单组件
-// 项目表单组件
-const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuccess: () => void }> = ({ project, allPhotos, onSuccess }) => {
+// ==================== 项目表单组件 ====================
+
+const ProjectForm: React.FC<{
+  project: Project | null;
+  allPhotos: Photo[];
+  onSuccess: () => void;
+}> = ({ project, allPhotos, onSuccess }) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     id: project?.id || "",
     title: project?.title || "",
     description: project?.description || "",
     cover_image: project?.cover_image || "",
-    year: project?.year || new Date().getFullYear().toString()
+    year: project?.year || new Date().getFullYear().toString(),
   });
   const [selectedPhotoIds, setSelectedPhotoIds] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
@@ -418,15 +498,15 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
   useEffect(() => {
     if (project) {
       const associatedIds = allPhotos
-        .filter(p => p.project === project.id)
-        .map(p => p.id);
+        .filter((p) => p.project === project.id)
+        .map((p) => p.id);
       setSelectedPhotoIds(associatedIds);
     }
   }, [project, allPhotos]);
 
   const togglePhoto = (id: string) => {
-    setSelectedPhotoIds(prev => 
-      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    setSelectedPhotoIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
     );
   };
 
@@ -436,29 +516,31 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
 
     try {
       const projectId = project?.id || formData.id;
-      
+
       // 1. 创建或更新项目
       if (project) {
         await updateProject(project.id, formData);
       } else {
-        await createProject(formData as any);
+        await createProject(formData);
       }
 
       // 2. 更新照片关联
-      const updatePromises = allPhotos.map(photo => {
-        const isSelected = selectedPhotoIds.includes(photo.id);
-        const wasInThisProject = photo.project === projectId;
+      const updatePromises = allPhotos
+        .map((photo) => {
+          const isSelected = selectedPhotoIds.includes(photo.id);
+          const wasInThisProject = photo.project === projectId;
 
-        if (isSelected && !wasInThisProject) {
-          return updatePhoto(photo.id, { project: projectId });
-        } else if (!isSelected && wasInThisProject) {
-          return updatePhoto(photo.id, { project: "" });
-        }
-        return null;
-      }).filter(p => p !== null);
+          if (isSelected && !wasInThisProject) {
+            return updatePhoto(photo.id, { project: projectId });
+          } else if (!isSelected && wasInThisProject) {
+            return updatePhoto(photo.id, { project: "" });
+          }
+          return null;
+        })
+        .filter((p) => p !== null);
 
       await Promise.all(updatePromises);
-      
+
       toast.success(project ? t("admin.projectUpdated") : t("admin.projectAdded"));
       onSuccess();
     } catch (error: any) {
@@ -505,48 +587,68 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
             <Textarea
               id="project-description"
               value={formData.description}
-              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
               placeholder="讲述这个系列背后的故事..."
               rows={4}
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="cover-image">{t("admin.coverImage")}</Label>
-              <Input
-                id="cover-image"
-                value={formData.cover_image}
-                onChange={(e) => setFormData({ ...formData, cover_image: e.target.value })}
-                placeholder="封面图片链接"
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="project-year">{t("admin.yearSpan")}</Label>
-              <Input
-                id="project-year"
-                value={formData.year}
-                onChange={(e) => setFormData({ ...formData, year: e.target.value })}
-                placeholder="2024 或 2023-2024"
-              />
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="cover-image">{t("admin.coverImage")}</Label>
+            <Input
+              id="cover-image"
+              value={formData.cover_image}
+              onChange={(e) =>
+                setFormData({ ...formData, cover_image: e.target.value })
+              }
+              placeholder="https://your-image-host.com/cover.jpg"
+              required
+            />
+            {formData.cover_image && (
+              <div className="mt-2 aspect-video rounded-md overflow-hidden bg-muted">
+                <img
+                  src={formData.cover_image}
+                  alt="cover preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="project-year">{t("admin.yearSpan")}</Label>
+            <Input
+              id="project-year"
+              value={formData.year}
+              onChange={(e) => setFormData({ ...formData, year: e.target.value })}
+              placeholder="2024 或 2023-2024"
+            />
           </div>
         </div>
 
         <div className="space-y-2 flex flex-col">
-          <Label className="mb-2">{t("admin.selectPhotos")} ({selectedPhotoIds.length})</Label>
+          <Label className="mb-2">
+            {t("admin.selectPhotos")} ({selectedPhotoIds.length})
+          </Label>
           <div className="border rounded-md p-4 flex-1 overflow-y-auto max-h-[400px] grid grid-cols-3 gap-2 bg-muted/20">
-            {allPhotos.map(photo => (
-              <div 
+            {allPhotos.map((photo) => (
+              <div
                 key={photo.id}
                 onClick={() => togglePhoto(photo.id)}
                 className={cn(
                   "relative aspect-square cursor-pointer border-2 transition-all rounded-sm overflow-hidden",
-                  selectedPhotoIds.includes(photo.id) ? "border-accent scale-[0.98]" : "border-transparent opacity-60 grayscale hover:opacity-100"
+                  selectedPhotoIds.includes(photo.id)
+                    ? "border-accent scale-[0.98]"
+                    : "border-transparent opacity-60 grayscale hover:opacity-100"
                 )}
               >
-                <img src={photo.url} alt={photo.title} className="w-full h-full object-cover" />
+                <img
+                  src={photo.url}
+                  alt={photo.title}
+                  className="w-full h-full object-cover"
+                />
                 {selectedPhotoIds.includes(photo.id) && (
                   <div className="absolute inset-0 bg-accent/20 flex items-center justify-center">
                     <div className="bg-accent text-white rounded-full p-1">
@@ -557,70 +659,25 @@ const ProjectForm: React.FC<{ project: Project | null; allPhotos: Photo[]; onSuc
               </div>
             ))}
             {allPhotos.length === 0 && (
-              <p className="col-span-3 text-center text-muted-foreground text-xs py-10">{t("admin.noPhotos")}</p>
+              <p className="col-span-3 text-center text-muted-foreground text-xs py-10">
+                {t("admin.noPhotos")}
+              </p>
             )}
           </div>
-          <p className="text-[10px] text-muted-foreground mt-2 italic">{t("admin.clickPhotoHint")}</p>
+          <p className="text-[10px] text-muted-foreground mt-2 italic">
+            {t("admin.clickPhotoHint")}
+          </p>
         </div>
       </div>
 
       <Button type="submit" className="w-full" disabled={loading}>
-        {loading ? t("admin.saving") : project ? t("admin.saveSeries") : t("admin.createSeries")}
+        {loading
+          ? t("admin.saving")
+          : project
+            ? t("admin.saveSeries")
+            : t("admin.createSeries")}
       </Button>
     </form>
-  );
-};
-
-// 留言管理组件
-const MessagesManager: React.FC<{ messages: any[]; onRefresh: () => void }> = ({ messages, onRefresh }) => {
-  const { t } = useTranslation();
-  const handleDelete = async (id: string) => {
-    if (!confirm(t("admin.confirmDeleteMessage"))) return;
-
-    try {
-      await deleteMessage(id);
-      toast.success(t("admin.messageDeleted"));
-      onRefresh();
-    } catch (error: any) {
-      toast.error(error.message);
-    }
-  };
-
-  return (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-serif">{t("admin.messageList")} ({messages.length})</h2>
-      <div className="grid grid-cols-1 gap-4">
-        {messages.map((msg) => (
-          <Card key={msg.id} className="bg-muted/30">
-            <CardHeader className="flex flex-row items-start justify-between space-y-0">
-              <div className="space-y-1">
-                <CardTitle className="text-lg font-serif">{msg.name}</CardTitle>
-                <CardDescription>{msg.email || t("admin.noEmail")}</CardDescription>
-              </div>
-              <Button variant="ghost" size="icon" onClick={() => handleDelete(msg.id)}>
-                <Trash2 className="w-4 h-4 text-destructive" />
-              </Button>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm whitespace-pre-wrap leading-relaxed">{msg.content}</p>
-              <div className="flex justify-between items-center mt-4">
-                <p className="text-[10px] text-muted-foreground uppercase tracking-widest">
-                  {new Date(msg.created_at).toLocaleString()}
-                </p>
-                {msg.email && (
-                  <a href={`mailto:${msg.email}`} className="text-[10px] text-accent hover:underline uppercase tracking-widest">
-                    {t("admin.replyEmail")}
-                  </a>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-        {messages.length === 0 && (
-          <p className="text-center text-muted-foreground py-20 font-serif italic">{t("admin.noMessages")}</p>
-        )}
-      </div>
-    </div>
   );
 };
 

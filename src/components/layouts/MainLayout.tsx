@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Camera, Instagram, Mail, LogOut, User, ScrollText } from "lucide-react";
+import { Menu, X, Camera, Instagram, Mail, ScrollText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import Busuanzi from "@/components/Busuanzi";
-import { useAuth } from "@/contexts/AuthContext";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
@@ -19,7 +18,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { user, profile, signOut } = useAuth();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -77,33 +75,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             
             <LanguageSwitcher />
             <ThemeToggle />
-            
-            {user ? (
-              <>
-                {profile?.role === "admin" && (
-                  <Link
-                    to="/admin"
-                    className="text-sm font-medium tracking-widest uppercase transition-colors hover:text-accent text-muted-foreground"
-                  >
-                    {t("nav.admin")}
-                  </Link>
-                )}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => signOut()}
-                  className="relative group"
-                >
-                  <LogOut className="h-5 w-5" />
-                </Button>
-              </>
-            ) : (
-              <Link to="/login">
-                <Button variant="ghost" size="icon" className="relative group">
-                  <User className="h-5 w-5" />
-                </Button>
-              </Link>
-            )}
           </nav>
 
           {/* Mobile Toggle */}
@@ -140,14 +111,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                   {link.name}
                 </Link>
               ))}
-              {user && profile?.role === "admin" && (
-                <Link
-                  to="/admin"
-                  className="text-3xl font-bold tracking-tighter uppercase text-foreground"
-                >
-                  {t("nav.admin")}
-                </Link>
-              )}
             </nav>
             <div className="mt-12 pt-12 border-t flex items-center justify-between">
               <div className="flex space-x-6">
@@ -157,15 +120,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               <div className="flex items-center space-x-4">
                 <LanguageSwitcher />
                 <ThemeToggle />
-                {user ? (
-                  <Button variant="ghost" size="sm" onClick={() => signOut()}>
-                    {t("nav.logout")}
-                  </Button>
-                ) : (
-                  <Link to="/login">
-                    <Button variant="ghost" size="sm">{t("nav.login")}</Button>
-                  </Link>
-                )}
               </div>
             </div>
           </motion.div>

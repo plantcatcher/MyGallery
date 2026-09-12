@@ -2,8 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import IntersectObserver from '@/components/common/IntersectObserver';
 import { Toaster } from '@/components/ui/sonner';
-import { AuthProvider } from '@/contexts/AuthContext';
-import { RouteGuard } from '@/components/common/RouteGuard';
 import { MainLayout } from '@/components/layouts/MainLayout';
 
 import routes from './routes';
@@ -11,7 +9,7 @@ import routes from './routes';
 // 包装组件，用于判断是否需要 MainLayout
 const LayoutWrapper: React.FC = () => {
   const location = useLocation();
-  const noLayoutPaths = ['/login'];
+  const noLayoutPaths: string[] = [];
   const needsLayout = !noLayoutPaths.includes(location.pathname);
 
   return (
@@ -48,13 +46,9 @@ const LayoutWrapper: React.FC = () => {
 const App: React.FC = () => {
   return (
     <Router>
-      <AuthProvider>
-        <RouteGuard>
-          <IntersectObserver />
-          <LayoutWrapper />
-          <Toaster />
-        </RouteGuard>
-      </AuthProvider>
+      <IntersectObserver />
+      <LayoutWrapper />
+      <Toaster />
     </Router>
   );
 };

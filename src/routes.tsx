@@ -7,7 +7,6 @@ const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ChangelogPage = lazy(() => import('./pages/ChangelogPage'));
-const LoginPage = lazy(() => import('./pages/LoginPage'));
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -63,15 +62,6 @@ const routes: RouteConfig[] = [
     element: (
       <Suspense fallback={routeFallback}>
         <ChangelogPage />
-      </Suspense>
-    ),
-  },
-  {
-    nameKey: 'nav.login',
-    path: '/login',
-    element: (
-      <Suspense fallback={routeFallback}>
-        <LoginPage />
       </Suspense>
     ),
   },

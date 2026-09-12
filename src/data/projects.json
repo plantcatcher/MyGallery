@@ -1,0 +1,29 @@
+[
+  {
+    "id": "high-altitudes",
+    "title": "荒原里的回声",
+    "description": "那些关于高度、寒冷与神性的瞬间。我们登顶，是为了看清自己的渺小。",
+    "cover_image": "http://galleryphoto.planetgis.cn/PicGo/2026-02-28-梅里雪山.webp",
+    "year": "2024",
+    "created_at": "2026-02-28T16:55:55.996239+00:00",
+    "updated_at": "2026-02-28T16:55:55.996239+00:00"
+  },
+  {
+    "id": "urban-pulse",
+    "title": "被遗忘的城市",
+    "description": "在繁华的缝隙中寻找宁静，捕捉钢铁森林中那些柔软的、易碎的诗意。",
+    "cover_image": "https://miaoda-site-img.cdn.bcebos.com/images/baidu_image_search_2999a840-8343-488f-be20-8df542f2e8f4.jpg",
+    "year": "2023-2024",
+    "created_at": "2026-02-28T16:55:55.996239+00:00",
+    "updated_at": "2026-02-28T16:55:55.996239+00:00"
+  },
+  {
+    "id": "silent-sands",
+    "title": "风的足迹",
+    "description": "关于流动与永恒。沙漠是地球上最接近外星的地方，它在沉默中讲述万物起源。",
+    "cover_image": "https://miaoda-site-img.cdn.bcebos.com/images/baidu_image_search_38a071ca-aaf7-4fe2-9ae1-e5abf2679976.jpg",
+    "year": "2023",
+    "created_at": "2026-02-28T16:55:55.996239+00:00",
+    "updated_at": "2026-02-28T16:55:55.996239+00:00"
+  }
+]
