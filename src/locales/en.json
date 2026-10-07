@@ -7,6 +7,7 @@
     "about": "Echo",
     "admin": "Admin",
     "changelog": "Changelog",
+    "blog": "Journal",
     "logout": "Logout",
     "login": "Login"
   },
@@ -187,6 +188,8 @@
     "aboutDesc": "Get in touch with the photographer or leave a message on the echo wall.",
     "changelogTitle": "Changelog | Banya Studio",
     "changelogDesc": "View all version update records and track the evolution of features.",
+    "blogTitle": "Travel Journal | Banya Studio",
+    "blogDesc": "Banya's travel journal — notes on sights, reflections and thoughts gathered on the road.",
     "loginTitle": "Admin Login | Banya Studio",
     "loginDesc": "Administrator login portal.",
     "notFoundTitle": "Page Not Found | Banya Studio",
@@ -204,6 +207,18 @@
     "priorityMedium": "Medium Priority",
     "itemsUnit": "items",
     "footer": "— Continuously evolving, light flows on —"
+  },
+  "blog": {
+    "subtitle": "ON THE ROAD",
+    "title": "Travel Journal",
+    "description": "Letters to the future, written from the road — sights, reflections, realizations and thoughts gathered along the way.",
+    "minRead": "min",
+    "allTags": "All",
+    "backToList": "Back to Journal",
+    "prev": "Previous",
+    "next": "Next",
+    "footer": "— The road continues, the words linger —",
+    "empty": "No entries yet — the satchel awaits its next journey."
   },
   "common": {
     "emailCopied": "Email address copied to clipboard"

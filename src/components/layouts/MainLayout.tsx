@@ -36,6 +36,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const navLinks = [
     { name: t("nav.home"), path: "/" },
     { name: t("nav.gallery"), path: "/gallery" },
+    { name: t("nav.blog"), path: "/blog" },
     { name: t("nav.profile"), path: "/profile" },
     { name: t("nav.about"), path: "/about" },
   ];
@@ -144,6 +145,13 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             >
               <ScrollText className="w-3.5 h-3.5 mr-1.5" />
               {t("nav.changelog")}
+            </Link>
+            <Link
+              to="/blog"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center"
+            >
+              <ScrollText className="w-3.5 h-3.5 mr-1.5" />
+              {t("nav.blog")}
             </Link>
             <button
               onClick={() => {

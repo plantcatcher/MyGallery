@@ -7,6 +7,8 @@ const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ChangelogPage = lazy(() => import('./pages/ChangelogPage'));
+const BlogListPage = lazy(() => import('./pages/BlogListPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -71,6 +73,24 @@ const routes: RouteConfig[] = [
     element: (
       <Suspense fallback={routeFallback}>
         <AdminPage />
+      </Suspense>
+    ),
+  },
+  {
+    nameKey: 'nav.blog',
+    path: '/blog',
+    element: (
+      <Suspense fallback={routeFallback}>
+        <BlogListPage />
+      </Suspense>
+    ),
+  },
+  {
+    nameKey: 'blog.detailTitle',
+    path: '/blog/:slug',
+    element: (
+      <Suspense fallback={routeFallback}>
+        <BlogPostPage />
       </Suspense>
     ),
   },
