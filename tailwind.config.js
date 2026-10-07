@@ -91,6 +91,11 @@ export default {
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)'
             },
+            transitionTimingFunction: {
+                // iOS 标准弹簧缓动近似：入场干脆、收尾柔和
+                'apple': 'cubic-bezier(0.32, 0.72, 0, 1)',
+                'apple-in': 'cubic-bezier(0.42, 0, 1, 1)',
+            },
             backgroundImage: {
                 'gradient-primary': 'var(--gradient-primary)',
                 'gradient-card': 'var(--gradient-card)',

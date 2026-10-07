@@ -60,15 +60,17 @@ const GalleryPage: React.FC = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 20 },
-    show: { 
-      opacity: 1, 
-      scale: 1, 
+    hidden: { opacity: 0, scale: 0.96, y: 16 },
+    show: {
+      opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.2, 0.8, 0.2, 1] as const
-      }
+        type: "spring",
+        stiffness: 260,
+        damping: 28,
+        mass: 0.9,
+      } as const,
     },
   };
 
@@ -83,7 +85,7 @@ const GalleryPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageMeta title={t("seo.galleryTitle")} description={t("seo.galleryDesc")} />
+      <PageMeta title={t("seo.galleryTitle")} description={t("seo.galleryDesc")} image={photos[0]?.url} />
       {/* 头部标题区 */}
       <section className="px-6 md:px-12 pt-12 pb-16 text-center">
         <motion.div
@@ -161,17 +163,25 @@ const GalleryPage: React.FC = () => {
               className="relative group cursor-pointer overflow-hidden break-inside-avoid"
               onClick={() => setSelectedPhoto(photo)}
             >
-              <div className="relative overflow-hidden">
+              <div
+                className="relative overflow-hidden bg-muted"
+                style={
+                  photo.lqip
+                    ? { backgroundImage: `url(${photo.lqip})`, backgroundSize: "cover", backgroundPosition: "center" }
+                    : undefined
+                }
+              >
                 <img
-                  src={photo.url}
+                  src={photo.thumbnail || photo.url}
                   alt={photo.title}
-                  className="w-full h-auto object-cover transition-transform duration-[2s] ease-out group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
+                  decoding="async"
+                  className="w-full h-auto object-cover transition-[transform,filter] duration-500 ease-apple will-change-transform group-hover:scale-[1.04] grayscale-[0.15] group-hover:grayscale-0"
                   loading="lazy"
                 />
                 
                 {/* 悬浮遮罩 */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-4">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-apple flex flex-col justify-end p-4">
+                  <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500 ease-apple">
                     <h4 className="text-white font-serif text-sm tracking-tight">{photo.title}</h4>
                     <p className="text-white/60 text-[10px] uppercase tracking-widest">{photo.location}</p>
                   </div>

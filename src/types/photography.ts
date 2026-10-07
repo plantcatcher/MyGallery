@@ -1,6 +1,8 @@
 export interface Photo {
   id: string;
   url: string;
+  thumbnail?: string;
+  lqip?: string;
   title: string;
   description: string;
   category: string;

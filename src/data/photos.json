@@ -9,7 +9,9 @@
     "date": "2026-05-08",
     "location": "香港",
     "created_at": "2026-05-08T16:12:06.434612+00:00",
-    "updated_at": "2026-05-08T16:12:06.434612+00:00"
+    "updated_at": "2026-05-08T16:12:06.434612+00:00",
+    "thumbnail": "/photos/thumb/d42d4696-ad00-414f-b688-a741f4463db0.webp",
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAABwBgCdASogADAAPqVGm0mmJCKhNVgMAMAUiUATplkBgAG8mj/6EfLGYsZrlL91L441Qur5f0BHLA9VHDAA+6zKqDHmuh9rUjY/dmEBPf/QrfVgDwG1mZlCroizMgT8GbxQ9TP3vY7V/3KzXsFQuJiMRV93Wng4Szp9H3Pnzj8h9yTPgpbyFhsXR6Bl91aVqQnD5mfgEhjyZqrQeeCenShggVDTWQ+YwsFaCl5CaxtqE6lqHrelCL1gY5B4AAAA"
   },
   {
     "id": "8aec3c79-d7ac-4916-a9e4-cd0930b8b19d",
@@ -21,7 +23,9 @@
     "date": "2026-05-08",
     "location": "香港",
     "created_at": "2026-05-08T16:11:23.114876+00:00",
-    "updated_at": "2026-05-08T16:11:23.114876+00:00"
+    "updated_at": "2026-05-08T16:11:23.114876+00:00",
+    "thumbnail": "/photos/thumb/8aec3c79-d7ac-4916-a9e4-cd0930b8b19d.webp",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwBACdASogABUAPrVKnkonJCKhsAgA4BaJYwC90BuZGn06D+RGqECbeoAA/vV7yot3SlhotWPdS//R6RU1eaONCPqu4NcqRGGQ8YXHRAx+gT6560iH5wpOcf6+WoSlaP8xlbsggAAAAA=="
   },
   {
     "id": "7360858e-a494-4c24-a364-e164aae55e3c",
@@ -33,7 +37,9 @@
     "date": "2026-01-03",
     "location": "中国，深圳",
     "created_at": "2026-02-12T18:19:39.093437+00:00",
-    "updated_at": "2026-02-12T18:19:39.093437+00:00"
+    "updated_at": "2026-02-12T18:19:39.093437+00:00",
+    "thumbnail": "/photos/thumb/7360858e-a494-4c24-a364-e164aae55e3c.webp",
+    "lqip": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAABwBgCdASogADAAPrVKnUsnJCKhsBVaqOAWiWcAwNwubQZh2gAjOSDQ0pwoIWXrkR2+vPnIXYSeXK98AAAA/vn0wnofRuGGlegDvz8hYUdCJRc55douC44aye+jGKnb6rDzuMaF3f4xZmoZhNgLWr42ruNFXtzagxGz9F9BzmCGxkUtoRq16vs4aqbtiQetRxs6a+UPN+pHSX4AAAA="
   },
   {
     "id": "c6e3bceb-fc54-4c5e-bcf3-d2bdb15903bc",
@@ -45,7 +51,9 @@
     "date": "2026-01-03",
     "location": "中国，深圳",
     "created_at": "2026-02-12T18:20:11.161623+00:00",
-    "updated_at": "2026-02-12T18:20:11.161623+00:00"
+    "updated_at": "2026-02-12T18:20:11.161623+00:00",
+    "thumbnail": "/photos/thumb/c6e3bceb-fc54-4c5e-bcf3-d2bdb15903bc.webp",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAACQBgCdASogADAAPrFGm0mnI6IhNVgIAOAWCWcAzJRPPJcw251yY+A4FmThNxmHk3HO7GgOmOMeamYqgfwAAP74Ksjk52TFRKqg52VlHz3+8mOdFPf9RdOadkycwlZ84siw+4StVrcwzFTsSgMBpHkcqBzy4N1wUpAUe0nT7wAAAA=="
   },
   {
     "id": "1ea36b92-c349-49d5-a1f3-47788a977b41",
@@ -57,7 +65,9 @@
     "date": "2026-01-03",
     "location": "中国，深圳",
     "created_at": "2026-02-12T18:18:54.425262+00:00",
-    "updated_at": "2026-02-12T18:18:54.425262+00:00"
+    "updated_at": "2026-02-12T18:18:54.425262+00:00",
+    "thumbnail": "/photos/thumb/1ea36b92-c349-49d5-a1f3-47788a977b41.webp",
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABwBACdASogABUAPrVKnkmnJCKhMAgA4BaJQAALSQfyNhuSC81Q/f6Ofa8AAAD++ROjQCtOC4NkVEDwrWHG//kDJ3/7M7gUYKlRZEP3LveaEaDZijJWqa62wH6kTn1uUEFI0mgCdDW/nsdqpVtQThso3KFofGIAAAA="
   },
   {
     "id": "daf32759-9d43-4d69-92bb-b85dd5b37b98",
@@ -69,7 +79,9 @@
     "date": "2025-12-28",
     "location": "中国，深圳",
     "created_at": "2026-02-12T15:14:00.96963+00:00",
-    "updated_at": "2026-02-12T15:14:00.96963+00:00"
+    "updated_at": "2026-02-12T15:14:00.96963+00:00",
+    "thumbnail": "/photos/thumb/daf32759-9d43-4d69-92bb-b85dd5b37b98.webp",
+    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAAAwBwCdASogADAAPp1CmUmlpCKhOrmYALATiWMAuwes4MFygKIEDa4poTaUVVAZsQmL8tBsby81zw+9wILhpz+ULAAA/s3VFPsGo5g4HAqBuBB6qp1YDc7L/2t4lns33Vzxz+X28Qs/4NrYJiNC/3FfjEbT6OuCd0l6PhC2GSHwr+wU8dQvaS6KMpPmas51v+U8CQ67hEpgNCTsXmYPVppai6Q2iHpHlyY+KVqroLRL9JxKZrnQbjuNzeRpEwgLLcqeWutwAAA="
   },
   {
     "id": "bdbcfee9-257d-40bb-9df5-6dc459424ff9",
@@ -81,7 +93,9 @@
     "date": "2025-12-28",
     "location": "中国，深圳",
     "created_at": "2026-02-12T15:15:17.658546+00:00",
-    "updated_at": "2026-02-12T15:15:17.658546+00:00"
+    "updated_at": "2026-02-12T15:15:17.658546+00:00",
+    "thumbnail": "/photos/thumb/bdbcfee9-257d-40bb-9df5-6dc459424ff9.webp",
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABwBQCdASogABUAPrVQo0unJKMhqAqo4BaJYwC+SBBew2rYvec9h/TN7F4/nk1l7YzBJBxQAP3NgNoE6ZUE90B+d+ThB7y6dK77/qxDn3hqM1ZKVJYKKK+UoJq4obS6XAW1MGKfXaOweVnDUZn/PTZJEsW6rWxm7N87QVq2Uy5RmRFJCagAAA=="
   },
   {
     "id": "377481f3-397d-4d3a-be52-f64345ab2d69",
@@ -93,7 +107,9 @@
     "date": "2025-12-28",
     "location": "中国，深圳",
     "created_at": "2026-02-12T14:39:43.37478+00:00",
-    "updated_at": "2026-02-12T14:39:43.37478+00:00"
+    "updated_at": "2026-02-12T14:39:43.37478+00:00",
+    "thumbnail": "/photos/thumb/377481f3-397d-4d3a-be52-f64345ab2d69.webp",
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASogABUAPrVInkmnJCKhMAgA4BaJZQDA/NkkxgUvpFnP6lj1WLrbQwEQwzyAAPqeg+vN4mFSDMFw5l4pVNe9vGKE1K87Ij4sTZ1H0ta0BYzIvozBg/13DzMVIa9QLypVvcFjKJV5Ntwfn2oCDzMJH6vur1lAbpXIRyyzxI+XLH8Pkxn02aIoAA=="
   },
   {
     "id": "f4793970-9d94-41f2-8e2d-16a4f05367f8",
@@ -105,7 +121,9 @@
     "date": "2025-12-20",
     "location": "中国，深圳",
     "created_at": "2026-02-12T15:12:27.429988+00:00",
-    "updated_at": "2026-02-12T15:12:27.429988+00:00"
+    "updated_at": "2026-02-12T15:12:27.429988+00:00",
+    "thumbnail": "/photos/thumb/f4793970-9d94-41f2-8e2d-16a4f05367f8.webp",
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBQCdASogABUAPrVWpk4nJKOiKAgA4BaJZwC4MA9eEGUzPKfuC0QMoGYkvYtdEv2AAP7s3KK6mgd6PJq/yjaLzyjRydyr+GyASNXS7uXcoA/fF3JpLCJQXUrIGwljl2PfD8+6RJgkVwdjAAA="
   },
   {
     "id": "f2574f43-ab26-4dc6-91f5-0b1904e89f92",
@@ -117,7 +135,9 @@
     "date": "2025-12-20",
     "location": "中国，深圳",
     "created_at": "2026-02-12T15:13:12.783832+00:00",
-    "updated_at": "2026-02-12T15:13:12.783832+00:00"
+    "updated_at": "2026-02-12T15:13:12.783832+00:00",
+    "thumbnail": "/photos/thumb/f2574f43-ab26-4dc6-91f5-0b1904e89f92.webp",
+    "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQBQCdASogABUAPrVQoUsnJKMhqA1Q4BaJZwC7AA9Z8Jrll8w28HuJ+Uk+jGNeX6FAAP7dtE2Thy8bsv1XeTIkxeb7wjy+kiFov5BwPyGzSrWIBqQLOImqS0EPWooo7ANas8jn7bH+k1n/EAAAAA=="
   },
   {
     "id": "dbd14561-552b-4c1c-9432-428a86d4aac3",
@@ -129,7 +149,9 @@
     "date": "2025-11-18",
     "location": "中国，深圳",
     "created_at": "2026-02-12T15:11:25.022516+00:00",
-    "updated_at": "2026-02-12T15:11:25.022516+00:00"
+    "updated_at": "2026-02-12T15:11:25.022516+00:00",
+    "thumbnail": "/photos/thumb/dbd14561-552b-4c1c-9432-428a86d4aac3.webp",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAACQBACdASogABUAPp1CmUmlpCKhN+gAsBOJZQC90DJTJc5dpi2Mk6vF5jtmqEAA/vnF6shFK8q+9eh/uw81euchlu8zM64gPCFTxliMZ57XzPhBNaO2ZC02B5Kjgq5jpsGAAA=="
   },
   {
     "id": "69e17eb9-012f-4a95-bda5-5ca3fe837668",
@@ -141,7 +163,9 @@
     "date": "2025-10-28",
     "location": "钦州，古镇村",
     "created_at": "2026-02-12T15:10:29.704571+00:00",
-    "updated_at": "2026-02-12T15:10:29.704571+00:00"
+    "updated_at": "2026-02-12T15:10:29.704571+00:00",
+    "thumbnail": "/photos/thumb/69e17eb9-012f-4a95-bda5-5ca3fe837668.webp",
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACwBACdASogABUAPrFGoEmnI6MhMBgMAOAWCWMAuwARArtATC617Y1PP3eyvNDEAP7CQf9LJkMLP/9rZkrNtVpeyG9GPxPGK8qyEOsStdstQKJkxjBEb1kL7phVbmp/fYQncUx2h0HGb/3KakmbNgqEiykAAA=="
   },
   {
     "id": "e45f74cf-3507-4def-9180-23cb63569d3f",
@@ -153,7 +177,9 @@
     "date": "2025-10-04",
     "location": "中国，佛山",
     "created_at": "2026-02-12T15:09:03.363483+00:00",
-    "updated_at": "2026-02-12T15:09:03.363483+00:00"
+    "updated_at": "2026-02-12T15:09:03.363483+00:00",
+    "thumbnail": "/photos/thumb/e45f74cf-3507-4def-9180-23cb63569d3f.webp",
+    "lqip": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBQCdASogABUAPrVMoUsnJCMhsBgIAOAWiWUAwzQQ7+diXFqCdUNPmsDjpFnObHK2UwaT1gD++FBtYqQNvP0BDZiePMZib6RjuLZjLQ3yFFlH9LujPYVgbIzFRAZFe7BjmP34dJ1mhzjI2z9TGjRlPJx92WK3V5BSAvAA"
   },
   {
     "id": "dcf1be17-4e8c-49f8-923a-fd31d705b10a",
@@ -165,7 +191,9 @@
     "date": "2025-09-18",
     "location": "烟台蓬莱，码头",
     "created_at": "2026-02-12T11:17:28.434796+00:00",
-    "updated_at": "2026-02-12T11:17:28.434796+00:00"
+    "updated_at": "2026-02-12T11:17:28.434796+00:00",
+    "thumbnail": "/photos/thumb/dcf1be17-4e8c-49f8-923a-fd31d705b10a.webp",
+    "lqip": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAAAwBgCdASogADAAPq1GnUm/o6KhMAqr8BWJQBOnKCr7zrAusENsQR1PQH5OJLSsCn2Qzo3rjVAr9HXgAP7fuP4sb3rrJrtIDQq6+TJIFwYzSj4dBtFM8ZO0F+9RaqQ0s9Uur8Y8ojEixQnESqBe0t6gaS+gJR5DUYOt9X5NWuRuZFLpua3W2dOHHQwGj4a2FL5dRDv+fGjnTfrHd4V2Qx+VBUEpY9pQULYptsZVvIAAAA=="
   },
   {
     "id": "f5975d32-9328-4966-99f7-5cab4e63c0c5",
@@ -177,7 +205,9 @@
     "date": "2025-09-18",
     "location": "烟台蓬莱，码头",
     "created_at": "2026-02-12T11:29:58.594751+00:00",
-    "updated_at": "2026-02-12T11:29:58.594751+00:00"
+    "updated_at": "2026-02-12T11:29:58.594751+00:00",
+    "thumbnail": "/photos/thumb/f5975d32-9328-4966-99f7-5cab4e63c0c5.webp",
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBQCdASogABUAPrVKoUunJCMhsBgIAOAWiWQAnTNMQamwrK1w2L5nlfhEg1HrMmq/9zcAAP75UTe0dS8U4+/waY3kMxz7Nr9wesNu8C3d2ZJKZ0gnw5uAKFlgGn5m6TDUjVZ100mR3uTY952hggWvh3apnE1pj2RqBZMCJFy7brTTOwsbgqXnh80+g/YvqsRAAA=="
   },
   {
     "id": "4bcffd0e-cd1f-410d-afb1-742a08d0067d",
@@ -189,7 +219,9 @@
     "date": "2025-08-24",
     "location": "中国，日照",
     "created_at": "2026-02-12T15:17:06.326586+00:00",
-    "updated_at": "2026-02-12T15:17:06.326586+00:00"
+    "updated_at": "2026-02-12T15:17:06.326586+00:00",
+    "thumbnail": "/photos/thumb/4bcffd0e-cd1f-410d-afb1-742a08d0067d.webp",
+    "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABwBACdASogABgAPqk+m0mmIyKhN/qoAMAVCWcAzNBdYCfGZP+d8CK2zjFe4AD+2dYseZqBHadjNOFKwP3v/9SCmNB5lt/y5IFfQXu+Jt/V7bji63hggoHQAAA="
   },
   {
     "id": "5a662e8a-8d58-4dcf-81ae-ac52c68cc614",
@@ -201,7 +233,9 @@
     "date": "2025-08-22",
     "location": "山东，日照",
     "created_at": "2026-02-28T15:49:36.198765+00:00",
-    "updated_at": "2026-02-28T15:49:36.198765+00:00"
+    "updated_at": "2026-02-28T15:49:36.198765+00:00",
+    "thumbnail": "/photos/thumb/5a662e8a-8d58-4dcf-81ae-ac52c68cc614.webp",
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAAAwBQCdASogABUAPrVSo00nJKMiKAgA4BaJQBdmUGYwFRW6ymcRAwsSbrBPeUix8ycEQAD++58o3ixSmSJBslgXgJP/jG87m+q9D+kA2PmdT2lXnMh4LnFSVci0w0CX/L2HtEy66deu6ShQGSC11i9sSSdiVxuaIPjnRRKHS9/7ySfYob7JeCQGLc5cBOCsgAA="
   },
   {
     "id": "47acec6a-0003-44f6-8e75-f17bb7675819",
@@ -213,7 +247,9 @@
     "date": "2025-08-22",
     "location": "中国，日照",
     "created_at": "2026-02-12T15:07:14.753176+00:00",
-    "updated_at": "2026-02-12T15:07:14.753176+00:00"
+    "updated_at": "2026-02-12T15:07:14.753176+00:00",
+    "thumbnail": "/photos/thumb/47acec6a-0003-44f6-8e75-f17bb7675819.webp",
+    "lqip": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAQBQCdASogABUAPqVAm0mmI6KhN/qoAMAUiWcAzFgh30xeg+OLUW6FwfTZS9WM6hAAAP75DnSblfR3XQoxPhw3o4IoVQEJ7tpJck6v+4tGn3cZ60C9m2nzGOaFsQAA"
   },
   {
     "id": "2b342ca8-b43b-4e3a-9706-2243c0c9786c",
@@ -225,7 +261,9 @@
     "date": "2025-08-16",
     "location": "青岛，小麦岛",
     "created_at": "2026-02-12T14:45:33.591481+00:00",
-    "updated_at": "2026-02-12T14:45:33.591481+00:00"
+    "updated_at": "2026-02-12T14:45:33.591481+00:00",
+    "thumbnail": "/photos/thumb/2b342ca8-b43b-4e3a-9706-2243c0c9786c.webp",
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADwBACdASogABUAPqVGmkmmJCKhN/qoAMAUiWMAsR8vwcZeAslraoEsqeGkbd7leZAA/c1KzvrSchE4JQlHbf5E4Rd0bBMJN1VI1JR2FYo/5x1gvaCyG5vlJ5+X7P1+SZ/Vr0Qyxi5cKtMmFgzaCqqt3gAAAA=="
   },
   {
     "id": "12ad0d9b-fc68-4e6c-b910-127cd7d3a8d3",
@@ -237,7 +275,9 @@
     "date": "2025-08-14",
     "location": "中国，青岛",
     "created_at": "2026-02-12T14:46:55.726594+00:00",
-    "updated_at": "2026-02-12T14:46:55.726594+00:00"
+    "updated_at": "2026-02-12T14:46:55.726594+00:00",
+    "thumbnail": "/photos/thumb/12ad0d9b-fc68-4e6c-b910-127cd7d3a8d3.webp",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBQCdASogABUAPq1GnEmmI6KhN/VYAMAViWMAgeEEopyhfrsH9qZJExZF9At7L63sAPx/qsjgdyiI3w8Ucu/hLqYw/PKe2bKI/pEX4SRlDquyJzhlYhpszH/Q2uPU07VFDlMrUI0yAQIjR/eVW0DD1k/QVAAA"
   },
   {
     "id": "169c2b4d-60a6-4b8e-8710-ceb5339c2b39",
@@ -249,7 +289,9 @@
     "date": "2025-08-13",
     "location": "中国，青岛",
     "created_at": "2026-02-12T14:48:08.171362+00:00",
-    "updated_at": "2026-02-12T14:48:08.171362+00:00"
+    "updated_at": "2026-02-12T14:48:08.171362+00:00",
+    "thumbnail": "/photos/thumb/169c2b4d-60a6-4b8e-8710-ceb5339c2b39.webp",
+    "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBQCdASogABUAPrFIn0mnJCMhMBgMAOAWCUAWo2QwNTsQRe4M7yyL5aRHBc6bTuFy5wAA/vW7gpsjpk0ZlUXVlvzTCHG/rdLFCJapyqWzjYbamO3RnQTIjM+CRZTw1tvjK6hQCAJB9OBsBCMssj6zVwk+x4VB/vVde4fguqli6mrLU1rBVkG8/xGoxQAA"
   },
   {
     "id": "f9d80448-5d01-4eac-8821-077f83c9860c",
@@ -261,7 +303,9 @@
     "date": "2025-08-10",
     "location": "中国，青岛",
     "created_at": "2026-02-12T15:06:04.252777+00:00",
-    "updated_at": "2026-02-12T15:06:04.252777+00:00"
+    "updated_at": "2026-02-12T15:06:04.252777+00:00",
+    "thumbnail": "/photos/thumb/f9d80448-5d01-4eac-8821-077f83c9860c.webp",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBQCdASogABUAPrVQnUqnJSKhqA1Q4BaJZwDE2EXZsEHtlLWsBLjmTKK1ADSYkTIAAP7zq8eA0drLTwvIMchk4hq2n9PjasUhhblgsBiXu8enNNPzDZCQvO8lNGt621iexO9N3PaTe2HeLUNovgAA"
   },
   {
     "id": "1e3b4587-0d2b-4fcc-94a2-e3f7135afa13",
@@ -273,7 +317,9 @@
     "date": "2025-08-02",
     "location": "中国，青岛",
     "created_at": "2026-02-12T14:55:50.542312+00:00",
-    "updated_at": "2026-02-12T14:55:50.542312+00:00"
+    "updated_at": "2026-02-12T14:55:50.542312+00:00",
+    "thumbnail": "/photos/thumb/1e3b4587-0d2b-4fcc-94a2-e3f7135afa13.webp",
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQBQCdASogABUAPqlGnkmmJCMhMAwAwBUJYwDFCyGBgF0dQOxqbZHgruC1hGByNAWn00AA+dfDXkKeMmt+ULDA34F2EAF+do7i5U+kd/dtXCMT0VGlcY3fNiJw9Z5VsXMRPPsahxy0HexFYAc6kEa7kzY4C7GCAAA="
   },
   {
     "id": "2768689d-fc1a-4486-91a7-90503361c8e0",
@@ -285,7 +331,9 @@
     "date": "2025-08-02",
     "location": "中国，青岛",
     "created_at": "2026-02-12T15:16:11.613323+00:00",
-    "updated_at": "2026-02-12T15:16:11.613323+00:00"
+    "updated_at": "2026-02-12T15:16:11.613323+00:00",
+    "thumbnail": "/photos/thumb/2768689d-fc1a-4486-91a7-90503361c8e0.webp",
+    "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACQBACdASogABUAPrVMn0qnJCKhqA1Q4BaJYwCsMw6Ad85VooG3hfvTBkql5GAA8Ioczj4LOZK19NfdEbNyXvYPDljpqFGqoN7ee3BdzwFebBDRnVjzjfeKArZgfZQ5mcC5gkvmnYTZ8vSgAAA="
   },
   {
     "id": "e52074c4-0998-45ff-8f5f-88eb9166aa9e",
@@ -297,7 +345,9 @@
     "date": "2025-08-02",
     "location": "中国，青岛",
     "created_at": "2026-02-12T14:57:52.100752+00:00",
-    "updated_at": "2026-02-12T14:57:52.100752+00:00"
+    "updated_at": "2026-02-12T14:57:52.100752+00:00",
+    "thumbnail": "/photos/thumb/e52074c4-0998-45ff-8f5f-88eb9166aa9e.webp",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQBQCdASogABUAPqk+m0mmIyKhN/qoAMAVCWcAxNgiIWtk49WsyDeWamYH94j3SQMAAPdnnmI0n/bJuBjTH+OeeFPv+U0V2DCqZnVgvdRc0SEs7bnOCd5SZP34W0mZHQAAAA=="
   },
   {
     "id": "8cba0724-f41b-40aa-92a3-2a1724928ace",
@@ -309,7 +359,9 @@
     "date": "2025-08-02",
     "location": "中国，青岛",
     "created_at": "2026-02-12T14:56:49.013412+00:00",
-    "updated_at": "2026-02-12T14:56:49.013412+00:00"
+    "updated_at": "2026-02-12T14:56:49.013412+00:00",
+    "thumbnail": "/photos/thumb/8cba0724-f41b-40aa-92a3-2a1724928ace.webp",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBQCdASogABUAPq1GmUmmI6IhMAwAwBWJQBOmarheuNN+A/OtuM0DtOSro5ule5TAAPoxwZnfmzJh67qfQIxKnB24iHaI+bbHXQ8btJ7F1/+AFK1XCxzXA02aeVuqMpxjOrGGYDBSNlzrLGAPChu15OoYlOXkcVYpCCk3iAAAAA=="
   },
   {
     "id": "b5a14fef-fdfc-49aa-86fc-c1b78e966f51",
@@ -321,7 +373,9 @@
     "date": "2025-07-30",
     "location": "中国，青岛",
     "created_at": "2026-02-12T14:59:18.849868+00:00",
-    "updated_at": "2026-02-12T14:59:18.849868+00:00"
+    "updated_at": "2026-02-12T14:59:18.849868+00:00",
+    "thumbnail": "/photos/thumb/b5a14fef-fdfc-49aa-86fc-c1b78e966f51.webp",
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBQCdASogABUAPrFEnUmnI6KhN/VYAOAWCWMAuwBBo4urkQZpW9wlhsUIIIeE16NGAAD+I0uYZUVV7544sc62f9spnlP5QZS/y47uwudbTecqfxJYRwlytECFWsjtRWu+A9p6K/vq7O02YZx7WX9wD0dYLKB4AfBMKmm2f13beui/CGkAAA=="
   },
   {
     "id": "138aaedb-3077-419e-8259-a83b5cd1a030",
@@ -333,7 +387,9 @@
     "date": "2025-07-30",
     "location": "中国，青岛",
     "created_at": "2026-02-12T15:01:20.779679+00:00",
-    "updated_at": "2026-02-12T15:01:20.779679+00:00"
+    "updated_at": "2026-02-12T15:01:20.779679+00:00",
+    "thumbnail": "/photos/thumb/138aaedb-3077-419e-8259-a83b5cd1a030.webp",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQBACdASogABUAPrVUpE2nJKOiKAgA4BaJaQAA7EVQkQ2ZKpbqjHBSoq/85raZAAD+/hV5DHPllvvGrO1rknPqJQnDzF14w0XKE2fUGq7GvyAqx/bVEKbLxqsGZnKqrtyCr4iS8tTrKERmTryAl3gA"
   },
   {
     "id": "dbeb2b8e-7733-4445-bbd7-046c5e9574ee",
@@ -345,7 +401,9 @@
     "date": "2025-07-27",
     "location": "中国，青岛",
     "created_at": "2026-02-12T15:02:39.927999+00:00",
-    "updated_at": "2026-02-12T15:02:39.927999+00:00"
+    "updated_at": "2026-02-12T15:02:39.927999+00:00",
+    "thumbnail": "/photos/thumb/dbeb2b8e-7733-4445-bbd7-046c5e9574ee.webp",
+    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBQCdASogABUAPrVOokwnJCMiKAqo4BaJQBb9XRA1PxBu9ar/vCmn167QP96G009AAP75FF2Dr52f+4f0WMkBDHLvBOsTaDjYzEkGAzmOlJlsIYfM3IPdxOrgWiipVIDkhFy1PBOcNU1NFwBlPyBgGoOzPWTe1B24MHLPsYGr9xgA"
   },
   {
     "id": "6eea9b97-d24d-457d-ac6e-966b2013621e",
@@ -357,7 +415,9 @@
     "date": "2025-07-25",
     "location": "中国，青岛",
     "created_at": "2026-02-12T15:03:44.230538+00:00",
-    "updated_at": "2026-02-12T15:03:44.230538+00:00"
+    "updated_at": "2026-02-12T15:03:44.230538+00:00",
+    "thumbnail": "/photos/thumb/6eea9b97-d24d-457d-ac6e-966b2013621e.webp",
+    "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBQCdASogABUAPq1GmUmmI6IhMAwAwBWJQBOmWg//Ay9lKHaXeACNK0SoWIoYwc4AAMxBkF/K6GjDWrYA/qZhAzt/9a3qxG00YlaYg22skcjVj3cqbHsn0RJneaJaf6ONA8lK2AA="
   },
   {
     "id": "4a2f1e2a-b87f-4471-aa3d-01183007e570",
@@ -369,7 +429,9 @@
     "date": "2025-07-24",
     "location": "青岛，蓝调时刻",
     "created_at": "2026-02-12T06:16:36.413706+00:00",
-    "updated_at": "2026-02-12T06:16:36.413706+00:00"
+    "updated_at": "2026-02-12T06:16:36.413706+00:00",
+    "thumbnail": "/photos/thumb/4a2f1e2a-b87f-4471-aa3d-01183007e570.webp",
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBQCdASogADAAPrVIn0qnJCKhqrgN+OAWiWNmmoEeMhdu3rgzl73qDdpGrmOonLYgAP7hnp36YPgPzXQ2x5Zx1q/UjAD6+ubnWZqE7qe4gw9txBHbE0HpLFkeT3wZc/5LiXY/4YCVsOf/haTIgrZAg6f0tMnLN0bA5BPTgsTDBEPnK35+yCS+VcxJQDBfDjQAAA=="
   },
   {
     "id": "cd29e4ed-9e54-4ac9-b9da-b4519e01fdda",
@@ -381,7 +443,9 @@
     "date": "2025-06-24",
     "location": "烟台长岛",
     "created_at": "2026-02-12T11:33:10.840881+00:00",
-    "updated_at": "2026-02-12T11:33:10.840881+00:00"
+    "updated_at": "2026-02-12T11:33:10.840881+00:00",
+    "thumbnail": "/photos/thumb/cd29e4ed-9e54-4ac9-b9da-b4519e01fdda.webp",
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwBQCdASogACsAPqlAm0mmI6KhOrZoAMAVCWUAtRvHyRjopV2BOAGZY+eubZCNjagcRmUlRHgZ4AD+9rCfOODOtfxsy08u4zWFoyrCpT2wmx2e/DVR3L5d2UMDofqpp7GxvtdpGvLXUeBJb/KBXKFAnBuPL3pMHvNO1sESyMemDC28HI+tjSu1xJWPDHNiAAA="
   },
   {
     "id": "a8ff3bde-0ac7-4279-a74a-04c492faad15",
@@ -393,7 +457,9 @@
     "date": "2025-06-04",
     "location": "中国，青岛",
     "created_at": "2026-02-13T13:07:24.775956+00:00",
-    "updated_at": "2026-02-13T13:07:24.775956+00:00"
+    "updated_at": "2026-02-13T13:07:24.775956+00:00",
+    "thumbnail": "/photos/thumb/a8ff3bde-0ac7-4279-a74a-04c492faad15.webp",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwBACdASogABgAPrVKoUmnJCOhMBgMAOAWiWkAAI9ob7lOO1myNII4WYqKAnyxDgAA/ursSDt8zkLILg77PZhsX+CXWBGbZ/t/m58D/Eu+m1cnQZ6+u3mvIQBd/2tAC/hG/YkPbNoAAA=="
   },
   {
     "id": "41e79c85-0501-4219-8626-593498433ff2",
@@ -405,7 +471,9 @@
     "date": "2025-05-31",
     "location": "塞拉利昂，弗里敦",
     "created_at": "2026-02-12T18:08:15.438084+00:00",
-    "updated_at": "2026-02-12T18:08:15.438084+00:00"
+    "updated_at": "2026-02-12T18:08:15.438084+00:00",
+    "thumbnail": "/photos/thumb/41e79c85-0501-4219-8626-593498433ff2.webp",
+    "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBQCdASogABgAPrVWpE2nJKOiKAgA4BaJZwDE2BEa/zFhSu2BBceC8phvx3aVrzwfgAD9nG4wVjUWdPfFtz3oS7sgtqKndQxVzCoU2zU2XYOsvmv/wYOStZDsz7bIte+GQOVTRmxA0XiUUYbAAA=="
   },
   {
     "id": "8348092b-31d5-4874-b999-d3221d60f673",
@@ -417,7 +485,9 @@
     "date": "2025-05-31",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:01:16.995388+00:00",
-    "updated_at": "2026-02-12T18:01:16.995388+00:00"
+    "updated_at": "2026-02-12T18:01:16.995388+00:00",
+    "thumbnail": "/photos/thumb/8348092b-31d5-4874-b999-d3221d60f673.webp",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBQCdASogABgAPrFEnUmnI6KhN/VYAOAWCWUAxnwQ3SS9UuFA3eBIql70PPcU63JGNdgA/vhTSEumcOhQ5AtiMPg3JQMTtplcuy78gOG5vilzSX2+gw/Spuql8crWV2vVe+m/My9ynyb3X8xpmziy6MEZR+tohFVq3dqbIAQAAA=="
   },
   {
     "id": "cc8eba5a-cf51-42cc-9fdb-6e902fbe95d9",
@@ -429,7 +499,9 @@
     "date": "2025-05-31",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:07:19.821972+00:00",
-    "updated_at": "2026-02-12T18:07:19.821972+00:00"
+    "updated_at": "2026-02-12T18:07:19.821972+00:00",
+    "thumbnail": "/photos/thumb/cc8eba5a-cf51-42cc-9fdb-6e902fbe95d9.webp",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBQCdASogABgAPrVKn0snJCKhsBgIAOAWiWcAuwAQ4krxKRe1X9liqhVsEdslFOPD88QA/vRTsqzR8tCTZRYkOSnUSU6xpEER4uCN0XxEnG5ihGvxjoznF2jjfk7KfJaxQgVTxQifb2tPBdSzjdOp86tX0X3xQIAAAA=="
   },
   {
     "id": "fd6a2205-714c-4413-b76f-1a441191f47a",
@@ -441,7 +513,9 @@
     "date": "2025-05-30",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:09:50.09509+00:00",
-    "updated_at": "2026-02-12T18:09:50.09509+00:00"
+    "updated_at": "2026-02-12T18:09:50.09509+00:00",
+    "thumbnail": "/photos/thumb/fd6a2205-714c-4413-b76f-1a441191f47a.webp",
+    "lqip": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBQCdASogABgAPp1CmkmlpCKhN/qoALATiWcAAFtydXiVnzg4sngI/ZG0Hbd+0HhAAP3OO0OL1Cpa/jJ+CLUHizTRQ4SU48eHmktbgFehgQocF6GJheCeV6Lc6Pclf6S6W8PxRSeTV66W0nTKH5QQoUAAAA=="
   },
   {
     "id": "aabcee80-6e1d-4ee6-b6d0-37893314a298",
@@ -453,7 +527,9 @@
     "date": "2025-05-30",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:09:12.445546+00:00",
-    "updated_at": "2026-02-12T18:09:12.445546+00:00"
+    "updated_at": "2026-02-12T18:09:12.445546+00:00",
+    "thumbnail": "/photos/thumb/aabcee80-6e1d-4ee6-b6d0-37893314a298.webp",
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABwBQCdASogABgAPrVOoUmnJKOhMAgA4BaJZQDE2CHPgumDQKolPwn+4hNqptueQLwRYbxAAP6MLN1q87IRhY2/D8396aY4E3MmTDOVJimjqHqYIAbiObFyv5uTrBAwWl8jhe/+2IPvdr9ugZsyTIFn81+6uLUbaTYKE53PgAA="
   },
   {
     "id": "84e33850-eb83-462c-b432-53a4bba1bdeb",
@@ -465,7 +541,9 @@
     "date": "2025-05-29",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:06:00.037227+00:00",
-    "updated_at": "2026-02-12T18:06:00.037227+00:00"
+    "updated_at": "2026-02-12T18:06:00.037227+00:00",
+    "thumbnail": "/photos/thumb/84e33850-eb83-462c-b432-53a4bba1bdeb.webp",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBQCdASogABgAPp0+mEmlo6KhN+gAsBOJZAC7HX+gqKTTJl6kkhjF/WzNwJvnMc/AAP6uq/Kcg7D4cK6FILoUKx7Kf/Vly/VrW/r1a3TMyEfEfH900CFvVxLBZb4vVZEBNtQBX9GtmytvEPiuC4Ru7g7U8AAA"
   },
   {
     "id": "144ec6b7-30b1-430d-98ac-29df5f2cc1f7",
@@ -477,7 +555,9 @@
     "date": "2025-05-24",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:05:14.626278+00:00",
-    "updated_at": "2026-02-12T18:05:14.626278+00:00"
+    "updated_at": "2026-02-12T18:05:14.626278+00:00",
+    "thumbnail": "/photos/thumb/144ec6b7-30b1-430d-98ac-29df5f2cc1f7.webp",
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBQCdASogABgAPrVQnkunJKKhqA1Q4BaJZQC7AHtsCs6Tn8Dmbn1ZKrcy4zT1bFBf54AA/vOUFsZZfjHImO5WaBx3Oop5glnrd5Ee8AVKaQSDrHHkijjaBT7Bhi9jrYvFWSXlRGp15M/h4caG16DiTXViN1JpfAj7FJwDQAA="
   },
   {
     "id": "9ef2f3e0-d416-4dcb-87a9-487258db99a7",
@@ -489,7 +569,9 @@
     "date": "2025-05-22",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:04:38.089734+00:00",
-    "updated_at": "2026-02-12T18:04:38.089734+00:00"
+    "updated_at": "2026-02-12T18:04:38.089734+00:00",
+    "thumbnail": "/photos/thumb/9ef2f3e0-d416-4dcb-87a9-487258db99a7.webp",
+    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAABwBgCdASogACsAPp1Cm0mlpCKhNUwAsBOJZwDE2Ch+Faybe2TZ5hmcCknOqWBpZejPYU7VQbJhWzPfVuAA/fafQAELmaSTgG/QEZqeLbbIpwnPYSEckuLMO/9bhnbrFnKMnEvc7xvPGBtEmPLgqI9IVEkN+oPS4M2y2ELOH4J5IqTjicDrZMr8mMZ/RvdfLat/ALzQkmWsLiQA"
   },
   {
     "id": "727c59dd-a72a-42e2-9dc5-4b75193faa54",
@@ -501,7 +583,9 @@
     "date": "2025-05-21",
     "location": "西非，塞拉利昂",
     "created_at": "2026-02-12T18:03:53.658018+00:00",
-    "updated_at": "2026-02-12T18:03:53.658018+00:00"
+    "updated_at": "2026-02-12T18:03:53.658018+00:00",
+    "thumbnail": "/photos/thumb/727c59dd-a72a-42e2-9dc5-4b75193faa54.webp",
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBQCdASogABgAPrVOoUmnJKOhKA1Q4BaJYwDMHD+keRpOWlMt2OByfXjhRMJVRAFKAAD++JoRk6sOjy+UocuKUcJQ+bQZqA5s6UfJP3rU93jqX6bMCSUk58Vjblcn9ev2DUkpUYLyfAHvoOdAdN0hnp51/hJ0xF4x0zPqpdY2xY3tvPTBD0wAAAA="
   },
   {
     "id": "5b47bdc5-9e53-40f4-bab0-63cc2028a870",
@@ -513,7 +597,9 @@
     "date": "2025-05-19",
     "location": "西非，加纳",
     "created_at": "2026-02-12T18:02:59.013092+00:00",
-    "updated_at": "2026-02-12T18:02:59.013092+00:00"
+    "updated_at": "2026-02-12T18:02:59.013092+00:00",
+    "thumbnail": "/photos/thumb/5b47bdc5-9e53-40f4-bab0-63cc2028a870.webp",
+    "lqip": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADwBgCdASogACsAPrVKn0qnJCKhsBqoAOAWiWcAznRpV23pONsIDHVL2a4kuMTSYv8rerVirnrksoGR0mjJwpMAAP7+4hpaZqo+3/4AyRJ6uselRwxQ15Wgn/BN225nTcV88KrG6USV9kFKSu/TzWocu+p/XNItBMp/TSzdZsuIRr44sDebbR9syyQ/HLB7Z3M2sYQ3O0rmOKT/AAAAAA=="
   },
   {
     "id": "cdfd2ba8-88c5-4a2e-bc84-9f91b7da3321",
@@ -525,7 +611,9 @@
     "date": "2025-05-03",
     "location": "四川，九寨沟",
     "created_at": "2026-02-12T11:36:56.42874+00:00",
-    "updated_at": "2026-02-12T11:36:56.42874+00:00"
+    "updated_at": "2026-02-12T11:36:56.42874+00:00",
+    "thumbnail": "/photos/thumb/cdfd2ba8-88c5-4a2e-bc84-9f91b7da3321.webp",
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBQCdASogABgAPrVQn0qnJSKhsBgIAOAWiWcAACnAOqKqJGsJK+v5l9nj2/GbRTjteAAA9qGhywyfds1AQA/ZnBEXwmHyVpqjfj6atEK3bKYqNUK8kATsCdKkp6wl/eZZk84BWprXmOmdiuzIDVmdkIFksnV8f+wl2U8AAAA="
   },
   {
     "id": "4e2eec65-7fee-4300-a7ca-cd5b1ca12a7b",
@@ -537,7 +625,9 @@
     "date": "2025-05-01",
     "location": "四川成都，寺庙",
     "created_at": "2026-02-12T11:40:20.141523+00:00",
-    "updated_at": "2026-02-12T11:40:20.141523+00:00"
+    "updated_at": "2026-02-12T11:40:20.141523+00:00",
+    "thumbnail": "/photos/thumb/4e2eec65-7fee-4300-a7ca-cd5b1ca12a7b.webp",
+    "lqip": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwBQCdASogABgAPrVQoUqnJSMhsBgIAOAWiUATpmyI22JsOnq06IiAOuGT2JXs3z6XquAgIh+eYAD+8zmBXHOivKmA5JeC+kzx/ZjIQPwlva+cxo/3ax3n1W6sl/+9+Ra6htFIF0fMTHOrWyiEvOZmKPvW1/FvRgDswLbcuO5icYIF6DNB+IrULg+wF46NipG5YZYWPrk8WfQBRHPDKJSVeiHgf7ZoAAA="
   },
   {
     "id": "42d7f7f8-c5fd-41c7-8666-64fa3a97e913",
@@ -549,7 +639,9 @@
     "date": "2025-05-01",
     "location": "四川，成都",
     "created_at": "2026-02-12T11:42:28.809092+00:00",
-    "updated_at": "2026-02-12T11:42:28.809092+00:00"
+    "updated_at": "2026-02-12T11:42:28.809092+00:00",
+    "thumbnail": "/photos/thumb/42d7f7f8-c5fd-41c7-8666-64fa3a97e913.webp",
+    "lqip": "data:image/webp;base64,UklGRsoAAABXRUJQVlA4IL4AAACwBgCdASogACsAPqlImUmmJKIhNVgMAMAVCWUArhxBQMRTDl4IqUXQvwYI6oHfdIRxPFDutW9+UuTbnPQRsAD+fBmdyS7Wk1t3akF9FdtHgeaS6W8iVorKSZxkodor299XgLDr4xnSI6pK61xrcypYYO5IWBYtskXbAT8p8fM1S3Y45STxtCAPcYXWmxnd6MZFydGxEzOsEXoFeSAopQdpPxxbeHk+o3wjC3dJZt2ybJWRlfE3ER9zTQMQAAAA"
   },
   {
     "id": "5cad8f7a-3865-4f09-ae4e-fec22aa3a3f0",
@@ -561,7 +653,9 @@
     "date": "2025-02-13",
     "location": "广西，钦州",
     "created_at": "2026-02-13T13:08:03.807663+00:00",
-    "updated_at": "2026-02-13T13:08:03.807663+00:00"
+    "updated_at": "2026-02-13T13:08:03.807663+00:00",
+    "thumbnail": "/photos/thumb/5cad8f7a-3865-4f09-ae4e-fec22aa3a3f0.webp",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAACQBACdASogABgAPqlEnkmmJCMhMAwAwBUJZwDKABUr8v5t81IvmMsNkkxEvEAA8qZ7Ky8dZ14u3xBplPklwLP0763j4EvD6YqDlS+xdAcThw0ECOddiVXOPdA6nYxH0Nl8jCmvxN4wAthbES7rKJbHeasJw6PrguQAAA=="
   },
   {
     "id": "b40f47e0-a886-48c8-917e-f2c9d32079ad",
@@ -573,7 +667,9 @@
     "date": "2025-01-30",
     "location": "钦州，古镇村",
     "created_at": "2026-02-13T13:11:25.880432+00:00",
-    "updated_at": "2026-02-13T13:11:25.880432+00:00"
+    "updated_at": "2026-02-13T13:11:25.880432+00:00",
+    "thumbnail": "/photos/thumb/b40f47e0-a886-48c8-917e-f2c9d32079ad.webp",
+    "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAACwBQCdASogABgAPrVQn0snJKKhsBgIAOAWiWcAwzQ0UJgp3s7zMiap7LU0sMpOkzmj98WGwgAA99rggeY53J2BS2Xgec+XLu/xP/GQY1/E3jrS5ULZ5nKbR0JjqpWyv9X0VQhbiKcYA+QlhplYNVV4gBBiV3ZOOOmLlwT/MCVOExsVp9EEmfhE+/ESE7zOG2SXxDYfGAA="
   },
   {
     "id": "6e4f493c-ba5d-453f-99a7-897b49475c41",
@@ -585,7 +681,9 @@
     "date": "2025-01-30",
     "location": "钦州，古镇村",
     "created_at": "2026-02-13T13:09:31.478201+00:00",
-    "updated_at": "2026-02-13T13:09:31.478201+00:00"
+    "updated_at": "2026-02-13T13:09:31.478201+00:00",
+    "thumbnail": "/photos/thumb/6e4f493c-ba5d-453f-99a7-897b49475c41.webp",
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACwBQCdASogABgAPrVMoUsnJCMhsBgIAOAWiWUAqSeOxNPxoF3KxdgqqnJ4GvhVMtBHSis+EoIA/t/DHFyKIaZAtO01Rx5o3GydeOOobU7m3nqhOzXiOEhBaAZql8Mj5sT0/YGKfnAGeCY4yFwZAbjPOyv1/jhS3VbL9JbWqp+9dYJxMxe/fko8V/f0cHOD9AA="
   },
   {
     "id": "7d0e4706-7b47-4ef5-a404-70ac15be5dbd",
@@ -597,7 +695,9 @@
     "date": "2025-01-30",
     "location": "钦州，古镇村",
     "created_at": "2026-02-13T13:08:55.158152+00:00",
-    "updated_at": "2026-02-13T13:08:55.158152+00:00"
+    "updated_at": "2026-02-13T13:08:55.158152+00:00",
+    "thumbnail": "/photos/thumb/7d0e4706-7b47-4ef5-a404-70ac15be5dbd.webp",
+    "lqip": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBQCdASogABgAPqlEnEmmI6KhMAwAwBUJZQCzgB6JU3TOjgRT0jDOP0drtbKnS2ZQAPz4L38OtFHBb9HeJ/vIMRDnJ/nQl4s/9ibT7JSo0J4UKkihmg243DUNGFZA6nnwSKhg1wF0/kZjTn6+779Wjz0bk1MGNGOdHZqEYoZhdTKw7n+AAA=="
   },
   {
     "id": "8c4377ad-2212-4a71-b6f3-a667b71df81c",
@@ -609,7 +709,9 @@
     "date": "2024-12-19",
     "location": "湖南长沙，铜官窑古镇",
     "created_at": "2026-02-12T11:49:36.591947+00:00",
-    "updated_at": "2026-02-12T11:49:36.591947+00:00"
+    "updated_at": "2026-02-12T11:49:36.591947+00:00",
+    "thumbnail": "/photos/thumb/8c4377ad-2212-4a71-b6f3-a667b71df81c.webp",
+    "lqip": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAABQBwCdASogACsAPqlCnEmmI6MhNVv4AMAVCWcAxNh1LpkYIb8QNlPnD3Mq+ijoWeVQh3GyV5f5GVIQxN+559PG1n+AAP7675gEEJQAybvsnelKZhcAS9Y4MnYwz1v5wOWbci+n1V1LxIH7NukSbgs14FWZO4RbG/oZMj9dwpEk82+tTD7Zo3E+iQbijstR0XeTJpoRy8UhJz6O9ncZilsi3YtZxwKXkWL3AAAA"
   },
   {
     "id": "d54ec520-8091-4af8-8922-21c79d9cac66",
@@ -621,7 +723,9 @@
     "date": "2024-12-19",
     "location": "湖南长沙，铜官窑古镇",
     "created_at": "2026-02-12T11:51:11.017709+00:00",
-    "updated_at": "2026-02-12T11:51:11.017709+00:00"
+    "updated_at": "2026-02-12T11:51:11.017709+00:00",
+    "thumbnail": "/photos/thumb/d54ec520-8091-4af8-8922-21c79d9cac66.webp",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBQCdASogABgAPqVAnEmmI6MhN/qoAMAUiWcAw6wZ8/NxXhqsmKfiPgzLtFXzGKd3ABgA/unqiKQQ3I37grb+Es1BpnqOW/eRS+R5Vrq00xsn8cLkJnqkKMuxy5t/DCbWKpS7S7u4zCng0rtLyXnc99t0oAAA"
   },
   {
     "id": "ce74052b-d7a6-4635-8fd8-bbbbfd56d9ac",
@@ -633,7 +737,9 @@
     "date": "2024-12-03",
     "location": "湖南长沙，公园",
     "created_at": "2026-02-12T12:01:16.092674+00:00",
-    "updated_at": "2026-02-12T12:01:16.092674+00:00"
+    "updated_at": "2026-02-12T12:01:16.092674+00:00",
+    "thumbnail": "/photos/thumb/ce74052b-d7a6-4635-8fd8-bbbbfd56d9ac.webp",
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBQCdASogACAAPqlGnUmmJCMhMAwAwBUJYwCdOUAAt+xk9vUdh+TlFvYQnXvop9aFAAChex7Zplg//bbyDgxQszZueyQr/EYXJEE/BkfYf64WfwvJyubRtEaQS+ILlwx8iSNVvWE195fL13M/fQ6hVxtH+U57tyshquBfXZxJYVJIeZNR3RIAAAA="
   },
   {
     "id": "69541368-ec84-4cbd-9a2d-874378a48568",
@@ -645,7 +751,9 @@
     "date": "2024-11-29",
     "location": "菲律宾，宿务",
     "created_at": "2026-02-13T13:12:11.02631+00:00",
-    "updated_at": "2026-02-13T13:12:11.02631+00:00"
+    "updated_at": "2026-02-13T13:12:11.02631+00:00",
+    "thumbnail": "/photos/thumb/69541368-ec84-4cbd-9a2d-874378a48568.webp",
+    "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQBACdASogABgAPq1GnEmmI6KhMAwAwBWJZQDCgCHZrHkPktV3VydVt5FQum11QAD+0wouS9w+P4+jHZ4fLgnB61MxdBFw/RinC6C2s7ht+IFkHf8VEZRQdDi+kbNYI8Yh8n6IRzAwUgAA"
   },
   {
     "id": "cf20b0ef-8f9e-4bf0-87e9-1a9c6c87d8f5",
@@ -657,7 +765,9 @@
     "date": "2024-11-29",
     "location": "菲律宾，宿务",
     "created_at": "2026-02-13T13:12:48.888516+00:00",
-    "updated_at": "2026-02-13T13:12:48.888516+00:00"
+    "updated_at": "2026-02-13T13:12:48.888516+00:00",
+    "thumbnail": "/photos/thumb/cf20b0ef-8f9e-4bf0-87e9-1a9c6c87d8f5.webp",
+    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADQBACdASogABgAPrVUok2nJKMiKAgA4BaJQBYj29gpApu92w8bL9q5EBOlb+DwAAD9zF49N4hYa2rdbolzkF/CzrbZPOJ9aRPh1/xErW3OctygO0MqnXuDugvij5hXALGZUgl3LdsxdTx7NuZ+qil5OH6uNyXDRTPOoVh/7Ua6dAAA"
   },
   {
     "id": "2a6cc58c-eeaa-449e-a00f-9682e030c808",
@@ -669,7 +779,9 @@
     "date": "2024-11-29",
     "location": "菲律宾，宿务",
     "created_at": "2026-02-13T13:13:23.194932+00:00",
-    "updated_at": "2026-02-13T13:13:23.194932+00:00"
+    "updated_at": "2026-02-13T13:13:23.194932+00:00",
+    "thumbnail": "/photos/thumb/2a6cc58c-eeaa-449e-a00f-9682e030c808.webp",
+    "lqip": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAABwBgCdASogACsAPp1EmUmlpCKhOrmYALATiUATpmi+QRlAKYGGAHhZOZX3JjP4v95a6dE4iB3IFoOGMsAA/u7Y+HC2Bo4Ta2kqAMzctvlILI168HWXcZbZLq4TqYhJfKuUM4CCCcT9GvQioohd5L3ApXzYXAr/gA3ybhfXCqYuenwSGobIalJRby58N6oW0hXKPb6Ksbsyi80SWKW5Z/Ik8TM8CUZmQC3RU4khVjC2iC2kSu4hkagAAAA="
   },
   {
     "id": "f0cae92a-2a11-40ea-8948-e852349bf299",
@@ -681,7 +793,9 @@
     "date": "2024-11-27",
     "location": "湖南长沙，公园",
     "created_at": "2026-02-12T11:55:58.358782+00:00",
-    "updated_at": "2026-02-12T11:55:58.358782+00:00"
+    "updated_at": "2026-02-12T11:55:58.358782+00:00",
+    "thumbnail": "/photos/thumb/f0cae92a-2a11-40ea-8948-e852349bf299.webp",
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwBACdASogACAAPrVUoUynJKMiKAqo4BaJaQABJP/ynj8wn1pkZWTeSnloMd5nAAAA/tcvWhDHRgeTWGkM08+y3cPnqISru/ZSaKxNsuiLuR3Ck3xMf2ICShA9fCK8sXOuOQAA"
   },
   {
     "id": "dc16a832-5933-442b-862b-938f3bbb640c",
@@ -693,7 +807,9 @@
     "date": "2024-11-19",
     "location": "湖南长沙，公园",
     "created_at": "2026-02-12T11:57:11.577703+00:00",
-    "updated_at": "2026-02-12T11:57:11.577703+00:00"
+    "updated_at": "2026-02-12T11:57:11.577703+00:00",
+    "thumbnail": "/photos/thumb/dc16a832-5933-442b-862b-938f3bbb640c.webp",
+    "lqip": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADQBQCdASogACAAPrVMn0snJCKhqA1Q4BaJYgC7AHtwBZ0TK7/+XYsJ8lOzmsAmUosLa+353HD0AP79sGhbvvDk56amuqT63hWtfN7TOAV+fFo3XDMeV1RO3sTeZKUD6G8As4GeNNOeF2RrJJWV2S3MoxNwLf4EKKNFS2P155x6SBWmpcaASiTtLSMNqi0KpaG6TlguPgAAAA=="
   },
   {
     "id": "1e709f1b-6f12-4c58-b2f2-affd1ccdb970",
@@ -705,7 +821,9 @@
     "date": "2024-11-19",
     "location": "湖南长沙，公园",
     "created_at": "2026-02-12T11:59:37.290438+00:00",
-    "updated_at": "2026-02-12T11:59:37.290438+00:00"
+    "updated_at": "2026-02-12T11:59:37.290438+00:00",
+    "thumbnail": "/photos/thumb/1e709f1b-6f12-4c58-b2f2-affd1ccdb970.webp",
+    "lqip": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAwBQCdASogACsAPpU8lkmlo6IhOqgAsBKJaQAAXC7EFlbnWsDC6k7nzvUwAlHTMqDgAAD+vHNToqgXm7ENXSmk7AOeP6LpMMlUzNQkQxtaMkMot2nxU+Mn2p3KerHznublW029Ghv7YKAHRWTiLshkXiDQTrORgr26gXwwEntea4td/sPG/dKka4pxRdU16R1atC4Py3EyR8FnMCtsAAAA"
   },
   {
     "id": "c8c07e97-7ad2-4564-abae-7e1debfba6ed",
@@ -717,7 +835,9 @@
     "date": "2024-11-10",
     "location": "山东，潍坊",
     "created_at": "2026-02-13T13:14:05.085088+00:00",
-    "updated_at": "2026-02-13T13:14:05.085088+00:00"
+    "updated_at": "2026-02-13T13:14:05.085088+00:00",
+    "thumbnail": "/photos/thumb/c8c07e97-7ad2-4564-abae-7e1debfba6ed.webp",
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBQCdASogABgAPrFKnEmnJKKhMBgMAOAWCWcAygAQ8K9Z078vnLTYVcKKOc2G72BJAAD+38Ebxb118IBO6Lp9pM69HRHf8IgO808HWuEQO3XA7qgVSI7cXIlTlWd1wMjAwvIdFAo0Xh8SfLHKP6aaAAA="
   },
   {
     "id": "4fb7965f-739d-4edf-aa7a-ad6ec44db52c",
@@ -729,7 +849,9 @@
     "date": "2024-11-02",
     "location": "长沙，潮宗街",
     "created_at": "2026-02-13T13:22:07.196608+00:00",
-    "updated_at": "2026-02-13T13:22:07.196608+00:00"
+    "updated_at": "2026-02-13T13:22:07.196608+00:00",
+    "thumbnail": "/photos/thumb/4fb7965f-739d-4edf-aa7a-ad6ec44db52c.webp",
+    "lqip": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwBQCdASogABgAPrVOoUonJCMhsAgA4BaJQBOmWg//A8PzZgouQRM5lAh7XAMIftpXlt2AAP7yypwnnKdpAGtpyPvOQdwLT5waCWR/G0sN8vMeOEV4vWzLGC8gVjCZxKzXjZtIFohjDVFfZHnKyusbmGI2BR9V2wqunNQFJnwG7mAA"
   },
   {
     "id": "25ba6ba7-9384-486e-a9d9-15bab3dec65e",
@@ -741,7 +863,9 @@
     "date": "2024-11-02",
     "location": "长沙，潮宗街",
     "created_at": "2026-02-13T13:23:27.271381+00:00",
-    "updated_at": "2026-02-13T13:23:27.271381+00:00"
+    "updated_at": "2026-02-13T13:23:27.271381+00:00",
+    "thumbnail": "/photos/thumb/25ba6ba7-9384-486e-a9d9-15bab3dec65e.webp",
+    "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBQCdASogABgAPq1ImkmmJCIhMAwAwBWJagCdMt65n6begAa5XZ/UzexOtij2H71SgAD+9rL9o4FUwO1La7oAM1MG1dluxGLWbHb1k6tX4gGNlSwMduPcIaGUI1IUn3XSPg7Helg4P+VEvkh9iKGDYXkN+DGVCUm9ZzYyToz3+mLYDmdUOC1ZQLBcAAAA"
   },
   {
     "id": "6cc3682d-6301-41d9-a6e3-849b176494fa",
@@ -753,7 +877,9 @@
     "date": "2024-11-02",
     "location": "长沙，潮宗街",
     "created_at": "2026-02-13T13:22:42.477576+00:00",
-    "updated_at": "2026-02-13T13:22:42.477576+00:00"
+    "updated_at": "2026-02-13T13:22:42.477576+00:00",
+    "thumbnail": "/photos/thumb/6cc3682d-6301-41d9-a6e3-849b176494fa.webp",
+    "lqip": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBQCdASogABgAPrVSoUwnJKMiKAqo4BaJYwCo9BI/UAHtFciTbeQl0fwXSyCyDvciAAD+25eC+GZpT8HKf3v0clv4uxPI1i0lyB26T8JCxFR6W7+lUhBq+BCyZBGFiK7Fz7RmKCYfBll77ui/sC/opeTtVcVFcT31TtQJAAA="
   },
   {
     "id": "0cc5ddaf-9aba-4b33-b6d1-15c056d01f63",
@@ -765,7 +891,9 @@
     "date": "2024-11-02",
     "location": "长沙，潮宗街",
     "created_at": "2026-02-13T13:24:02.968325+00:00",
-    "updated_at": "2026-02-13T13:24:02.968325+00:00"
+    "updated_at": "2026-02-13T13:24:02.968325+00:00",
+    "thumbnail": "/photos/thumb/0cc5ddaf-9aba-4b33-b6d1-15c056d01f63.webp",
+    "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBQCdASogABgAPrVOnkqnJCKhqA1Q4BaJZwDBzEXhoZZ3KgjlSZ4QZPta97gprupOasAA/v0fNgLvWZt8wNb9X2VJc6XnsCOU+pBUd0galVBDpekWRfgSRZdLGmsomvaNKD/tx2FAsUnUPkNHvxpPdoHCouK0RrYAAA=="
   },
   {
     "id": "fce4f41e-a687-4b9a-9960-123e76c30df6",
@@ -777,7 +905,9 @@
     "date": "2024-10-05",
     "location": "土林，流沙之海",
     "created_at": "2026-02-12T06:16:36.413706+00:00",
-    "updated_at": "2026-02-12T06:16:36.413706+00:00"
+    "updated_at": "2026-02-12T06:16:36.413706+00:00",
+    "thumbnail": "/photos/thumb/fce4f41e-a687-4b9a-9960-123e76c30df6.webp",
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBQCdASogABgAPrVSpEwnJKOiKAqo4BaJQBWGZfgvzlbUQgzZlyqX4Sa9+kcyyzWYQAD+jSPPD4rxI7rCDU6KdChJMXe4eGxEeTerMrCPEEI+JAMjoQPtISXZjO/5mpdpblHaqEgecgRfLLlCo9Oh4ZR9h6AlLQfvKQnEts6+Xg/7ffCBjicTwAA="
   },
   {
     "id": "f2db56f7-d0d1-44ff-a990-10d0dcd12a60",
@@ -789,7 +919,9 @@
     "date": "2024-09-30",
     "location": "老挝，巴色",
     "created_at": "2026-02-13T13:17:08.629295+00:00",
-    "updated_at": "2026-02-13T13:17:08.629295+00:00"
+    "updated_at": "2026-02-13T13:17:08.629295+00:00",
+    "thumbnail": "/photos/thumb/f2db56f7-d0d1-44ff-a990-10d0dcd12a60.webp",
+    "lqip": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADwBACdASogABgAPrVKoEonJCMhqA1Q4BaJQBWEJADF0gX/vjQLV+U58yOfKM07ewAA/ulYYaVuG8dLaLhvQh2PRyZEkkuQdY5ACOKkFqZrgcKVofzDaGWIRjISfOfEopN0/C7WSR1F63FdL464NBEhFVPveVAUo8JF90ccNd4Vth704ce2de5huAA="
   },
   {
     "id": "1385bc6b-9b97-40d2-a558-47692669a733",
@@ -801,7 +933,9 @@
     "date": "2024-09-07",
     "location": "泰国，火车站",
     "created_at": "2026-02-13T13:14:48.657128+00:00",
-    "updated_at": "2026-02-13T13:14:48.657128+00:00"
+    "updated_at": "2026-02-13T13:14:48.657128+00:00",
+    "thumbnail": "/photos/thumb/1385bc6b-9b97-40d2-a558-47692669a733.webp",
+    "lqip": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAAAwBwCdASogACsAPrFIn0mnJCMhMBVdUOAWCWcAw6xdVWLIhPOg7D1N2O+7Ouwa1ka+Yj3yDtGyW0vfGdokpjwEJPAA/vkX8eRiHLzn7R+Pr69d7IG98M1CiQMK/sXn7aDB13pvvYiRZe4q2WWx1oDztPEt9gvysfDm1sJztA2Hz0dTJsMekfBtmPN3zg0nAdGPM07Kb3KNnfHWoNcLGLzy4GqufxQ6/qFy/xVU3RRRJm8XQNqdOaxLVD4YHN8TQOS7pOYaLAd1TuQh4ehM1Zxl4pqkoVHB+OGAgAAA"
   },
   {
     "id": "740c4978-0d68-4a9f-81c4-7b1e1cc4899b",
@@ -813,7 +947,9 @@
     "date": "2024-09-07",
     "location": "泰国，火车站",
     "created_at": "2026-02-12T12:10:23.885764+00:00",
-    "updated_at": "2026-02-12T12:10:23.885764+00:00"
+    "updated_at": "2026-02-12T12:10:23.885764+00:00",
+    "thumbnail": "/photos/thumb/740c4978-0d68-4a9f-81c4-7b1e1cc4899b.webp",
+    "lqip": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBQCdASogABgAPqlKm0mmJKKhMAwAwBUJaQAASfaTcoy0hKikkaWsK3aTvUnZVOGI+AD+5egG/ZZPhNl/60UexVAxq5dzcKQACrGyX2KMOFLozn5dU9rcY56nI7ZtpyAnU1Tk9uBc0feC82eaIY0rSCkidUiFq1/+b1v8eu5M2G6qYAA="
   },
   {
     "id": "383aa35a-7067-4a77-ac83-271db0e6a0f6",
@@ -825,7 +961,9 @@
     "date": "2024-09-07",
     "location": "泰国，火车",
     "created_at": "2026-02-12T12:12:27.381211+00:00",
-    "updated_at": "2026-02-12T12:12:27.381211+00:00"
+    "updated_at": "2026-02-12T12:12:27.381211+00:00",
+    "thumbnail": "/photos/thumb/383aa35a-7067-4a77-ac83-271db0e6a0f6.webp",
+    "lqip": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABQBgCdASogACsAPrFInUmnJCKhKq344BYJaQAAzGo0AA9ZtMqS1Evkz10bYMak7Vc8tzWjKJnWif0oAAD++g3wom6WMktHFmNGcwjwFuvijii9b6hq2w0ZlZ3FlicoDsp+PZLcy/yJFHspe3oYqqLILo0tg+JfgbiN4nqY4OiC9xsTOgW840Y+Il+Jo0GywTMrmRkmNVoO9glCQtxVYrtbz4mzdnPW0YZhBqhgGAQVsAAA"
   },
   {
     "id": "68450ba1-baf6-43e7-a692-a07c56cd3c7d",
@@ -837,7 +975,9 @@
     "date": "2024-09-05",
     "location": "柬埔寨，吴哥窟",
     "created_at": "2026-02-12T12:14:26.059482+00:00",
-    "updated_at": "2026-02-12T12:14:26.059482+00:00"
+    "updated_at": "2026-02-12T12:14:26.059482+00:00",
+    "thumbnail": "/photos/thumb/68450ba1-baf6-43e7-a692-a07c56cd3c7d.webp",
+    "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAAAQBwCdASogACsAPq1Km0mmJKKhNVgIAMAViWcAw3AQmTm+J0Wx5JxDN8YoPx1Zk2mXvgGvrvYLEj2PmCoh9bs0AAD+rbyEfkaSc1VfPDeeGzHoEPjq0rwmWiC5iHyXuGf89uyNY4ZTuZ04s+67GXv8SrYRtsdFnsHdoE7fHdM3Hhe9+UQDuMEfvXwuwx7zEdtVSLfCej28WsNI385pgyI9sdwr/TSGm5GBzKdGhD+tjWb5L0kcOT69x/xPVEOd63PmPDsyzhD1L1ENZCJvyGYNRHAJi5FauwwAAA=="
   },
   {
     "id": "dded4d9e-279f-4f42-8098-1ad9eb15f8a4",
@@ -849,7 +989,9 @@
     "date": "2024-09-05",
     "location": "柬埔寨，吴哥窟",
     "created_at": "2026-02-12T12:15:41.25124+00:00",
-    "updated_at": "2026-02-12T12:15:41.25124+00:00"
+    "updated_at": "2026-02-12T12:15:41.25124+00:00",
+    "thumbnail": "/photos/thumb/dded4d9e-279f-4f42-8098-1ad9eb15f8a4.webp",
+    "lqip": "data:image/webp;base64,UklGRuoAAABXRUJQVlA4IN4AAABwBwCdASogACsAPrVOoUonJKMhqqwA4BaJZQC8q6gBvGsijLAUWCYbhGw3xs6galgrvwLz/OCYbg5dcyKJU5XFU2qMQAD++TeJV7etn44PA7TqdmdDFW30v/NlZm8cwjl/0y9KokFlp1VrVH4WtB3JzU8EjmaBqIh1ixlbAhOquV2bwEKoClHpS0v0S7spdS2KEbTjSQUS/UOj/LCtpzIIGF9i8oXyuqso/K/DLZlDJtq0G40Fcry3xjtdsKVZcklGRk+0DZdeW6rs3uHhzueiVwYq+AttIpZmjisAAAA="
   },
   {
     "id": "647cf2e7-9c66-4199-8d72-cfe1e36e5089",
@@ -861,7 +1003,9 @@
     "date": "2024-08-31",
     "location": "老挝，巴色",
     "created_at": "2026-02-13T13:18:39.237496+00:00",
-    "updated_at": "2026-02-13T13:18:39.237496+00:00"
+    "updated_at": "2026-02-13T13:18:39.237496+00:00",
+    "thumbnail": "/photos/thumb/647cf2e7-9c66-4199-8d72-cfe1e36e5089.webp",
+    "lqip": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwBACdASogABgAPrVQoUqnJSMhsAgA4BaJZwDGQBh1n+dBTiUpqJkzGqU8VDrvPAAA/tj+plehg3ghpBbpvQAGyQZ2NqxY4iOhPL3zTnInfrQdC6IYJNWsgjVlEzEwwgnbuYixU3GUQr+7HP3G8xMp4aDewAAA"
   },
   {
     "id": "db6c1457-53b7-4abc-a352-c1a3544977c0",
@@ -873,7 +1017,9 @@
     "date": "2024-08-30",
     "location": "老挝，巴色",
     "created_at": "2026-02-13T13:17:50.971109+00:00",
-    "updated_at": "2026-02-13T13:17:50.971109+00:00"
+    "updated_at": "2026-02-13T13:17:50.971109+00:00",
+    "thumbnail": "/photos/thumb/db6c1457-53b7-4abc-a352-c1a3544977c0.webp",
+    "lqip": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBQCdASogACsAPrVUo00nJKMiKrgIAOAWiUAZGoubWL9MupjtApWc2BIhajSTc6gQv+LGAAD+/m1Ulir+Lzq++qPfaHihwof9f3YaEy3r60r8qXbsp18ycmfzcalPjEUHdIH7WE7qBN3ivqx/2yHnXQzaQ3NybeYHS3oUdmhq6wrss1nhBwbHCfGjCSKsKhjxxgL+Di6eLOAA"
   },
   {
     "id": "29c37532-3d26-4430-a2d6-d2e6c150cdb8",
@@ -885,7 +1031,9 @@
     "date": "2024-08-30",
     "location": "老挝，巴色",
     "created_at": "2026-02-13T13:16:27.823567+00:00",
-    "updated_at": "2026-02-13T13:16:27.823567+00:00"
+    "updated_at": "2026-02-13T13:16:27.823567+00:00",
+    "thumbnail": "/photos/thumb/29c37532-3d26-4430-a2d6-d2e6c150cdb8.webp",
+    "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAACwBwCdASogACsAPrVIoEmnJCMhKrgN+OAWiWQAnTNHQrqxgCPDktN7vE1PM8AbO+6swF92PqiWyNAjv9Hh948aT09ys1QAAPlAOIi/4ys8t6Pggu+7QjtV+CS0E4y3RXWqd2pv8xpyCYv97qyaOebt1GD40wXgP/FrSGkgDmPPQVerlBjP/ClUDI3MxeZ1Cp38Kb/XAUrbBVi3WtmDEtjE46o3qfEUmjXqbBX86CtEn2xisX4mZMXUW/YqSnGhkNJf86ijCYncYv+sCORCNZxD2Wd1nfVH40QAAA=="
   },
   {
     "id": "d97faf47-5d65-458e-8a42-479bb9e64577",
@@ -897,7 +1045,9 @@
     "date": "2024-08-22",
     "location": "泰国，清迈",
     "created_at": "2026-02-13T13:20:56.161184+00:00",
-    "updated_at": "2026-02-13T13:20:56.161184+00:00"
+    "updated_at": "2026-02-13T13:20:56.161184+00:00",
+    "thumbnail": "/photos/thumb/d97faf47-5d65-458e-8a42-479bb9e64577.webp",
+    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAACQBwCdASogACsAPp1AnEmlpCMhNUwAsBOJYgC2+9qD2EAD6OH71Q50Z89ZvxLV0FM1eyGRPT1Ix7UYb7i6IkJcdaijz1gA/kQYG9K+FKKylt/Fm/4t8nUpbB+P7iksAWIEaBI66qTEzK0NpTxwr9Y6aQbKe8haZ5BHFDqzxKlrFpvwbYk72nOj4cDYC9r2/p6keesLT3kbHM4AFF76DWNJz6oPgAUEvE813xm1dSCKZEylVW/31eb9iXwribgOrbO9MIi9CbfxK1onv9uC0uxTmXGfZXbocAA="
   },
   {
     "id": "1ef03b52-dece-491c-91f8-5f67c7ee0977",
@@ -909,7 +1059,9 @@
     "date": "2024-08-20",
     "location": "泰国，曼谷",
     "created_at": "2026-02-13T13:19:55.362278+00:00",
-    "updated_at": "2026-02-13T13:19:55.362278+00:00"
+    "updated_at": "2026-02-13T13:19:55.362278+00:00",
+    "thumbnail": "/photos/thumb/1ef03b52-dece-491c-91f8-5f67c7ee0977.webp",
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAAAwBgCdASogACsAPqlCnEmmI6MhNVv4AMAVCWcAAN+e6ue1yrwp/RGjpkIQWnQnPNzuR2UBnXephwNgAP73BPK19Tl9b2mz34t0xQqa2xLiUMH6H37EbEoRJrdx8yudjLKFfJzRoX80z5qgXUr7UJWdx2SHgoqZIeC18LkBLakXKuwXF/MlRSH4rEi5CwcdAnr9XLyMlF3NaL/kQldJ8jVBxZkGTFFUPZlqooFweziv3W3eFv4ktalVESOQAA=="
   },
   {
     "id": "a0e473d3-d35c-475b-9e7b-cf4fb919acea",
@@ -921,7 +1073,9 @@
     "date": "2024-08-20",
     "location": "泰国，曼谷",
     "created_at": "2026-02-13T13:19:22.005+00:00",
-    "updated_at": "2026-02-13T13:19:22.005+00:00"
+    "updated_at": "2026-02-13T13:19:22.005+00:00",
+    "thumbnail": "/photos/thumb/a0e473d3-d35c-475b-9e7b-cf4fb919acea.webp",
+    "lqip": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACwBgCdASogACsAPrFGoUmnI6OhMBqqqOAWCWcAzux1bQfOZvbqOV8YwAfExeXJsCw/InOFJ07e5Q8v8RumIAD+9Nc0ij0Y9WKE3bDuNiItGhAJv3z08WJux9qK60N3J+dH0m1hXdgMfPEXMEvusUdeLBWfGHdhjHi7yOu7K+ayrvspum/HQfNx8wu8/OMIn3as2rAsA4NK5/dlolXMV4f4muBPNjQ29vJoCymR8eHBSd1YzK415z45ZVAAAA=="
   },
   {
     "id": "2cd27ee6-cf8b-4114-a1c2-4b0900022ca2",
@@ -933,7 +1087,9 @@
     "date": "2024-08-19",
     "location": "泰国，曼谷",
     "created_at": "2026-02-12T12:22:29.651793+00:00",
-    "updated_at": "2026-02-12T12:22:29.651793+00:00"
+    "updated_at": "2026-02-12T12:22:29.651793+00:00",
+    "thumbnail": "/photos/thumb/2cd27ee6-cf8b-4114-a1c2-4b0900022ca2.webp",
+    "lqip": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAACQBgCdASogACsAPq1KoEmmJKOhKq34wBWJYwC06IF9Z6PHmibhiclamzlhkxwXvWJjjlq+bSUMldbnnsHAAP7/GssbNJBOn7Zm+4GmEzcmyf/gWkxWKP5gcEMDSaP+skq4fOplD287AZ+dywOIMCG6Kidgv2zUm3VhkLGML5bW4XeNQOiB6xzQ2M0GPGxMXiVhLwqOPeX2GfkjP/iU+nzWpTfByitzaTKt0gdu/1f5XU2eAhL2+6r/chWIo8ZmMAA="
   },
   {
     "id": "7e5f486e-285c-43e9-8ace-e011b29df017",
@@ -945,7 +1101,9 @@
     "date": "2024-08-19",
     "location": "泰国，曼谷",
     "created_at": "2026-02-12T12:21:34.201477+00:00",
-    "updated_at": "2026-02-12T12:21:34.201477+00:00"
+    "updated_at": "2026-02-12T12:21:34.201477+00:00",
+    "thumbnail": "/photos/thumb/7e5f486e-285c-43e9-8ace-e011b29df017.webp",
+    "lqip": "data:image/webp;base64,UklGRvYAAABXRUJQVlA4IOoAAAAwBwCdASogACsAPrVKnUonJCKhsBVdUOAWiWUAuwB+tSZ9uF2NcdMW5UZLNNVwfqj3ea4X++aHVBKRgnXTbWrxXWAA/o03vY+Dc5kxTc/cble215sM8SbOwhLr5DvdRibRsSZJ9x5qw6LH3sF0/A3DPk7kWbJgQH9CvFnu93J49QZxHi5hpKwLn0cf+Q0NZnZ/191JTqqB0aEcdw6JLT7uFOsfErciVRNw05EFMCJAc7CSqgk6C4ybOUNPfgtZn/nKh0m7N990ePWOkow+l/+XVAolntzZIHhhczTaRs6+YHRyL2FgWYtiAAA="
   },
   {
     "id": "888847e4-60fa-440d-aafa-68f07b59b85d",
@@ -957,7 +1115,9 @@
     "date": "2024-08-16",
     "location": "曼谷，唐人街",
     "created_at": "2026-02-12T12:24:11.580954+00:00",
-    "updated_at": "2026-02-12T12:24:11.580954+00:00"
+    "updated_at": "2026-02-12T12:24:11.580954+00:00",
+    "thumbnail": "/photos/thumb/888847e4-60fa-440d-aafa-68f07b59b85d.webp",
+    "lqip": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAABwBgCdASogACsAPqFGm0mmJCKhNVv8AMAUCUATpmhY8jp5KeUS9AsZvmLZg0VCH272lpZJ6c+AicHJLoAA/szedzpO5DM3BSfTIXGKf0g8HJm540aOcYsm+Tn/qolIxeWRxwVE7bWSSHxGwjUEfod0SqC7KMMm9F3y5aA1ESglIum3KUzJE7rFrHRJB8Q04NI40bjeEO567VDzthXZSy8pc0as/8h/V8M+qVjo0RMHx1cQzLwhafiTvL+aFuVI46wgdtdbDaiRVxtOFUYHo27+eUAWUJzqwOwAAA=="
   },
   {
     "id": "b6dec62b-2a07-4009-93dd-cb984665a2b9",
@@ -969,7 +1129,9 @@
     "date": "2024-08-16",
     "location": "曼谷，唐人街",
     "created_at": "2026-02-12T12:26:07.155629+00:00",
-    "updated_at": "2026-02-12T12:26:07.155629+00:00"
+    "updated_at": "2026-02-12T12:26:07.155629+00:00",
+    "thumbnail": "/photos/thumb/b6dec62b-2a07-4009-93dd-cb984665a2b9.webp",
+    "lqip": "data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAABQBwCdASogACsAPrVKoUynI6MiKrgKAOAWiWMAriNuMOlfvvYMry8Jqh4PUeVAy9S+YnUAhkKHwgmK9kVVq9Ak0CQAAP4BTQfm0uaatEBn0kUYYEBMOyIz2hBacg9kuNFQKyYSBCUmhmRyYMPIKPgCo9rovL945MHcg8b1THf7DK22HTrfhOXF9QXIZ2hPWcXw8k3DbmKOQ7mN5DVve2+Twy/FnCwfIY5C0NwpZF7u+EbJ4g+UIBUKeJDHAtvkwwr4rTACPrtokpigayG59GaAcRgkM1LagAA="
   },
   {
     "id": "23afa051-20a7-4e72-b78a-b8ab3d5c4ad5",
@@ -981,7 +1143,9 @@
     "date": "2024-08-09",
     "location": "湖南，张家界",
     "created_at": "2026-02-12T12:17:06.93027+00:00",
-    "updated_at": "2026-02-12T12:17:06.93027+00:00"
+    "updated_at": "2026-02-12T12:17:06.93027+00:00",
+    "thumbnail": "/photos/thumb/23afa051-20a7-4e72-b78a-b8ab3d5c4ad5.webp",
+    "lqip": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABwBgCdASogACsAPrFGnEmnI6KhNVQMAOAWCWcAzBw5XtVM73UCqUWEOefu064VlV/BA2f5QYTq0bUkS2AA/vpe2Mam/59sLQ6CKOAHKSXYouIdTK1TQscxRLM2r2fmiFNLAY252T4B3Uw7WbJxAZYtTnRFIBxkoiymMMzpL/ps9Cgf47kGCfDGYZZALLwAAAA="
   },
   {
     "id": "8d02a20c-cece-4673-a5df-880383ae55d1",
@@ -993,7 +1157,9 @@
     "date": "2024-08-06",
     "location": "张家界，迷雾森林",
     "created_at": "2026-02-12T06:16:36.413706+00:00",
-    "updated_at": "2026-02-12T06:16:36.413706+00:00"
+    "updated_at": "2026-02-12T06:16:36.413706+00:00",
+    "thumbnail": "/photos/thumb/8d02a20c-cece-4673-a5df-880383ae55d1.webp",
+    "lqip": "data:image/webp;base64,UklGRtoAAABXRUJQVlA4IM4AAABwBwCdASogACsAPqVEmkmmJCKhNUgAwBSJZACsMyrI8ChmzVPkYpEe4KPlUaB9xIInJsOWx7g56MxMhcygHxdn6+GEAAD+9XteOGbxBWCjvc0NkJrJjfo4WOXFb883gm+Gcw/gxOQK3BHogAautP5Zay7ojft6xau7KIq5oyIgctizrnyg5UwzoYYppMRotqCR98wh44zkjmuaXZlA3e86IjXRyj2H9Q3CjTf868PEr5PlzoZf/u71yP5HWvvTdUpf9vBYiFcc/OqjNDKAAA=="
   },
   {
     "id": "796105c0-5c28-4bfa-80a2-9165deb8f19d",
@@ -1005,7 +1171,9 @@
     "date": "2024-07-17",
     "location": "云南，昆明",
     "created_at": "2026-02-13T13:02:13.039514+00:00",
-    "updated_at": "2026-02-13T13:02:13.039514+00:00"
+    "updated_at": "2026-02-13T13:02:13.039514+00:00",
+    "thumbnail": "/photos/thumb/796105c0-5c28-4bfa-80a2-9165deb8f19d.webp",
+    "lqip": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABwBQCdASogACsAPqlCm0mmI6KhNVgMAMAVCWUAx+RpcCsJRY3IpZEotlzjx9WPGfYd08TgAP79nZUcLB4epwh1Gve71HQmBu6uK9B/0xmuGlnS6WU4IgRZJGA4P01EX4+p7UOi6CAK4GySaZ9hJHMaaJ4HnKIJ1urdlTp/cVR/lKB8S+MBXt6md88t3Mf0K32cnfMF4XZawMpelc/WpfeJlZ7w9NHc9xSMHTPVfUmgrzymIAAAAA=="
   },
   {
     "id": "d6002d69-702b-46a9-9098-ed2b55a82cde",
@@ -1017,7 +1185,9 @@
     "date": "2024-05-25",
     "location": "香格里拉，寺庙",
     "created_at": "2026-02-12T12:06:06.924271+00:00",
-    "updated_at": "2026-02-12T12:06:06.924271+00:00"
+    "updated_at": "2026-02-12T12:06:06.924271+00:00",
+    "thumbnail": "/photos/thumb/d6002d69-702b-46a9-9098-ed2b55a82cde.webp",
+    "lqip": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADQBQCdASogABgAPrVOoUmnJKOhN/VYAOAWiWMAsR9VxsAp9ZGDeqXcbC2W5C4WoVhobdPJTIgAAP75EgLc07KC4yhfzyw4ENOiwAOUzPPCVwm64gTcy3t9p+/PWTPLp8dGtj8j9Ptli9h8KhZ2AQVO98hOkPGqNw8mvQMWS6ZgSsqMww/GZc/4YuYqymQwU9AAAA=="
   },
   {
     "id": "f8110a20-223b-4f49-b876-d182e330652c",
@@ -1029,7 +1199,9 @@
     "date": "2024-05-20",
     "location": "元谋，土林",
     "created_at": "2026-02-12T06:16:36.413706+00:00",
-    "updated_at": "2026-02-12T06:16:36.413706+00:00"
+    "updated_at": "2026-02-12T06:16:36.413706+00:00",
+    "thumbnail": "/photos/thumb/f8110a20-223b-4f49-b876-d182e330652c.webp",
+    "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBQCdASogABgAPrVEn0onI6KhsBgMAOAWiUATpmSUsYR1IF7impku2WUGtaapA8VSKUAAynf6CI+CcKpFzUvpMJxn0IU2Ezi8w0B11XVvmVmHAWX94wdVb+DxumZUeD2tha9tZDR/ZY2PJC0hd2SdnbP8zjRpPWl0IF66dzL2tKyk9TjUAAAA"
   },
   {
     "id": "4bfbcc23-2329-4316-9a55-854b9a2d3ec7",
@@ -1041,7 +1213,9 @@
     "date": "2024-05-16",
     "location": "云南昆明，圆通寺",
     "created_at": "2026-02-12T12:07:15.603138+00:00",
-    "updated_at": "2026-02-12T12:07:15.603138+00:00"
+    "updated_at": "2026-02-12T12:07:15.603138+00:00",
+    "thumbnail": "/photos/thumb/4bfbcc23-2329-4316-9a55-854b9a2d3ec7.webp",
+    "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBQCdASogACAAPrVap00nJaOiKAqo4BaJZgCxH0xKQ+o7pFi7IRz7YomStUfORYqQAP7ZCF9tFHYiDkfUHo4lNrcxncByv+lNeGibSqnHiE/IiLRQIrAd+OXlgEGqwb8KPuHpTAh3YE2wKKmBELCI2RHmISpoXtCzB+99VKi/FWzJokOqaxhTKp4AAA=="
   },
   {
     "id": "852947cb-c88c-4362-bc33-e572baffab0b",
@@ -1053,7 +1227,9 @@
     "date": "2024-05-12",
     "location": "香格里拉，寺庙",
     "created_at": "2026-02-12T10:43:03.895295+00:00",
-    "updated_at": "2026-02-12T10:43:03.895295+00:00"
+    "updated_at": "2026-02-12T10:43:03.895295+00:00",
+    "thumbnail": "/photos/thumb/852947cb-c88c-4362-bc33-e572baffab0b.webp",
+    "lqip": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAABQBQCdASogABgAPrVGnUonI6KhsBgMAOAWiWcAwcwRW4iDNXbHwcSBPUVpmD5ZrD+bKMAA/unep7qMlLgy8t6cXLNC6wylEOV2/M7cGCXAoa8ArU2bBLvJe7XDxJlNu9ejMaIYIMEQ8h9p87FEZLABQoUIFeIAAAA="
   },
   {
     "id": "25e47f66-fa60-4eed-bcfa-c22b16c5d50e",
@@ -1065,7 +1241,9 @@
     "date": "2024-03-09",
     "location": "菲律宾，宿务",
     "created_at": "2026-02-12T11:54:06.044486+00:00",
-    "updated_at": "2026-02-12T11:54:06.044486+00:00"
+    "updated_at": "2026-02-12T11:54:06.044486+00:00",
+    "thumbnail": "/photos/thumb/25e47f66-fa60-4eed-bcfa-c22b16c5d50e.webp",
+    "lqip": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQBQCdASogABgAPrVGn0mnI6MhMBgMAOAWiWMAACrMAzxGD769IRXA1/2cTFV5tTX6voAA/uzOrAIL4xwf/AQUcbH+k4egh7ZE6a7Rg0T/PDXjpWdkN6kgKZNKMimbglzQbto3JBloAA=="
   },
   {
     "id": "98d51277-b2e4-4336-8041-b51c5c6b0063",
@@ -1077,7 +1255,9 @@
     "date": "2024-02-05",
     "location": "富士市，日落时分",
     "created_at": "2026-02-12T06:16:36.413706+00:00",
-    "updated_at": "2026-02-12T06:16:36.413706+00:00"
+    "updated_at": "2026-02-12T06:16:36.413706+00:00",
+    "thumbnail": "/photos/thumb/98d51277-b2e4-4336-8041-b51c5c6b0063.webp",
+    "lqip": "data:image/webp;base64,UklGRtIAAABXRUJQVlA4IMYAAADwBwCdASogADAAPqFCmUmmJCKhNVv8AMAUCUAVhnhYIAgBwK63lDGoBdCk5txNdvllkkewQ9x/Crm/ynhkDBTgUTUl2+OR6oAA/v2+9YpPmAWFkEkShJ8L1mfzWCQsdFk9XDTiVFxKY0tcj/bVrpUPRIMZ6w4Tks0e63K1TE5Fyn8slCZYfx5QD6Wkl4T6VWj7SX16AS0ouowIDPkkpP/2Yga6fUapd7bW34t4NLeIWZh9CkTOn8W77QOakXDEpt44GcAsSAA="
   },
   {
     "id": "efe55408-f632-41ac-abb5-79d9a2c7154c",
@@ -1089,7 +1269,9 @@
     "date": "2024-01-15",
     "location": "滇西，梅里雪山",
     "created_at": "2026-02-12T06:16:36.413706+00:00",
-    "updated_at": "2026-02-12T06:16:36.413706+00:00"
+    "updated_at": "2026-02-12T06:16:36.413706+00:00",
+    "thumbnail": "/photos/thumb/efe55408-f632-41ac-abb5-79d9a2c7154c.webp",
+    "lqip": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAQBQCdASogABgAPrFCnkmnI6KhN/VYAOAWCUAW2QCa4WS/MBXgqjlILhUVg6FeQ1gAAP4R3XRJnYVDJ4pMaXrthEBHKpG2qbFc06UOG6DvbJzxh7uIpM4UhFNX9tytch4+icr/Ib3qn1+ANaIft317X+KHcIwUM4yCpU6epAAAAA=="
   },
   {
     "id": "64b04f79-cd06-4f3f-9d7c-0735550dfe0c",
@@ -1101,7 +1283,9 @@
     "date": "2023-10-22",
     "location": "山东，潍坊",
     "created_at": "2026-02-13T12:59:11.093882+00:00",
-    "updated_at": "2026-02-13T12:59:11.093882+00:00"
+    "updated_at": "2026-02-13T12:59:11.093882+00:00",
+    "thumbnail": "/photos/thumb/64b04f79-cd06-4f3f-9d7c-0735550dfe0c.webp",
+    "lqip": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAwBACdASogABUAPrVMoEsnJCMhsBgIAOAWiWVg61CPB1SueuJ2fvoVsFAA/uqCHGDcuZwAcO0D9tyLpDtb970qPpFqCiTplLGtjfQ+ti2I61/++rgNMENjJHfxVGyCDZQAAA=="
   },
   {
     "id": "5e743c0d-b185-497d-96ea-37fbd0a28b54",
@@ -1113,7 +1297,9 @@
     "date": "2023-10-21",
     "location": "山东，潍坊",
     "created_at": "2026-02-13T13:00:32.068552+00:00",
-    "updated_at": "2026-02-13T13:00:32.068552+00:00"
+    "updated_at": "2026-02-13T13:00:32.068552+00:00",
+    "thumbnail": "/photos/thumb/5e743c0d-b185-497d-96ea-37fbd0a28b54.webp",
+    "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAwCdASogABUAPrVMoEqnJCMhqA1Q4BaJYgCdMuN2WGUlv/mDLoUAAP7deR5KRFS4PIfG23C+0T8Vt3173MAmUW1wA18/AwbQPtg3p7dZiSikDrdJH0YbXAwrvIBkLLuWKNQA"
   },
   {
     "id": "4419ab3c-de5c-4927-a4f6-04afbf6bb752",
@@ -1125,7 +1311,9 @@
     "date": "2023-05-11",
     "location": "日本，富士",
     "created_at": "2026-02-13T13:04:14.588639+00:00",
-    "updated_at": "2026-02-13T13:04:14.588639+00:00"
+    "updated_at": "2026-02-13T13:04:14.588639+00:00",
+    "thumbnail": "/photos/thumb/4419ab3c-de5c-4927-a4f6-04afbf6bb752.webp",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASogABUAPrVKnUonJCKhsAgA4BaJQAADgI9SstdguxfHNXhbAAD8UvfCfzaSY3mHOrErP3ehFkj/429pEPr6v9JvdRHvauZFsKWtEBxWudaUor/v+jsqOMrh6rvdZ8Anb24q71HKrOpoQ8AA"
   },
   {
     "id": "94830921-1463-4373-b0f7-779e8a53acbc",
@@ -1137,7 +1325,9 @@
     "date": "2023-05-10",
     "location": "日本，大版",
     "created_at": "2026-02-13T13:03:25.292572+00:00",
-    "updated_at": "2026-02-13T13:03:25.292572+00:00"
+    "updated_at": "2026-02-13T13:03:25.292572+00:00",
+    "thumbnail": "/photos/thumb/94830921-1463-4373-b0f7-779e8a53acbc.webp",
+    "lqip": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAADQBwCdASogADAAPrVKnkmnJCKhMBqqqOAWiWQAnTLQEBInAN8cYbXZkj3vTJeU6N9r/id2xKMdqVlfGTS/IUv+E7Zv4gEagAD+v/DJQHXfA77bCsThQymV+AdIWeDeFqIP6JTlmm8JmBmCEonZN6Hzji1/s/N7tgVqZYKjg1EVw9GEzbJXXa4c+Jgh5r/e5LOuT8g0pLoaNNcH5nh5vefxhTAuA8I0rbUY8TzUv2tPFxhiw7uvfnNJlTvpxLVx0uo7czabGbFIOH2m8JEhGLYwjWF2/NCor/PhaTFt5dOxyQ6VWdhcbrutS3JJywYgAAA="
   },
   {
     "id": "ac844f21-951d-42f0-9687-ee2c8a3eb6f1",
@@ -1149,7 +1339,9 @@
     "date": "2023-05-01",
     "location": "日本，富士",
     "created_at": "2026-02-13T13:05:00.579016+00:00",
-    "updated_at": "2026-02-13T13:05:00.579016+00:00"
+    "updated_at": "2026-02-13T13:05:00.579016+00:00",
+    "thumbnail": "/photos/thumb/ac844f21-951d-42f0-9687-ee2c8a3eb6f1.webp",
+    "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABQBQCdASogABUAPqVCmkmmI6KhN/qoAMAUiWUArAAh3urMjZZ28i4Ao2xVoe9dqcyEdIAA/ucXV0RBuzuLxBVFyMEvuRJU9EE5skOAs/Ki+oD6yLKxJI63S1zOIxGQm22k1vcprRWEPWQxDn+ABG+AAAA="
   },
   {
     "id": "124fb07f-7a12-4698-aa26-1e6c576f6848",
@@ -1161,7 +1353,9 @@
     "date": "2023-04-15",
     "location": "中国，青岛",
     "created_at": "2026-02-13T13:06:43.563817+00:00",
-    "updated_at": "2026-02-13T13:06:43.563817+00:00"
+    "updated_at": "2026-02-13T13:06:43.563817+00:00",
+    "thumbnail": "/photos/thumb/124fb07f-7a12-4698-aa26-1e6c576f6848.webp",
+    "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAABQBQCdASogABUAPrVMn0onJCKhsAgA4BaJZwDNwCBio9WNv7gZ0zWkBGdx71O9sqQT1EAA/vMdeD8a1BH/gd4pgUEotODDV6rb288lGIYgCoX4fghuwYWPny/gz2ZF549+VOZjt1R86wseJ1egoAAA"
   },
   {
     "id": "d4b21687-3751-4330-9d89-420a4376d890",
@@ -1173,6 +1367,8 @@
     "date": "2023-04-15",
     "location": "中国，青岛",
     "created_at": "2026-02-13T13:06:03.870751+00:00",
-    "updated_at": "2026-02-13T13:06:03.870751+00:00"
+    "updated_at": "2026-02-13T13:06:03.870751+00:00",
+    "thumbnail": "/photos/thumb/d4b21687-3751-4330-9d89-420a4376d890.webp",
+    "lqip": "data:image/webp;base64,UklGRuwAAABXRUJQVlA4IOAAAADwBwCdASogADAAPqlInUmmJKMhMBqtUMAVCUAUu/B3dUJT4oIV/Vb/9oPYArywOZojwNBkLmUhgPWXQHRd2DCKUQslpyNZAsgA/pt9dWv2RkpXaKnx/X1zVjPtK7RKeZ6rYpSWIxL3QwWDTMvmuzN0JocJyTHwOqhil4nVX5h6JGgteD3ZnG6xIxTOnmPdEMLL7gyAw8UZU3OKkNIYJG6/438p5DgATfN3CeZsnzbxqDLUnSDxphKBJVq9sZrpL5n94iTbc8MEKB0q6x2YjIaoQfEHD1OYZxdaEnO2TwAAAA=="
   }
 ]

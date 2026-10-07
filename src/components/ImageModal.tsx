@@ -22,7 +22,9 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
   const [loading, setLoading] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const [direction, setDirection] = useState(1);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
 
   const currentIndex = allPhotos.findIndex(p => p.id === photo?.id);
 
@@ -53,6 +55,14 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     }
   }, [isPlayingMusic]);
 
+  // 关闭弹窗时停止自动播放与背景音乐，避免声音残留
+  useEffect(() => {
+    if (!photo) {
+      setIsAutoPlaying(false);
+      setIsPlayingMusic(false);
+    }
+  }, [photo]);
+
   const toggleMusic = (e?: React.MouseEvent) => {
     if (e) {
       e.preventDefault();
@@ -66,10 +76,14 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     e.stopPropagation();
     const newAutoPlay = !isAutoPlaying;
     setIsAutoPlaying(newAutoPlay);
-    
-    // 如果开启自动播放且音乐没在播，则自动响起音乐
+
+    // 开启自动播放且音乐未播放时，自动响起音乐
     if (newAutoPlay && !isPlayingMusic) {
       setIsPlayingMusic(true);
+    }
+    // 关闭自动播放时，同步停止音乐（否则声音会一直响）
+    if (!newAutoPlay && isPlayingMusic) {
+      setIsPlayingMusic(false);
     }
   };
 
@@ -82,8 +96,26 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     } else {
       nextIndex = (currentIndex - 1 + allPhotos.length) % allPhotos.length;
     }
+    setDirection(direction === 'next' ? 1 : -1);
     onNavigate(allPhotos[nextIndex]);
   }, [currentIndex, allPhotos, onNavigate]);
+
+  // 移动端滑动手势：左滑下一张、右滑上一张（仅响应以水平方向为主的滑动，避免与竖向滚动冲突）
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.current.x;
+    const dy = t.clientY - touchStart.current.y;
+    touchStart.current = null;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      navigateTo(dx < 0 ? 'next' : 'prev');
+    }
+  };
 
   useEffect(() => {
     if (photo) {
@@ -167,6 +199,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
         className="fixed inset-0 z-[60] flex items-center justify-center bg-background/95 backdrop-blur-xl p-2 md:p-12"
         onClick={onClose}
       >
@@ -184,7 +217,13 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
           onClick={(e) => e.stopPropagation()}
         >
           {/* 图片区域 */}
-          <div className="flex-[2] md:flex-1 w-full h-full flex items-center justify-center overflow-hidden relative group/nav">
+          <div
+            className="flex-[2] md:flex-1 w-full h-full flex items-center justify-center overflow-hidden relative group/nav"
+            style={{ touchAction: "pan-y" }}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* 图片切换动效：恢复为 GitHub 初始版本（blur 进出场 + 轻微位移缩放 + mode=wait） */}
             <AnimatePresence mode="wait">
               <motion.img
                 key={photo.id}
@@ -202,7 +241,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
             </AnimatePresence>
 
             {/* 导航按钮 - 在手机端也保持可见或通过点击触发 */}
-            <div className="absolute inset-0 flex items-center justify-between px-2 md:px-4 opacity-0 group-hover/nav:opacity-100 md:group-hover/nav:opacity-100 transition-opacity pointer-events-none">
+            <div className="absolute inset-0 flex items-center justify-between px-2 md:px-4 opacity-100 md:opacity-0 md:group-hover/nav:opacity-100 transition-opacity pointer-events-none">
               <Button
                 variant="ghost"
                 size="icon"
@@ -224,9 +263,9 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
 
           {/* 信息区域 */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.12, duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
             className="flex-1 w-full md:w-96 flex flex-col space-y-4 md:space-y-8 text-left p-4 md:p-0 overflow-y-auto"
           >
             {/* 这里的控制按钮现在在信息区域顶部，不会遮挡照片 */}
@@ -250,6 +289,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
                 variant="ghost"
                 size="icon"
                 onClick={toggleMusic}
+                aria-label={isPlayingMusic ? "关闭背景音乐" : "开启背景音乐"}
                 className={cn(
                   "w-8 h-8 rounded-full transition-all",
                   isPlayingMusic ? "text-accent bg-accent/10" : "text-muted-foreground bg-background/20 backdrop-blur-md"

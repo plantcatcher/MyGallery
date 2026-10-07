@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
-      <PageMeta title={t("seo.homeTitle")} description={t("seo.homeDesc")} />
+      <PageMeta title={t("seo.homeTitle")} description={t("seo.homeDesc")} image={photos[0]?.url} />
       {/* Hero Section */}
       <section className="py-24 md:py-40 space-y-12 text-center md:text-left">
         <div className="space-y-4">
@@ -322,14 +322,22 @@ const PhotoCard: React.FC<{ photo: Photo; onClick: () => void }> = ({ photo, onC
       className="group cursor-pointer relative"
       onClick={onClick}
     >
-      <div className="relative aspect-[3/4] overflow-hidden bg-muted transition-all duration-700 ease-in-out group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)]">
+      <div
+        className="relative aspect-[3/4] overflow-hidden bg-muted transition-shadow duration-500 ease-apple group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
+        style={
+          photo.lqip
+            ? { backgroundImage: `url(${photo.lqip})`, backgroundSize: "cover", backgroundPosition: "center" }
+            : undefined
+        }
+      >
         <img
-          src={photo.url}
+          src={photo.thumbnail || photo.url}
           alt={photo.title}
-          className="w-full h-full object-cover grayscale-[0.3] contrast-[1.1] transition-transform duration-[2s] group-hover:scale-105 group-hover:grayscale-0"
+          decoding="async"
+          className="w-full h-full object-cover grayscale-[0.2] contrast-[1.05] transition-[transform,filter] duration-500 ease-apple will-change-transform group-hover:scale-[1.05] group-hover:grayscale-0"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col justify-end p-6">
-          <p className="text-white font-serif italic text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-apple flex flex-col justify-end p-6">
+          <p className="text-white font-serif italic text-sm transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500 ease-apple">
             {photo.description}
           </p>
         </div>
@@ -361,14 +369,15 @@ const ProjectCard: React.FC<{ project: Project; photos: Photo[]; onPhotoClick: (
           <img
             src={project.cover_image}
             alt={project.title}
-            className="w-full h-full object-cover grayscale-[0.5] transition-all duration-[2s] group-hover:scale-110 group-hover:grayscale-0"
+            decoding="async"
+            className="w-full h-full object-cover grayscale-[0.4] transition-[transform,filter] duration-700 ease-apple will-change-transform group-hover:scale-[1.04] group-hover:grayscale-0"
           />
           <div className="absolute inset-0 bg-background/20 mix-blend-multiply transition-opacity group-hover:opacity-0" />
           <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
             <div className="space-y-4">
               <span className="text-[10px] text-accent font-bold tracking-[0.4em] uppercase">{project.year}</span>
               <h3 className="text-4xl md:text-7xl font-serif text-white tracking-tighter drop-shadow-2xl">{project.title}</h3>
-              <p className="text-sm text-white/70 max-w-sm font-serif italic opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-200 transform translate-y-4 group-hover:translate-y-0">
+              <p className="text-sm text-white/70 max-w-sm font-serif italic opacity-0 group-hover:opacity-100 transition-all duration-[600ms] ease-apple delay-100 transform translate-y-3 group-hover:translate-y-0">
                 {project.description}
               </p>
               <div className="pt-4">
@@ -402,7 +411,7 @@ const ProjectCard: React.FC<{ project: Project; photos: Photo[]; onPhotoClick: (
                   <img
                     src={photo.url}
                     alt={photo.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-apple will-change-transform group-hover/item:scale-[1.05]"
                   />
                 </motion.div>
               ))}
