@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { X, MapPin, Calendar, Info, Heart, ChevronLeft, ChevronRight, Play, Pause, Music, VolumeX, Volume2 } from "lucide-react";
+import { X, MapPin, Calendar, Info, Heart, Share2, ChevronLeft, ChevronRight, Play, Pause, Music, VolumeX, Volume2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Photo } from "@/types/photography";
@@ -191,6 +191,32 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
     }
   };
 
+  // 分享当前作品：优先唤起系统原生分享面板，不支持时回退为复制"标题 + 描述 + 链接"
+  const handleShare = async () => {
+    if (!photo) return;
+
+    const shareUrl = `${window.location.origin}/gallery?photo=${photo.id}`;
+    const shareTitle = photo.title;
+    const shareText = `${photo.title} · ${photo.location}\n${photo.description}`;
+
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: shareTitle, text: shareText, url: shareUrl });
+        return;
+      } catch (error: any) {
+        // 用户主动取消分享时不做任何提示，其余情况继续走复制回退
+        if (error && error.name === "AbortError") return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
+      toast.success(t("modal.shareCopied"));
+    } catch {
+      toast.error(t("modal.shareFailed"));
+    }
+  };
+
   if (!photo) return null;
 
   return (
@@ -316,15 +342,26 @@ export const ImageModal: React.FC<ImageModalProps> = ({ photo, allPhotos = [], o
               </div>
             </div>
 
-            <div className="mt-auto pt-12">
+            <div className="mt-auto pt-12 flex items-center gap-3">
               <Button 
-                className="w-full h-14 rounded-full font-serif tracking-widest group overflow-hidden relative" 
+                className="flex-1 h-14 rounded-full font-serif tracking-widest group overflow-hidden relative" 
                 variant={liked ? "default" : "outline"}
                 onClick={handleLike}
                 disabled={loading}
               >
                 <Heart className={`w-5 h-5 mr-2 transition-all ${liked ? "fill-current" : ""}`} />
                 <span className="relative z-10">{liked ? t("modal.likedBtn") : t("modal.likeBtn")} {likeCount > 0 && `(${likeCount})`}</span>
+              </Button>
+
+              <Button
+                type="button"
+                variant="outline"
+                className="h-14 rounded-full px-5 md:px-6 font-serif tracking-widest shrink-0"
+                onClick={handleShare}
+                aria-label={t("modal.shareBtn")}
+              >
+                <Share2 className="w-5 h-5 mr-2" />
+                <span>{t("modal.shareBtn")}</span>
               </Button>
             </div>
           </motion.div>

@@ -22,6 +22,46 @@ export interface ChangelogVersion {
 
 export const changelog: ChangelogVersion[] = [
   {
+    version: "v0.2.2",
+    date: "2026-10-08",
+    summaryZh: "作品分享与移动端体验：图片查看器新增分享按钮，作品展示稳定的人气点赞数，修复移动端页脚横向溢出",
+    summaryEn: "Sharing & mobile experience: share button in the image viewer, stable base like counts, and a fix for footer overflow on mobile",
+    changes: [
+      {
+        type: "feature",
+        priority: "high",
+        titleZh: "图片查看器支持一键分享",
+        titleEn: "One-tap share in the image viewer",
+        descZh: "点赞按钮旁新增\"分享\"按钮：手机端唤起系统原生分享面板，桌面端自动复制作品标题、描述与专属链接；打开链接可直达该作品。",
+        descEn: "Added a share button next to the like button: native share sheet on mobile, clipboard fallback with title, description and a deep link on desktop; the link opens that exact photo.",
+      },
+      {
+        type: "feature",
+        priority: "medium",
+        titleZh: "作品展示基础人气值",
+        titleEn: "Base popularity for each photo",
+        descZh: "每张作品展示一个稳定的基础点赞数（固定分配、刷新不变），叠加访客自己的点赞，分布更接近真实作品集的浏览热度。",
+        descEn: "Each photo now shows a stable base like count (fixed per photo, never changes on reload) added on top of the visitor's own likes, mimicking a natural popularity distribution.",
+      },
+      {
+        type: "fix",
+        priority: "medium",
+        titleZh: "修复移动端页脚横向溢出",
+        titleEn: "Footer horizontal overflow on mobile",
+        descZh: "页脚链接行在窄屏下不换行，把整页布局视口撑宽，导致全站内容被缩小且可横向滑动。现改为自动换行居中，并加大小链接触控热区。",
+        descEn: "The footer link row did not wrap on narrow screens, widening the layout viewport and shrinking every page. Links now wrap and center, with larger tap targets.",
+      },
+      {
+        type: "improvement",
+        priority: "low",
+        titleZh: "首页叙事系列卡片缩小",
+        titleEn: "Smaller series cards on the home page",
+        descZh: "叙事系列封面卡片由近乎全宽（约 1184px）收窄至 768px，标题与内边距同步缩小，卡片间距收紧；展开系列后桌面端改为四列网格，一屏可浏览更多内容。",
+        descEn: "Series cover cards shrank from near full width (~1184px) to 768px with smaller titles, padding and spacing; the expanded grid is now four columns on desktop so more fits on screen.",
+      },
+    ],
+  },
+  {
     version: "v0.2.1",
     date: "2026-10-07",
     summaryZh: "图片查看器声音与交互修复：关闭自动播放/弹窗时同步停止背景音乐，移动端可正常翻图",

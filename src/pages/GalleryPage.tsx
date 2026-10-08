@@ -33,6 +33,28 @@ const GalleryPage: React.FC = () => {
     fetchPhotos();
   }, []);
 
+  // 支持通过 /gallery?photo=<id> 直接打开指定作品（分享链接落地）
+  useEffect(() => {
+    if (photos.length === 0) return;
+    const id = new URLSearchParams(window.location.search).get("photo");
+    if (!id) return;
+    const target = photos.find((p) => p.id === id);
+    if (target) {
+      setActiveCategory(ALL_CATEGORY);
+      setSelectedPhoto(target);
+    }
+  }, [photos]);
+
+  // 关闭弹窗时同步清掉地址栏上的 photo 参数，避免刷新后重复弹出
+  const closeModal = () => {
+    setSelectedPhoto(null);
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("photo")) {
+      url.searchParams.delete("photo");
+      window.history.replaceState({}, "", url.pathname + (url.search || "") + url.hash);
+    }
+  };
+
   // 动态提取分类
   const categories = useMemo(() => {
     const cats = Array.from(new Set(photos.map(p => p.category))).filter(Boolean);
@@ -212,7 +234,7 @@ const GalleryPage: React.FC = () => {
         photo={selectedPhoto}
         allPhotos={filteredPhotos}
         onNavigate={setSelectedPhoto}
-        onClose={() => setSelectedPhoto(null)}
+        onClose={closeModal}
       />
     </div>
   );

@@ -134,21 +134,21 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
       {/* Footer */}
       <footer className="py-12 px-6 md:px-12 border-t mt-24">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
           <div className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Zayn Huang. All rights reserved.
           </div>
-          <div className="flex items-center space-x-8">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:gap-x-8">
             <Link
               to="/changelog"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center py-1.5 -my-1.5"
             >
               <ScrollText className="w-3.5 h-3.5 mr-1.5" />
               {t("nav.changelog")}
             </Link>
             <Link
               to="/blog"
-              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center py-1.5 -my-1.5"
             >
               <ScrollText className="w-3.5 h-3.5 mr-1.5" />
               {t("nav.blog")}
@@ -158,7 +158,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                 navigator.clipboard.writeText("zaynhuang@outlook.com");
                 toast.success(t("common.emailCopied"));
               }}
-              className="text-sm hover:text-accent transition-colors cursor-pointer"
+              className="text-sm hover:text-accent transition-colors cursor-pointer py-1.5 -my-1.5"
             >
               Email
             </button>
@@ -166,7 +166,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               href="https://www.instagram.com/zayn_huang_" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-sm hover:text-accent transition-colors"
+              className="text-sm hover:text-accent transition-colors py-1.5 -my-1.5"
             >
               Instagram
             </a>
@@ -174,7 +174,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               href="https://500px.com.cn/zaynhuangphoto" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-sm hover:text-accent transition-colors"
+              className="text-sm hover:text-accent transition-colors py-1.5 -my-1.5"
             >
               500px
             </a>

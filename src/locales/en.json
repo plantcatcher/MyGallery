@@ -175,7 +175,10 @@
     "unliked": "Like removed",
     "liked": "Liked",
     "likeBtn": "Like",
-    "likedBtn": "Liked"
+    "likedBtn": "Liked",
+    "shareBtn": "Share",
+    "shareCopied": "Title, description and link copied - ready to paste",
+    "shareFailed": "Share failed, please copy the link manually"
   },
   "seo": {
     "homeTitle": "Banya Studio | Seeking Eternity in the Crevices of Light",

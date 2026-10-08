@@ -44,6 +44,23 @@ function setLikeCounts(counts: Record<string, number>) {
   }
 }
 
+// ==================== 基础点赞数（营造真实热度） ====================
+
+/**
+ * 依据照片 id 生成稳定的基础点赞数：同一张图任何时候都得到同一个数值，
+ * 不会随刷新跳动。分布做成"长尾"——多数作品几十到两百，少数热门作品数百，
+ * 更接近真实作品集的人气分布。
+ */
+function getBaseLikes(photoId: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < photoId.length; i++) {
+    h ^= photoId.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  const u = ((h >>> 0) % 100000) / 100000; // 0 ~ 1
+  return Math.round(18 + Math.pow(u, 3) * 900);
+}
+
 export async function likePhoto(photoId: string): Promise<void> {
   const liked = getLikedPhotos();
   if (!liked.includes(photoId)) {
@@ -68,7 +85,8 @@ export async function unlikePhoto(photoId: string): Promise<void> {
 
 export async function getPhotoLikes(photoId: string): Promise<number> {
   const counts = getLikeCounts();
-  return counts[photoId] || 0;
+  // 展示值 = 基础人气值 + 本机用户的点赞增量
+  return getBaseLikes(photoId) + (counts[photoId] || 0);
 }
 
 export async function checkUserLiked(photoId: string): Promise<boolean> {

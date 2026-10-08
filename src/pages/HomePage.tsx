@@ -275,7 +275,7 @@ const HomePage: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="flex flex-col gap-24"
+              className="flex flex-col gap-16"
             >
               {displayedProjects.map((project) => (
                 <ProjectCard
@@ -365,7 +365,7 @@ const ProjectCard: React.FC<{ project: Project; photos: Photo[]; onPhotoClick: (
         onClick={() => setIsOpen(!isOpen)}
         className="group cursor-pointer relative overflow-hidden"
       >
-        <div className="relative aspect-video overflow-hidden bg-muted">
+        <div className="relative aspect-video max-w-3xl overflow-hidden bg-muted">
           <img
             src={project.cover_image}
             alt={project.title}
@@ -373,10 +373,10 @@ const ProjectCard: React.FC<{ project: Project; photos: Photo[]; onPhotoClick: (
             className="w-full h-full object-cover grayscale-[0.4] transition-[transform,filter] duration-700 ease-apple will-change-transform group-hover:scale-[1.04] group-hover:grayscale-0"
           />
           <div className="absolute inset-0 bg-background/20 mix-blend-multiply transition-opacity group-hover:opacity-0" />
-          <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12">
-            <div className="space-y-4">
+          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
+            <div className="space-y-3">
               <span className="text-[10px] text-accent font-bold tracking-[0.4em] uppercase">{project.year}</span>
-              <h3 className="text-4xl md:text-7xl font-serif text-white tracking-tighter drop-shadow-2xl">{project.title}</h3>
+              <h3 className="text-3xl md:text-5xl font-serif text-white tracking-tighter drop-shadow-2xl">{project.title}</h3>
               <p className="text-sm text-white/70 max-w-sm font-serif italic opacity-0 group-hover:opacity-100 transition-all duration-[600ms] ease-apple delay-100 transform translate-y-3 group-hover:translate-y-0">
                 {project.description}
               </p>
@@ -399,7 +399,7 @@ const ProjectCard: React.FC<{ project: Project; photos: Photo[]; onPhotoClick: (
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
               {projectPhotos.map((photo) => (
                 <motion.div
                   key={photo.id}
