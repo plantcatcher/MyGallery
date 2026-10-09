@@ -70,7 +70,8 @@ All colors MUST be HSL.
 
 @layer base {
   h1, h2, h3, h4, .font-serif {
-    font-family: "Georgia", "Songti SC", "STSong", "SimSun", serif;
+    /* 拉丁走 Georgia（跨平台一致）；中文走自托管的 Noto Serif SC（全平台一致） */
+    font-family: "Georgia", "Noto Serif SC", serif;
     letter-spacing: -0.02em;
   }
 }
@@ -93,8 +94,10 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
+  html, body {
     @apply bg-background text-foreground;
+    /* 中文统一走自托管的 Noto Sans SC（全平台一致）；拉丁回退到系统无衬线 */
+    font-family: "Noto Sans SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 }
 
@@ -109,7 +112,7 @@ All colors MUST be HSL.
   .blog-prose h2,
   .blog-prose h3,
   .blog-prose h4 {
-    font-family: "Georgia", "Songti SC", "STSong", "SimSun", serif;
+    font-family: "Georgia", "Noto Serif SC", serif;
     letter-spacing: -0.02em;
     color: hsl(var(--foreground));
     line-height: 1.3;
