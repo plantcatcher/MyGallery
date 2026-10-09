@@ -22,6 +22,37 @@ export default {
             }
         },
         extend: {
+            // 必须在 theme 里声明字体栈：index.css 的 @layer base 里手写 font-family 会被
+            // Tailwind 自带工具类（同优先级、utilities 层在后）覆盖，导致 .font-serif / .font-sans
+            // 类名拿不到自托管的 Noto。中文放最前面保证全平台一致，拉丁由 Noto 自带的西文字形兜住。
+            fontFamily: {
+                sans: [
+                    '"Noto Sans SC"',
+                    'ui-sans-serif',
+                    'system-ui',
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    '"Segoe UI"',
+                    'Roboto',
+                    '"Helvetica Neue"',
+                    'Arial',
+                    'sans-serif'
+                ],
+                serif: ['Georgia', '"Noto Serif SC"', 'serif'],
+                // preflight 会给 code/pre/kbd 自动套 mono；把 Noto Sans SC 放在最前面，
+                // 代码里的中文注释才不会掉进系统的苹方/雅黑
+                mono: [
+                    '"Noto Sans SC"',
+                    'ui-monospace',
+                    'SFMono-Regular',
+                    'Menlo',
+                    'Monaco',
+                    'Consolas',
+                    '"Liberation Mono"',
+                    '"Courier New"',
+                    'monospace'
+                ]
+            },
             colors: {
                 border: 'hsl(var(--border))',
                 borderColor: {

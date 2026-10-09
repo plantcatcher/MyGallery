@@ -4,6 +4,7 @@ import svgr from 'vite-plugin-svgr';
 import path from 'path';
 
 import localAdminPlugin from './plugins/vite-plugin-local-admin';
+import fontPreloadPlugin from './plugins/vite-plugin-font-preload';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,6 +18,7 @@ export default defineConfig({
       },
     }),
     localAdminPlugin(),
+    fontPreloadPlugin(),
   ],
   resolve: {
     alias: {
