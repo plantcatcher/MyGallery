@@ -46,8 +46,8 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
       {/* Navigation */}
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-6 md:px-12 py-8",
-          scrolled ? "bg-background/40 backdrop-blur-xl py-6 border-b border-border/20" : "bg-transparent"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-6 md:px-12 py-4",
+          scrolled ? "bg-background/40 backdrop-blur-xl py-3 border-b border-border/20" : "bg-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">

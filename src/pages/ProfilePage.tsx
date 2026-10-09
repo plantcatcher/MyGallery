@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import PageMeta from "@/components/common/PageMeta";
 
 // 摄影师肖像图：替换为本地或稳定的 CDN 链接
-const PHOTOGRAPHER_AVATAR = "https://miaoda-conversation-file.cdn.bcebos.com/user-9cva4ifsa1vk/conv-9kf03ktlf1ts/20260212/file-9kvi49kl9d6o.jpg";
+const PHOTOGRAPHER_AVATAR = "/images/avatar.jpg";
 
 const ProfilePage: React.FC = () => {
   const { t } = useTranslation();

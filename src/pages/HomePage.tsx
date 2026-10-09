@@ -96,7 +96,7 @@ const HomePage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
       <PageMeta title={t("seo.homeTitle")} description={t("seo.homeDesc")} image={photos[0]?.url} />
       {/* Hero Section */}
-      <section className="py-24 md:py-40 space-y-12 text-center md:text-left">
+      <section className="pt-6 md:pt-12 pb-20 md:pb-32 space-y-12 text-center md:text-left">
         <div className="space-y-4">
           <motion.div
             initial={{ opacity: 0, x: -10 }}
@@ -377,7 +377,7 @@ const ProjectCard: React.FC<{ project: Project; photos: Photo[]; onPhotoClick: (
             <div className="space-y-3">
               <span className="text-[10px] text-accent font-bold tracking-[0.4em] uppercase">{project.year}</span>
               <h3 className="text-3xl md:text-5xl font-serif text-white tracking-tighter drop-shadow-2xl">{project.title}</h3>
-              <p className="text-sm text-white/70 max-w-sm font-serif italic opacity-0 group-hover:opacity-100 transition-all duration-[600ms] ease-apple delay-100 transform translate-y-3 group-hover:translate-y-0">
+              <p className="text-sm text-white/70 max-w-sm font-serif italic opacity-0 group-hover:opacity-100 transition-all duration-600 ease-apple delay-100 transform translate-y-3 group-hover:translate-y-0">
                 {project.description}
               </p>
               <div className="pt-4">

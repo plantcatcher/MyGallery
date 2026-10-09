@@ -9,8 +9,7 @@ export default {
         './pages/**/*.{ts,tsx}',
         './components/**/*.{ts,tsx}',
         './app/**/*.{ts,tsx}',
-        './src/**/*.{ts,tsx}',
-        './node_modules/streamdown/dist/**/*.js'
+        './src/**/*.{ts,tsx}'
     ],
     safelist: ['border', 'border-border'],
     prefix: '',
@@ -95,6 +94,13 @@ export default {
                 // iOS 标准弹簧缓动近似：入场干脆、收尾柔和
                 'apple': 'cubic-bezier(0.32, 0.72, 0, 1)',
                 'apple-in': 'cubic-bezier(0.42, 0, 1, 1)',
+            },
+            transitionDuration: {
+                // 补充默认刻度之外的时长（默认只有 75/100/150/200/300/500/700/1000）。
+                // 注意：不要用 duration-[600ms] 这类任意值写法——duration 前缀会命中
+                // transition-duration / animation-duration 多个插件，Tailwind v3 无法自动
+                // 消歧，会直接丢弃该 class 且不生成任何 CSS（仅打印 ambiguous 警告）。
+                '600': '600ms'
             },
             backgroundImage: {
                 'gradient-primary': 'var(--gradient-primary)',

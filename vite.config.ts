@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 import path from 'path';
 
-import { miaodaDevPlugin } from "miaoda-sc-plugin";
 import localAdminPlugin from './plugins/vite-plugin-local-admin';
 
 // https://vite.dev/config/
@@ -17,7 +16,6 @@ export default defineConfig({
         namedExport: 'ReactComponent',
       },
     }),
-    miaodaDevPlugin(),
     localAdminPlugin(),
   ],
   resolve: {
